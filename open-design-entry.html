@@ -1,0 +1,261 @@
+<!doctype html>
+<html lang="fa" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Azadi Coffee Open Design Brief</title>
+    <style>
+      :root {
+        --ink: #000;
+        --paper: #fff;
+        --warm-paper: #f7f5f1;
+        --stone: #8a8178;
+        --coffee: #6f4e37;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        background: var(--paper);
+        color: var(--ink);
+        font-family: Vazirmatn, IRANSans, Tahoma, Arial, sans-serif;
+        line-height: 1.8;
+      }
+
+      main {
+        max-width: 1160px;
+        margin: 0 auto;
+        padding: 48px 24px 80px;
+      }
+
+      header {
+        display: grid;
+        grid-template-columns: 1fr auto;
+        gap: 24px;
+        align-items: end;
+        border-bottom: 2px solid var(--ink);
+        padding-bottom: 32px;
+      }
+
+      h1,
+      h2,
+      h3,
+      p {
+        margin: 0;
+      }
+
+      h1 {
+        font-size: clamp(48px, 8vw, 112px);
+        line-height: 1;
+        font-weight: 800;
+        letter-spacing: 0;
+      }
+
+      h2 {
+        font-size: 28px;
+        line-height: 1.3;
+        margin-bottom: 18px;
+      }
+
+      h3 {
+        font-size: 18px;
+        margin-bottom: 8px;
+      }
+
+      .label {
+        color: var(--stone);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        border-bottom: 2px solid var(--ink);
+      }
+
+      .panel {
+        grid-column: span 6;
+        min-height: 260px;
+        padding: 28px;
+        border-inline-start: 2px solid var(--ink);
+      }
+
+      .panel:nth-child(2n) {
+        border-inline-start: 0;
+      }
+
+      .full {
+        grid-column: 1 / -1;
+        border-inline-start: 0;
+      }
+
+      ul {
+        margin: 12px 0 0;
+        padding-inline-start: 20px;
+      }
+
+      li {
+        margin: 4px 0;
+      }
+
+      .tokens {
+        display: grid;
+        grid-template-columns: repeat(6, 1fr);
+        gap: 0;
+        border: 2px solid var(--ink);
+        margin-top: 16px;
+      }
+
+      .swatch {
+        min-height: 92px;
+        padding: 12px;
+        border-inline-start: 1px solid var(--ink);
+        font-size: 12px;
+      }
+
+      .swatch:first-child {
+        border-inline-start: 0;
+      }
+
+      .paper {
+        background: var(--paper);
+      }
+
+      .ink {
+        background: var(--ink);
+        color: var(--paper);
+      }
+
+      .warm {
+        background: var(--warm-paper);
+      }
+
+      .stone {
+        background: var(--stone);
+        color: var(--paper);
+      }
+
+      .coffee {
+        background: var(--coffee);
+        color: var(--paper);
+      }
+
+      .route {
+        display: flex;
+        justify-content: space-between;
+        gap: 16px;
+        border-top: 1px solid var(--ink);
+        padding: 10px 0;
+      }
+
+      @media (max-width: 760px) {
+        header,
+        .grid,
+        .tokens {
+          grid-template-columns: 1fr;
+        }
+
+        .panel {
+          grid-column: 1;
+          border-inline-start: 0;
+          border-top: 2px solid var(--ink);
+        }
+
+        .swatch {
+          border-inline-start: 0;
+          border-top: 1px solid var(--ink);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <header>
+        <div>
+          <p class="label">Open Design seed brief</p>
+          <h1>آزادی Coffee</h1>
+        </div>
+        <p>فروشگاه مینیمال قهوه تخصصی، راست به چپ، سیاه و سفید، مناسب بازار ایران.</p>
+      </header>
+
+      <section class="grid">
+        <article class="panel">
+          <h2>مسیر محصول</h2>
+          <p>
+            طراحی و پیاده سازی یک فروشگاه Next.js برای قهوه آزادی با الهام از نظم بصری سایت مرجع،
+            بدون کپی هویت، محتوا، تصاویر، آیکن ها یا ساختار دقیق آن.
+          </p>
+        </article>
+
+        <article class="panel">
+          <h2>تصمیم فنی</h2>
+          <p>
+            فرانت اند با Next.js App Router، TypeScript و Tailwind CSS. بک اند و پنل مدیریت با
+            WordPress/WooCommerce برای محصول، انبار، سفارش، پرداخت و بلاگ.
+          </p>
+        </article>
+
+        <article class="panel">
+          <h2>عامل مدیر اصلی</h2>
+          <p>
+            مسئول هماهنگی عامل های طراحی، تجربه خرید، RTL، پرداخت، سئو و پیاده سازی است و از اصالت
+            برند آزادی در برابر کپی مستقیم محافظت می کند.
+          </p>
+        </article>
+
+        <article class="panel">
+          <h2>عامل ها</h2>
+          <ul>
+            <li>Reference Site Auditor</li>
+            <li>Azadi Brand Designer</li>
+            <li>Design System Agent</li>
+            <li>Ecommerce UX Agent</li>
+            <li>Persian/RTL Agent</li>
+            <li>Payment & Backend Architect</li>
+            <li>Blog & SEO Agent</li>
+            <li>Next.js Implementation Agent</li>
+          </ul>
+        </article>
+
+        <article class="panel full">
+          <h2>توکن های اولیه</h2>
+          <div class="tokens">
+            <div class="swatch ink">Ink<br />#000000</div>
+            <div class="swatch paper">Paper<br />#ffffff</div>
+            <div class="swatch warm">Warm Paper<br />#f7f5f1</div>
+            <div class="swatch stone">Stone<br />#8a8178</div>
+            <div class="swatch coffee">Coffee<br />#6f4e37</div>
+            <div class="swatch">Border<br />1-2px solid</div>
+          </div>
+        </article>
+
+        <article class="panel">
+          <h2>صفحات</h2>
+          <div class="route"><span>خانه</span><code>/</code></div>
+          <div class="route"><span>فروشگاه</span><code>/shop</code></div>
+          <div class="route"><span>محصول</span><code>/shop/[slug]</code></div>
+          <div class="route"><span>سبد خرید</span><code>/cart</code></div>
+          <div class="route"><span>تسویه حساب</span><code>/checkout</code></div>
+          <div class="route"><span>بلاگ</span><code>/blog</code></div>
+          <div class="route"><span>درباره</span><code>/about</code></div>
+          <div class="route"><span>تماس</span><code>/contact</code></div>
+          <div class="route"><span>عمده فروشی</span><code>/wholesale</code></div>
+        </article>
+
+        <article class="panel">
+          <h2>کامپوننت های فروشگاهی</h2>
+          <ul>
+            <li>کارت محصول با خاستگاه، فرآوری، درجه برشت، وزن و قیمت</li>
+            <li>صفحه محصول با یادداشت طعمی، جدول مشخصات و پیشنهاد دم آوری</li>
+            <li>سبد خرید با تعداد، کد تخفیف، ارسال و جمع کل</li>
+            <li>چک اوت راست به چپ با شماره موبایل، آدرس ایران و درگاه پرداخت</li>
+          </ul>
+        </article>
+      </section>
+    </main>
+  </body>
+</html>
