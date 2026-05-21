@@ -1,0 +1,89 @@
+@import "tailwindcss";
+
+:root {
+  --ink: #000000;
+  --paper: #ffffff;
+  --warm-paper: #f7f5f1;
+  --graphite: #1f1f1f;
+  --stone: #8a8178;
+  --coffee: #6f4e37;
+  --line: #000000;
+  --success: #0f7a3b;
+  --danger: #b42318;
+}
+
+@theme inline {
+  --color-ink: var(--ink);
+  --color-paper: var(--paper);
+  --color-warm-paper: var(--warm-paper);
+  --color-graphite: var(--graphite);
+  --color-stone: var(--stone);
+  --color-coffee: var(--coffee);
+  --color-line: var(--line);
+  --color-success: var(--success);
+  --color-danger: var(--danger);
+  --font-sans: "Vazirmatn", "IRANSansX", "Inter", system-ui, sans-serif;
+  --font-mono: ui-monospace, "JetBrains Mono", monospace;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Regular.woff2") format("woff2");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Vazirmatn";
+  src: url("/fonts/Vazirmatn-Bold.woff2") format("woff2");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+body {
+  font-family: "Vazirmatn", "IRANSansX", "Inter", system-ui, sans-serif;
+  text-rendering: optimizeLegibility;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+::selection {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.container-shell {
+  inline-size: min(100% - 32px, 1200px);
+  margin-inline: auto;
+}
+
+.hard-border {
+  border: 1.5px solid var(--line);
+}
+
+.ltr {
+  direction: ltr;
+  unicode-bidi: isolate;
+}
+
+@media (max-width: 640px) {
+  .container-shell {
+    inline-size: min(100% - 24px, 1200px);
+  }
+}
