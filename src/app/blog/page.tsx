@@ -1,10 +1,12 @@
 import { BlogCard } from "@/components/blog/BlogCard";
 import { PageShell } from "@/components/layout/PageShell";
-import { posts } from "@/data/posts";
+import { getPosts } from "@/lib/wordpress";
 
 export const metadata = { title: "وبلاگ" };
 
-export default function BlogPage() {
+export default async function BlogPage() {
+  const posts = await getPosts("fa");
+
   return (
     <PageShell>
       <section className="container-shell py-12">

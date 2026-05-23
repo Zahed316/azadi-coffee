@@ -1,23 +1,24 @@
 import { notFound } from "next/navigation";
 import { PageShell } from "@/components/layout/PageShell";
 import { QuantityStepper } from "@/components/cart/QuantityStepper";
-import { getProduct, products } from "@/data/products";
 import { formatRial, formatToman } from "@/lib/format/currency";
 import { productJsonLd } from "@/lib/seo/schema";
+import { getProductBySlug, getProducts } from "@/lib/woocommerce";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const products = await getProducts("fa");
   return products.map((product) => ({ slug: product.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const product = getProduct(slug);
+  const product = await getProductBySlug(slug, "fa");
   return { title: product ? product.name : "محصول" };
 }
 
 export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const product = getProduct(slug);
+  const product = await getProductBySlug(slug, "fa");
   if (!product) notFound();
 
   return (

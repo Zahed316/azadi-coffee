@@ -11,7 +11,15 @@ npm install
 npm run dev
 ```
 
-Copy `.env.example` to `.env.local` when the WooCommerce backend is ready.
+Copy `.env.example` to `.env.local` and fill in WordPress/WooCommerce credentials when the backend is ready.
+
+## Features
+
+- Persian (RTL) storefront with mirrored English routes under `/en`
+- WordPress/WooCommerce headless data layer with seed fallbacks
+- Theme presets and live design tokens (colors, typography, component styles)
+- Design dashboard at `/dashboard/design` (preview + localStorage; WordPress sync when API credentials are set)
+- WordPress plugin + theme in `wp-content/` for REST theme settings
 
 ## Contents
 
@@ -21,10 +29,15 @@ Copy `.env.example` to `.env.local` when the WooCommerce backend is ready.
 - `design-system.md`: Azadi visual tokens, layout rules, RTL rules, and ecommerce component specs.
 - `sitemap.md`: page map and route structure.
 - `first-10-steps.md`: immediate VS Code and Open Design workflow.
-- `src/app`: Persian RTL storefront routes.
-- `src/components`: layout, product, cart, blog, and UI components.
-- `src/lib`: formatting, SEO schema, WooCommerce client, and payment gateway notes.
+- `src/app`: storefront routes (fa + `/en`)
+- `src/components`: layout, product, cart, blog, settings UI
+- `src/lib`: WordPress/WooCommerce clients, theme settings, i18n, formatting
+- `wp-content/`: `azadi-headless` theme and settings plugin for WordPress admin
 - `docs/architecture-decision.md`: implementation architecture decision.
+
+## Fonts
+
+Place `Vazirmatn-Regular.woff2` and `Vazirmatn-Bold.woff2` in `public/fonts/` (referenced by `globals.css`).
 
 ## Decision
 

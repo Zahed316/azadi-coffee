@@ -1,20 +1,21 @@
 import { notFound } from "next/navigation";
 import { PageShell } from "@/components/layout/PageShell";
-import { getPost, posts } from "@/data/posts";
+import { getPostBySlug, getPosts } from "@/lib/wordpress";
 
-export function generateStaticParams() {
+export async function generateStaticParams() {
+  const posts = await getPosts("fa");
   return posts.map((post) => ({ slug: post.slug }));
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getPostBySlug(slug, "fa");
   return { title: post ? post.title : "وبلاگ" };
 }
 
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
-  const post = getPost(slug);
+  const post = await getPostBySlug(slug, "fa");
   if (!post) notFound();
 
   return (

@@ -1,10 +1,12 @@
 import { PageShell } from "@/components/layout/PageShell";
 import { ProductCard } from "@/components/product/ProductCard";
-import { products } from "@/data/products";
+import { getProducts } from "@/lib/woocommerce";
 
 export const metadata = { title: "فروشگاه" };
 
-export default function ShopPage() {
+export default async function ShopPage() {
+  const products = await getProducts("fa");
+
   return (
     <PageShell>
       <section className="border-b border-ink">

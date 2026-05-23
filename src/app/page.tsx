@@ -3,16 +3,20 @@ import { PageStackLayout } from "@/components/page-stack/PageStackLayout";
 import type { StackPanel } from "@/components/page-stack/PagePanel";
 import { FeaturedProducts } from "@/components/sections/FeaturedProducts";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { posts } from "@/data/posts";
-import { products } from "@/data/products";
+import { getProducts } from "@/lib/woocommerce";
+import { getPosts } from "@/lib/wordpress";
+import { getLandingSettings } from "@/lib/theme-settings";
 
-const panels: StackPanel[] = [
-  {
+export default async function Home() {
+  const [products, posts, landingSettings] = await Promise.all([getProducts("fa"), getPosts("fa"), getLandingSettings("fa")]);
+
+  const panels: StackPanel[] = [
+    {
     id: "home",
     label: "خانه",
     eyebrow: "Azadi Coffee",
     title: "قهوه آزادی برای فنجان های دقیق، ساده و روزانه.",
-    children: <HeroSection />,
+    children: <HeroSection settings={landingSettings} />,
   },
   {
     id: "shop",
@@ -114,8 +118,7 @@ const panels: StackPanel[] = [
       </div>
     ),
   },
-];
+  ];
 
-export default function Home() {
   return <PageStackLayout panels={panels} />;
 }

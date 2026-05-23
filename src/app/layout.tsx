@@ -1,4 +1,7 @@
 import type { Metadata } from "next";
+import { DocumentLocaleSync } from "@/components/layout/DocumentLocaleSync";
+import { DesignSettingsProvider } from "@/components/settings/DesignSettingsProvider";
+import { getThemeSettings, themeSettingsToCssVariables } from "@/lib/theme-settings";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -17,14 +20,31 @@ export const metadata: Metadata = {
   },
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const themeSettings = await getThemeSettings();
+
   return (
-    <html lang="fa" dir="rtl" className="h-full antialiased">
-      <body className="min-h-full bg-paper text-ink">{children}</body>
+    <html
+      lang="fa"
+      dir="rtl"
+      className="h-full antialiased"
+      data-header-style={themeSettings.styles.header}
+      data-footer-style={themeSettings.styles.footer}
+      data-landing-style={themeSettings.styles.landing}
+      data-product-card-style={themeSettings.styles.productCard}
+      data-blog-card-style={themeSettings.styles.blogCard}
+      data-button-style={themeSettings.styles.button}
+      style={themeSettingsToCssVariables(themeSettings)}
+      suppressHydrationWarning
+    >
+      <body className="min-h-full bg-paper text-ink" suppressHydrationWarning>
+        <DocumentLocaleSync />
+        <DesignSettingsProvider initialSettings={themeSettings}>{children}</DesignSettingsProvider>
+      </body>
     </html>
   );
 }

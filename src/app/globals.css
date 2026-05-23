@@ -10,6 +10,24 @@
   --line: #000000;
   --success: #0f7a3b;
   --danger: #b42318;
+  --tab-background: #ffffff;
+  --tab-text: #000000;
+  --tab-hover-background: #f7f5f1;
+  --tab-hover-text: #000000;
+  --button-primary-background: #000000;
+  --button-primary-text: #ffffff;
+  --button-secondary-background: #ffffff;
+  --button-secondary-text: #000000;
+  --site-font-family: "Vazirmatn", "IRANSansX", "Inter", system-ui, sans-serif;
+  --site-font-family-fa: "Vazirmatn", var(--site-font-family);
+  --site-font-family-en: "Inter", var(--site-font-family);
+  --radius: 0px;
+  --card-radius: 0px;
+  --button-radius: 0px;
+  --tab-radius: 0px;
+  --shadow-intensity: 0;
+  --shadow-card: none;
+  --spacing-scale: 1;
 }
 
 @theme inline {
@@ -22,7 +40,7 @@
   --color-line: var(--line);
   --color-success: var(--success);
   --color-danger: var(--danger);
-  --font-sans: "Vazirmatn", "IRANSansX", "Inter", system-ui, sans-serif;
+  --font-sans: var(--site-font-family);
   --font-mono: ui-monospace, "JetBrains Mono", monospace;
 }
 
@@ -43,16 +61,29 @@
 }
 
 body {
-  font-family: "Vazirmatn", "IRANSansX", "Inter", system-ui, sans-serif;
+  font-family: var(--site-font-family);
   text-rendering: optimizeLegibility;
+}
+
+html[lang="fa"],
+[lang="fa"] {
+  font-family: var(--site-font-family-fa);
+}
+
+html[lang="en"],
+[lang="en"] {
+  font-family: var(--site-font-family-en);
 }
 
 * {
   box-sizing: border-box;
 }
 
-a {
+a:not([class]) {
   color: inherit;
+}
+
+a {
   text-decoration: none;
 }
 
@@ -75,6 +106,124 @@ textarea {
 
 .hard-border {
   border: 1.5px solid var(--line);
+}
+
+.site-header {
+  background: color-mix(in srgb, var(--paper) 95%, transparent);
+  border-color: var(--line);
+}
+
+:root[data-header-style="minimal"] .site-header {
+  border-color: transparent;
+}
+
+:root[data-header-style="floating"] .site-header {
+  top: 12px;
+  border: 1px solid var(--line);
+  border-radius: var(--card-radius);
+  inline-size: min(100% - 32px, 1200px);
+  margin-inline: auto;
+  box-shadow: var(--shadow-card);
+}
+
+.site-footer {
+  border-color: var(--line);
+}
+
+:root[data-footer-style="light"] .site-footer,
+:root[data-footer-style="bordered"] .site-footer {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+:root[data-footer-style="light"] .site-footer p,
+:root[data-footer-style="light"] .site-footer a,
+:root[data-footer-style="bordered"] .site-footer p,
+:root[data-footer-style="bordered"] .site-footer a {
+  color: var(--stone);
+}
+
+.landing-tab {
+  background: var(--tab-background);
+  border-color: var(--line);
+  border-radius: var(--tab-radius);
+  color: var(--tab-text);
+}
+
+.landing-tab:hover {
+  background: var(--tab-hover-background);
+  color: var(--tab-hover-text);
+}
+
+.button-primary,
+.button-secondary {
+  border-color: var(--line);
+  border-radius: var(--button-radius);
+}
+
+.button-primary {
+  background: var(--button-primary-background);
+  color: var(--button-primary-text);
+}
+
+.button-primary:hover {
+  background: var(--button-secondary-background);
+  color: var(--button-secondary-text);
+}
+
+.button-secondary {
+  background: var(--button-secondary-background);
+  color: var(--button-secondary-text);
+}
+
+.button-secondary:hover {
+  background: var(--button-primary-background);
+  color: var(--button-primary-text);
+}
+
+:root[data-button-style="soft"] .button-primary,
+:root[data-button-style="soft"] .button-secondary {
+  border-radius: max(var(--button-radius), 12px);
+}
+
+:root[data-button-style="pill"] .button-primary,
+:root[data-button-style="pill"] .button-secondary {
+  border-radius: 999px;
+}
+
+.product-card {
+  border-color: var(--line);
+  border-radius: var(--card-radius);
+  box-shadow: var(--shadow-card);
+  overflow: hidden;
+}
+
+:root[data-product-card-style="commercial"] .product-card {
+  box-shadow: none;
+}
+
+:root[data-product-card-style="soft"] .product-card {
+  background: var(--paper);
+}
+
+.blog-card {
+  border-color: var(--line);
+  border-radius: var(--card-radius);
+}
+
+:root[data-blog-card-style="card"] .blog-card {
+  border: 1px solid var(--line);
+  padding: calc(20px * var(--spacing-scale));
+  box-shadow: var(--shadow-card);
+}
+
+:root[data-blog-card-style="editorial"] .blog-card {
+  border-top-width: 2px;
+}
+
+:root[data-landing-style="gallery"] .landing-tab,
+:root[data-landing-style="editorial"] .landing-tab {
+  letter-spacing: 0.01em;
 }
 
 .ltr {
