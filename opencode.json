@@ -1,0 +1,14 @@
+{
+  "$schema": "https://opencode.ai/opencode.schema.json",
+  "agents": [
+    ".opencode/agents/devops.md",
+    ".opencode/agents/woocommerce.md",
+    ".opencode/agents/seo.md",
+    ".opencode/agents/bilingual.md",
+    ".opencode/agents/product-manager.md"
+  ],
+  "agentDefaults": {
+    "model": "antigravity/claude-sonnet-4-6",
+    "temperature": 0.2
+  }
+}
