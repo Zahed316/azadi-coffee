@@ -16,6 +16,7 @@ type WpPost = {
   featured_media?: number;
   categories?: number[];
   acf?: Record<string, unknown>;
+  meta?: Record<string, string>;
 };
 
 type WpPage = WpPost;
@@ -45,23 +46,45 @@ function stripHtml(value = "") {
   return value.replace(/<[^>]*>/g, "").replace(/\s+/g, " ").trim();
 }
 
-function mapWpPost(post: WpPost, locale: Locale): BlogPost {
+function metaVal(post: WpPost, key: string): string | undefined {
+  const val = post.meta?.[key] ?? (post.acf?.[key] as string | undefined);
+  return val || undefined;
+}
+
+function metaArr(post: WpPost, key: string): string[] | undefined {
+  const raw = post.meta?.[key] ?? (post.acf?.[key] as string | string[] | undefined);
+  if (Array.isArray(raw)) return raw;
+  if (typeof raw === "string") {
+    try {
+      const parsed = JSON.parse(raw);
+      if (Array.isArray(parsed)) return parsed;
+    } catch {
+      return [raw];
+    }
+  }
+  return undefined;
+}
+
+function mapWpPost(post: WpPost): BlogPost {
   const title = stripHtml(post.title?.rendered);
   const excerpt = stripHtml(post.excerpt?.rendered);
   const content = stripHtml(post.content?.rendered);
 
+  const body = content ? [content] : [];
+  const acfCategory = post.acf?.category as string | undefined;
+
   return {
     slug: post.slug,
-    title: locale === "fa" ? title : title,
-    titleEn: locale === "en" ? title : title,
-    category: String(post.acf?.category || "وبلاگ"),
-    categoryEn: String(post.acf?.categoryEn || post.acf?.category || "Journal"),
+    title: metaVal(post, "title_fa") || title,
+    titleEn: metaVal(post, "title_en") || title,
+    category: metaVal(post, "category_fa") || acfCategory || "وبلاگ",
+    categoryEn: metaVal(post, "category_en") || acfCategory || "Journal",
     date: post.date ? new Intl.DateTimeFormat("fa-IR").format(new Date(post.date)) : "",
     dateEn: post.date ? new Intl.DateTimeFormat("en-US", { dateStyle: "medium" }).format(new Date(post.date)) : "",
-    excerpt: locale === "fa" ? excerpt : excerpt,
-    excerptEn: locale === "en" ? excerpt : excerpt,
-    body: content ? [content] : [],
-    bodyEn: content ? [content] : [],
+    excerpt: metaVal(post, "excerpt_fa") || excerpt,
+    excerptEn: metaVal(post, "excerpt_en") || excerpt,
+    body: metaArr(post, "body_fa") || body,
+    bodyEn: metaArr(post, "body_en") || body,
   };
 }
 
@@ -93,7 +116,7 @@ export async function getPosts(locale: Locale = "fa") {
     params: { per_page: 20, _embed: true, lang: locale },
   });
 
-  return wpPosts.length ? wpPosts.map((post) => mapWpPost(post, locale)) : posts;
+  return wpPosts.length ? wpPosts.map((post) => mapWpPost(post)) : posts;
 }
 
 export async function getPostBySlug(slug: string, locale: Locale = "fa") {
@@ -102,7 +125,7 @@ export async function getPostBySlug(slug: string, locale: Locale = "fa") {
       params: { slug: candidate, per_page: 1, _embed: true, lang: locale },
     });
     if (wpPosts[0]) {
-      return mapWpPost(wpPosts[0], locale);
+      return mapWpPost(wpPosts[0]);
     }
   }
 

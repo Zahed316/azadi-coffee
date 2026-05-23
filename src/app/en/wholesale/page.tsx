@@ -1,17 +1,18 @@
 import { PageShell } from "@/components/layout/PageShell";
+import { getPageBySlug } from "@/lib/wordpress";
 
 export const metadata = { title: "Wholesale and B2B" };
 
-export default function EnglishWholesalePage() {
+export default async function EnglishWholesalePage() {
+  const page = await getPageBySlug("wholesale", "en");
+
   return (
     <PageShell locale="en">
       <section className="container-shell grid gap-10 py-12 lg:grid-cols-[1fr_420px]">
         <div>
           <p className="text-sm font-bold text-stone">Wholesale / B2B</p>
-          <h1 className="mt-3 text-5xl font-bold leading-tight">Coffee supply for cafes and teams</h1>
-          <p className="mt-6 max-w-2xl text-lg leading-9 text-stone">
-            Azadi wholesale should cover recurring orders, barista training, profile selection, and seasonal support.
-          </p>
+          <h1 className="mt-3 text-5xl font-bold leading-tight">{page?.title || "Coffee supply for cafes and teams"}</h1>
+          <p className="mt-6 max-w-2xl text-lg leading-9 text-stone">{page?.content || "Azadi wholesale covers recurring orders, barista training, profile selection, and seasonal support."}</p>
         </div>
         <form className="grid gap-4 border border-ink p-5">
           <input className="min-h-12 border border-ink px-4" placeholder="Cafe or company name" />

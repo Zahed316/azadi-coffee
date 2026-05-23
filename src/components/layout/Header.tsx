@@ -2,6 +2,7 @@ import Link from "next/link";
 import { localePath, type Locale } from "@/lib/i18n";
 import type { NavigationItem } from "@/lib/wordpress";
 import { LanguageSwitch } from "./LanguageSwitch";
+import { CartButton } from "../cart/CartButton";
 
 const nav = {
   fa: [
@@ -47,9 +48,7 @@ export function Header({
           <Link href={localePath(locale, "/contact")} className="button-secondary hidden min-h-10 items-center border px-3 py-2 font-bold md:inline-flex">
             {locale === "en" ? "Contact" : "تماس"}
           </Link>
-          <Link href={localePath(locale, "/cart")} className="button-primary inline-flex min-h-10 items-center border px-3 py-2 font-bold transition">
-            {locale === "en" ? "Cart" : "سبد خرید"}
-          </Link>
+          <CartButton />
         </div>
       </div>
     </header>

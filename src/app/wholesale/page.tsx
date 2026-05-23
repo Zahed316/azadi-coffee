@@ -1,17 +1,18 @@
 import { PageShell } from "@/components/layout/PageShell";
+import { getPageBySlug } from "@/lib/wordpress";
 
 export const metadata = { title: "عمده و B2B" };
 
-export default function WholesalePage() {
+export default async function WholesalePage() {
+  const page = await getPageBySlug("wholesale", "fa");
+
   return (
     <PageShell>
       <section className="container-shell grid gap-10 py-12 lg:grid-cols-[1fr_420px]">
         <div>
           <p className="text-sm font-bold text-stone">Wholesale / B2B</p>
-          <h1 className="mt-3 text-5xl font-bold leading-tight">تامین قهوه برای کافه ها و تیم ها</h1>
-          <p className="mt-6 max-w-2xl text-lg leading-9 text-stone">
-            برنامه عمده آزادی باید سفارش منظم، آموزش باریستا، انتخاب پروفایل و پشتیبانی تغییر فصل را پوشش دهد.
-          </p>
+          <h1 className="mt-3 text-5xl font-bold leading-tight">{page?.title || "تامین قهوه برای کافه ها و تیم ها"}</h1>
+          <p className="mt-6 max-w-2xl text-lg leading-9 text-stone">{page?.content || "برنامه عمده آزادی باید سفارش منظم، آموزش باریستا، انتخاب پروفایل و پشتیبانی تغییر فصل را پوشش دهد."}</p>
         </div>
         <form className="grid gap-4 border border-ink p-5">
           <input className="min-h-12 border border-ink px-4" placeholder="نام کافه یا شرکت" />

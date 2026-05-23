@@ -1,15 +1,16 @@
 import { PageShell } from "@/components/layout/PageShell";
+import { getPageBySlug } from "@/lib/wordpress";
 
 export const metadata = { title: "درباره آزادی" };
 
-export default function AboutPage() {
+export default async function AboutPage() {
+  const page = await getPageBySlug("about", "fa");
+
   return (
     <PageShell>
       <section className="container-shell grid gap-10 py-12 md:grid-cols-[0.8fr_1.2fr]">
-        <h1 className="text-5xl font-bold leading-tight">درباره قهوه آزادی</h1>
-        <div className="grid gap-6 text-lg leading-10 text-graphite">
-          <p>آزادی یک برند قهوه تخصصی فارسی است که روی خرید شفاف، برشته کاری دقیق و تجربه خرید ساده تمرکز دارد.</p>
-          <p>هویت بصری از ریتم مینیمال سیاه و سفید الهام می گیرد، اما محتوا، محصول و لحن کاملا برای قهوه و مخاطب ایرانی طراحی شده است.</p>
+        <h1 className="text-5xl font-bold leading-tight">{page?.title || "درباره قهوه آزادی"}</h1>
+        <div className="grid gap-6 text-lg leading-10 text-graphite" dangerouslySetInnerHTML={{ __html: page?.content || "" }}>
         </div>
       </section>
     </PageShell>

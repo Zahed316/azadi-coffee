@@ -56,6 +56,26 @@ add_action('template_redirect', static function (): void {
     }
 });
 
+/**
+ * Register bilingual post meta fields in the REST API for blog posts.
+ */
+add_action('init', static function (): void {
+    $bilingual_keys = [
+        'title_fa', 'title_en',
+        'excerpt_fa', 'excerpt_en',
+        'category_fa', 'category_en',
+        'body_fa', 'body_en',
+    ];
+    foreach ($bilingual_keys as $key) {
+        register_post_meta('post', $key, [
+            'show_in_rest' => true,
+            'single'       => true,
+            'type'         => 'string',
+            'auth_callback' => fn() => current_user_can('edit_posts'),
+        ]);
+    }
+});
+
 add_action('admin_notices', static function (): void {
     if (!current_user_can('manage_options')) {
         return;

@@ -4,6 +4,10 @@ COPY package.json package-lock.json ./
 RUN npm ci --only=production
 
 FROM node:24-alpine AS builder
+ARG NEXT_PUBLIC_SITE_URL
+ARG WORDPRESS_BASE_URL
+ENV NEXT_PUBLIC_SITE_URL=$NEXT_PUBLIC_SITE_URL
+ENV WORDPRESS_BASE_URL=$WORDPRESS_BASE_URL
 WORKDIR /app
 COPY package.json package-lock.json ./
 RUN npm ci

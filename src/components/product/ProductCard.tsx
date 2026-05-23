@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import type { CoffeeProduct } from "@/data/products";
 import { formatToman } from "@/lib/format/currency";
@@ -9,10 +10,14 @@ export function ProductCard({ product, locale = "fa" }: { product: CoffeeProduct
 
   return (
     <article className="product-card group grid border bg-paper">
-      <Link href={localePath(locale, `/shop/${product.slug}`)} className="aspect-square border-b border-ink bg-warm-paper p-4">
-        <div className="grid h-full place-items-center border border-ink bg-paper transition group-hover:scale-[0.98]">
-          <div className="h-24 w-24 rounded-full border-[18px] border-ink bg-paper" />
-        </div>
+      <Link href={localePath(locale, `/shop/${product.slug}`)} className="relative aspect-square border-b border-ink bg-warm-paper overflow-hidden">
+        {product.image ? (
+          <Image src={product.image} alt={product.imageAlt || product.name} fill className="object-cover transition group-hover:scale-[1.02]" sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 25vw" />
+        ) : (
+          <div className="grid h-full place-items-center p-4">
+            <div className="h-24 w-24 rounded-full border-[18px] border-ink bg-paper transition group-hover:scale-[0.98]" />
+          </div>
+        )}
       </Link>
       <div className="grid gap-4 p-5">
         <div className="flex items-start justify-between gap-4">

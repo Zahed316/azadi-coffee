@@ -15,6 +15,8 @@ export type CoffeeProduct = {
   brew: string;
   brewEn: string;
   inventory: "available" | "low" | "sold-out";
+  image?: string;
+  imageAlt?: string;
 };
 
 export const products: CoffeeProduct[] = [

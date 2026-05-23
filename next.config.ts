@@ -1,23 +1,27 @@
 import type { NextConfig } from "next";
 
+const wordpressHost = process.env.WORDPRESS_BASE_URL
+  ? new URL(process.env.WORDPRESS_BASE_URL).hostname
+  : undefined;
+
+const publicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
+const publicSiteHost = publicSiteUrl ? new URL(publicSiteUrl).hostname : undefined;
+
+const remotePatterns: NonNullable<NextConfig["images"]>["remotePatterns"] = [];
+
+if (wordpressHost) {
+  remotePatterns.push({ protocol: "https", hostname: wordpressHost, pathname: "/**" });
+}
+
+if (publicSiteHost && publicSiteHost !== wordpressHost) {
+  remotePatterns.push({ protocol: "https", hostname: publicSiteHost, pathname: "/**" });
+}
+
 const nextConfig: NextConfig = {
   output: "standalone",
 
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "admin.azadicoffee.com",
-        pathname: "/**",
-      },
-      {
-        protocol: "https",
-        hostname: process.env.WORDPRESS_BASE_URL
-          ? new URL(process.env.WORDPRESS_BASE_URL).hostname
-          : "**.localhost",
-        pathname: "/**",
-      },
-    ],
+    remotePatterns,
   },
 
   async headers() {

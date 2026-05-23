@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useContext, useEffect, useMemo, useSyncExternalStore, type ReactNode } from "react";
+import { createContext, useCallback, useContext, useEffect, useMemo, useSyncExternalStore, type ReactNode } from "react";
 import { defaultDesignSettings, type DesignSettings } from "@/lib/settings/design-presets";
 import {
   applyDesignSettings,
@@ -33,12 +33,12 @@ export function DesignSettingsProvider({
     applyDesignSettings(settings);
   }, [settings]);
 
-  const setSettings = (nextSettings: DesignSettings) => {
+  const setSettings = useCallback((nextSettings: DesignSettings) => {
     persistDesignSettings(nextSettings);
     applyDesignSettings(nextSettings);
-  };
+  }, []);
 
-  const value = useMemo(() => ({ settings, setSettings }), [settings]);
+  const value = useMemo(() => ({ settings, setSettings }), [settings, setSettings]);
 
   return <DesignSettingsContext.Provider value={value}>{children}</DesignSettingsContext.Provider>;
 }
@@ -51,3 +51,4 @@ export function useDesignSettings() {
 
   return context;
 }
+
