@@ -1,8 +1,17 @@
 # Azadi Coffee
 
-Persian RTL Next.js ecommerce plan for a minimalist specialty coffee roastery.
+Persian RTL Next.js ecommerce storefront for a minimalist specialty coffee roastery.
 
-This folder is the local handoff package for rebuilding the cloned WordPress design direction as an original Azadi Coffee storefront. The cloned site is only a reference for visual principles, not a source for copied assets, text, logo, layout, or brand identity.
+This repository now contains both the planning docs and the first working Next.js App Router implementation. The cloned WordPress site is only a reference for visual principles, not a source for copied assets, text, logo, layout, or brand identity.
+
+## Run
+
+```bash
+npm install
+npm run dev
+```
+
+Copy `.env.example` to `.env.local` when the WooCommerce backend is ready.
 
 ## Contents
 
@@ -12,6 +21,10 @@ This folder is the local handoff package for rebuilding the cloned WordPress des
 - `design-system.md`: Azadi visual tokens, layout rules, RTL rules, and ecommerce component specs.
 - `sitemap.md`: page map and route structure.
 - `first-10-steps.md`: immediate VS Code and Open Design workflow.
+- `src/app`: Persian RTL storefront routes.
+- `src/components`: layout, product, cart, blog, and UI components.
+- `src/lib`: formatting, SEO schema, WooCommerce client, and payment gateway notes.
+- `docs/architecture-decision.md`: implementation architecture decision.
 
 ## Decision
 

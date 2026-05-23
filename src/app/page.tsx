@@ -1,74 +1,121 @@
+import Link from "next/link";
+import { PageStackLayout } from "@/components/page-stack/PageStackLayout";
+import type { StackPanel } from "@/components/page-stack/PagePanel";
+import { FeaturedProducts } from "@/components/sections/FeaturedProducts";
+import { HeroSection } from "@/components/sections/HeroSection";
 import { posts } from "@/data/posts";
 import { products } from "@/data/products";
-import { BlogCard } from "@/components/blog/BlogCard";
-import { PageShell } from "@/components/layout/PageShell";
-import { ProductCard } from "@/components/product/ProductCard";
-import { ButtonLink } from "@/components/ui/ButtonLink";
 
-export default function Home() {
-  return (
-    <PageShell>
-      <section className="border-b border-ink">
-        <div className="container-shell grid min-h-[68vh] gap-10 py-10 md:grid-cols-[1.1fr_0.9fr] md:items-end">
-          <div className="pb-8">
-            <p className="mb-5 text-sm font-bold text-stone">قهوه تازه برشته / فروش آنلاین / تهران</p>
-            <h1 className="max-w-3xl text-5xl font-bold leading-tight tracking-tight md:text-7xl">
-              قهوه آزادی برای فنجان های دقیق، ساده و روزانه.
-            </h1>
-            <p className="mt-7 max-w-2xl text-lg leading-9 text-stone">
-              یک فروشگاه فارسی و راست چین برای قهوه تخصصی، با ریتم مینیمال سیاه و سفید، محصول محوری و مسیر خرید کوتاه.
+const panels: StackPanel[] = [
+  {
+    id: "home",
+    label: "خانه",
+    eyebrow: "Azadi Coffee",
+    title: "قهوه آزادی برای فنجان های دقیق، ساده و روزانه.",
+    children: <HeroSection />,
+  },
+  {
+    id: "shop",
+    label: "فروشگاه",
+    eyebrow: "قهوه های آماده ارسال",
+    title: "خرید قهوه باید کوتاه، واضح و آرام باشد.",
+    tone: "warm",
+    children: (
+      <div>
+        <FeaturedProducts products={products} />
+        <Link href="/shop" className="mt-8 inline-flex border border-ink bg-ink px-5 py-3 font-bold text-paper">
+          ورود به فروشگاه
+        </Link>
+      </div>
+    ),
+  },
+  {
+    id: "roastery",
+    label: "برشته کاری",
+    eyebrow: "پروفایل و ثبات",
+    title: "برشته کاری کوچک با تمرکز روی وضوح، تکرارپذیری و تازگی.",
+    children: (
+      <div className="grid gap-4 md:grid-cols-3">
+        {[
+          ["انتخاب سبز", "خرید دانه سبز براساس فصل، شفافیت و کیفیت فنجان."],
+          ["ثبت پروفایل", "کنترل زمان، دما و توسعه برای هر دسته برشته کاری."],
+          ["ارسال منظم", "بسته بندی بعد از استراحت مناسب و ارسال کوتاه."],
+        ].map(([title, text]) => (
+          <article key={title} className="border-t border-ink pt-4">
+            <h3 className="font-bold">{title}</h3>
+            <p className="mt-3 leading-8 text-stone">{text}</p>
+          </article>
+        ))}
+      </div>
+    ),
+  },
+  {
+    id: "blog",
+    label: "بلاگ",
+    eyebrow: "یادداشت های برشته کاری",
+    title: "آموزش خرید، دم آوری و شناخت خاستگاه قهوه.",
+    tone: "warm",
+    children: (
+      <div className="grid border-t border-ink">
+        {posts.map((post) => (
+          <Link key={post.slug} href={`/blog/${post.slug}`} className="grid gap-3 border-b border-ink py-5 md:grid-cols-[160px_1fr]">
+            <p className="text-sm text-stone">{post.category}</p>
+            <div>
+              <h3 className="text-xl font-bold">{post.title}</h3>
+              <p className="mt-2 leading-8 text-stone">{post.excerpt}</p>
+            </div>
+          </Link>
+        ))}
+      </div>
+    ),
+  },
+  {
+    id: "about",
+    label: "درباره",
+    eyebrow: "هویت آزادی",
+    title: "یک برند قهوه فارسی، مینیمال و مناسب خرید روزمره.",
+    children: (
+      <div className="grid gap-8 lg:grid-cols-[1fr_0.8fr]">
+        <p className="max-w-2xl text-lg leading-9 text-stone">
+          آزادی از زبان بصری سیاه و سفید، فاصله گذاری دقیق و صفحات کنار هم برای ساختن تجربه ای آرام استفاده می کند؛ اما محتوا،
+          محصول و هویت آن برای قهوه تخصصی و بازار فارسی طراحی شده است.
+        </p>
+        <div className="grid border border-ink">
+          {["مینیمال", "فارسی و راست چین", "محصول محور", "آماده اتصال به WooCommerce"].map((item) => (
+            <p key={item} className="border-b border-ink p-4 last:border-b-0">
+              {item}
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
-              <ButtonLink href="/shop">خرید قهوه</ButtonLink>
-              <ButtonLink href="/wholesale" variant="secondary">درخواست عمده</ButtonLink>
-            </div>
-          </div>
-          <div className="grid aspect-square border border-ink bg-warm-paper p-5">
-            <div className="grid place-items-center border border-ink bg-paper">
-              <div className="grid h-56 w-56 place-items-center rounded-full border-[34px] border-ink">
-                <span className="text-sm font-bold">AZADI</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="container-shell py-16">
-        <div className="mb-8 flex items-end justify-between gap-6">
-          <div>
-            <p className="text-sm font-bold text-stone">محصولات منتخب</p>
-            <h2 className="mt-2 text-3xl font-bold">قهوه های آماده ارسال</h2>
-          </div>
-          <ButtonLink href="/shop" variant="secondary">همه محصولات</ButtonLink>
-        </div>
-        <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
-          {products.map((product) => <ProductCard key={product.slug} product={product} />)}
-        </div>
-      </section>
-
-      <section className="border-y border-ink bg-warm-paper">
-        <div className="container-shell grid gap-8 py-14 md:grid-cols-3">
-          {[
-            ["۰۱", "برشته کاری کوچک", "پروفایل ها برای ثبات، وضوح و استفاده روزانه طراحی می شوند."],
-            ["۰۲", "پرداخت ایرانی", "درگاه ها در WooCommerce مدیریت می شوند تا سفارش و تسویه قابل اتکا بماند."],
-            ["۰۳", "محتوای فارسی", "وبلاگ برای آموزش خرید، دم آوری و روایت خاستگاه قهوه ساخته می شود."],
-          ].map(([num, title, text]) => (
-            <article key={num} className="border-r border-ink pr-5">
-              <p className="font-mono text-sm">{num}</p>
-              <h3 className="mt-4 text-xl font-bold">{title}</h3>
-              <p className="mt-3 leading-8 text-stone">{text}</p>
-            </article>
           ))}
         </div>
-      </section>
-
-      <section className="container-shell py-16">
-        <div className="mb-3 flex items-end justify-between">
-          <h2 className="text-3xl font-bold">یادداشت های برشته کاری</h2>
-          <ButtonLink href="/blog" variant="secondary">وبلاگ</ButtonLink>
+      </div>
+    ),
+  },
+  {
+    id: "contact",
+    label: "تماس",
+    eyebrow: "سفارش و همکاری",
+    title: "برای خرید، تامین قهوه کافه یا همکاری عمده با آزادی تماس بگیرید.",
+    tone: "ink",
+    children: (
+      <div className="grid gap-6 text-white/75 md:grid-cols-2">
+        <div className="border border-white/30 p-5 leading-8">
+          <p>تهران، کارگاه برشته کاری آزادی</p>
+          <p className="ltr text-right">021-00000000</p>
+          <p>شنبه تا پنجشنبه، ۱۰ تا ۱۸</p>
         </div>
-        {posts.slice(0, 2).map((post) => <BlogCard key={post.slug} post={post} />)}
-      </section>
-    </PageShell>
-  );
+        <div className="flex flex-wrap items-start gap-3">
+          <Link href="/contact" className="border border-paper px-5 py-3 font-bold text-paper">
+            صفحه تماس
+          </Link>
+          <Link href="/wholesale" className="border border-paper bg-paper px-5 py-3 font-bold text-ink">
+            درخواست عمده
+          </Link>
+        </div>
+      </div>
+    ),
+  },
+];
+
+export default function Home() {
+  return <PageStackLayout panels={panels} />;
 }
