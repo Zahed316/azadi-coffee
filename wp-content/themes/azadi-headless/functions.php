@@ -13,7 +13,10 @@ if (!defined('ABSPATH')) {
 
 function azadi_headless_frontend_url(): string
 {
-    $url = getenv('NEXT_PUBLIC_SITE_URL') ?: getenv('AZADI_FRONTEND_URL') ?: '';
+    $url = get_option('azadi_frontend_url', '');
+    if (!$url) {
+        $url = getenv('NEXT_PUBLIC_SITE_URL') ?: getenv('AZADI_FRONTEND_URL') ?: '';
+    }
     if (!$url) {
         $url = 'http://localhost:3000';
     }

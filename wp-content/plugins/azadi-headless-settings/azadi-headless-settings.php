@@ -25,6 +25,7 @@ final class Azadi_Headless_Settings {
 
     public static function boot(): void {
         add_action('admin_menu', [self::class, 'register_admin_menu']);
+        add_action('admin_notices', [self::class, 'admin_notices']);
         add_action('rest_api_init', [self::class, 'register_rest_routes']);
         add_filter('upload_mimes', [self::class, 'allow_font_uploads']);
         add_filter('rest_pre_serve_request', [self::class, 'send_cors_headers'], 10, 4);
@@ -47,6 +48,16 @@ final class Azadi_Headless_Settings {
             [self::class, 'render_admin_page'],
             'dashicons-admin-customizer',
             58
+        );
+
+        add_submenu_page(
+            'azadi-settings',
+            'Setup Wizard',
+            'Setup Wizard',
+            'manage_options',
+            'azadi-setup',
+            [self::class, 'render_setup_wizard'],
+            0
         );
 
         $pages = [
@@ -400,6 +411,234 @@ final class Azadi_Headless_Settings {
             'url' => esc_url_raw((string) $uploaded['url']),
             'format' => $extension === 'ttf' ? 'truetype' : $extension,
         ]);
+    }
+
+    public static function render_setup_wizard(): void {
+        if (!current_user_can('manage_options')) {
+            wp_die(esc_html__('You do not have permission to manage Azadi settings.', 'azadi-headless-settings'));
+        }
+
+        $saved = get_option('azadi_setup_complete', false);
+        $frontend_url = get_option('azadi_frontend_url', '');
+        $site_url = get_option('siteurl', '');
+        $home_url = get_option('home', '');
+        $default_lang = get_option('azadi_default_language', 'fa');
+
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['azadi_setup_submit'])) {
+            check_admin_referer('azadi_setup_wizard');
+            self::handle_setup_wizard_submit();
+            return;
+        }
+
+        $parsed_site = parse_url($site_url ?: 'https://example.com');
+        $current_domain = $parsed_site['host'] ?? '';
+        ?>
+        <div class="wrap" style="max-width:720px">
+            <h1><?php esc_html_e('Azadi Coffee — Setup Wizard', 'azadi-headless-settings'); ?></h1>
+
+            <?php if ($saved) : ?>
+                <div class="notice notice-success inline">
+                    <p><strong><?php esc_html_e('Setup is complete.', 'azadi-headless-settings'); ?></strong></p>
+                    <p><?php esc_html_e('You can run this wizard again to update the domain or frontend URL.', 'azadi-headless-settings'); ?></p>
+                </div>
+            <?php endif; ?>
+
+            <form method="post">
+                <?php wp_nonce_field('azadi_setup_wizard'); ?>
+
+                <table class="form-table" role="presentation">
+                    <tr>
+                        <th scope="row">
+                            <label for="azadi_domain"><?php esc_html_e('Live Domain', 'azadi-headless-settings'); ?></label>
+                        </th>
+                        <td>
+                            <input
+                                id="azadi_domain"
+                                name="azadi_domain"
+                                type="text"
+                                class="regular-text"
+                                value="<?php echo esc_attr($current_domain); ?>"
+                                placeholder="azadicoffee.com"
+                                required
+                            />
+                            <p class="description">
+                                <?php esc_html_e('The public domain where the site will be accessible (e.g. azadicoffee.com). Do not include http:// or https://.', 'azadi-headless-settings'); ?>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label for="azadi_frontend_url"><?php esc_html_e('Frontend URL', 'azadi-headless-settings'); ?></label>
+                        </th>
+                        <td>
+                            <input
+                                id="azadi_frontend_url"
+                                name="azadi_frontend_url"
+                                type="url"
+                                class="regular-text"
+                                value="<?php echo esc_attr($frontend_url ?: 'https://' . $current_domain); ?>"
+                                placeholder="https://azadicoffee.com"
+                            />
+                            <p class="description">
+                                <?php esc_html_e('The public URL of the Next.js frontend. Usually https://&lt;domain&gt;.', 'azadi-headless-settings'); ?>
+                            </p>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th scope="row">
+                            <label for="azadi_default_language"><?php esc_html_e('Default Language', 'azadi-headless-settings'); ?></label>
+                        </th>
+                        <td>
+                            <select id="azadi_default_language" name="azadi_default_language">
+                                <option value="fa" <?php selected($default_lang, 'fa'); ?>><?php esc_html_e('Persian (FA)', 'azadi-headless-settings'); ?></option>
+                                <option value="en" <?php selected($default_lang, 'en'); ?>><?php esc_html_e('English (EN)', 'azadi-headless-settings'); ?></option>
+                            </select>
+                            <p class="description">
+                                <?php esc_html_e('The default language for the storefront. Persian is recommended.', 'azadi-headless-settings'); ?>
+                            </p>
+                        </td>
+                    </tr>
+                </table>
+
+                <p class="submit">
+                    <button type="submit" name="azadi_setup_submit" class="button button-primary button-large">
+                        <?php echo $saved ? esc_html__('Update Configuration', 'azadi-headless-settings') : esc_html__('Complete Setup', 'azadi-headless-settings'); ?>
+                    </button>
+                </p>
+            </form>
+
+            <hr />
+
+            <h2><?php esc_html_e('Current Configuration', 'azadi-headless-settings'); ?></h2>
+            <table class="widefat striped">
+                <thead>
+                    <tr>
+                        <th><?php esc_html_e('Setting', 'azadi-headless-settings'); ?></th>
+                        <th><?php esc_html_e('Value', 'azadi-headless-settings'); ?></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><?php esc_html_e('WordPress Site URL (siteurl)', 'azadi-headless-settings'); ?></td>
+                        <td><code><?php echo esc_html($site_url ?: '—'); ?></code></td>
+                    </tr>
+                    <tr>
+                        <td><?php esc_html_e('WordPress Home (home)', 'azadi-headless-settings'); ?></td>
+                        <td><code><?php echo esc_html($home_url ?: '—'); ?></code></td>
+                    </tr>
+                    <tr>
+                        <td><?php esc_html_e('Frontend URL', 'azadi-headless-settings'); ?></td>
+                        <td><code><?php echo esc_html($frontend_url ?: '—'); ?></code></td>
+                    </tr>
+                    <tr>
+                        <td><?php esc_html_e('Default Language', 'azadi-headless-settings'); ?></td>
+                        <td><code><?php echo esc_html(strtoupper($default_lang)); ?></code></td>
+                    </tr>
+                    <tr>
+                        <td><?php esc_html_e('Setup Complete', 'azadi-headless-settings'); ?></td>
+                        <td><?php echo $saved ? '<span style="color:#0a0">✓ Yes</span>' : '<span style="color:#a00">— Not yet</span>'; ?></td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <?php
+    }
+
+    private static function handle_setup_wizard_submit(): void {
+        $domain = isset($_POST['azadi_domain'])
+            ? strtolower(trim(sanitize_text_field(wp_unslash($_POST['azadi_domain']))))
+            : '';
+        $frontend_url = isset($_POST['azadi_frontend_url'])
+            ? esc_url_raw(trim(wp_unslash($_POST['azadi_frontend_url'])))
+            : '';
+        $default_lang = isset($_POST['azadi_default_language']) && $_POST['azadi_default_language'] === 'en' ? 'en' : 'fa';
+
+        if (empty($domain)) {
+            wp_die(esc_html__('Domain is required.', 'azadi-headless-settings'));
+        }
+
+        $domain = preg_replace('#^https?://#', '', $domain);
+        $domain = rtrim($domain, '/');
+
+        if (empty($frontend_url)) {
+            $frontend_url = 'https://' . $domain;
+        }
+
+        $site_url = 'https://' . $domain . '/wp';
+
+        // Update WordPress core settings
+        update_option('siteurl', $site_url);
+        update_option('home', $frontend_url);
+
+        // Store frontend URL for the theme and REST API
+        update_option('azadi_frontend_url', $frontend_url);
+        update_option('azadi_default_language', $default_lang);
+        update_option('azadi_setup_complete', true);
+
+        // Update landing settings with locale-aware defaults
+        $landing = get_option('azadi_landing_settings', []);
+        if (!is_array($landing)) {
+            $landing = [];
+        }
+        $landing['fa'] = $landing['fa'] ?? [];
+        $landing['en'] = $landing['en'] ?? [];
+
+        if (empty($landing['fa']['heroText'])) {
+            $landing['fa']['heroText'] = 'فروشگاه فارسی و راست چین برای قهوه تازه برشته، با ریتمی شبیه صفحات کنار هم: آرام، دقیق و محصول محور.';
+        }
+        if (empty($landing['en']['heroText'])) {
+            $landing['en']['heroText'] = 'A precise specialty coffee shop for fresh roasts, with a calm side-by-side page rhythm and product-first navigation.';
+        }
+        update_option('azadi_landing_settings', $landing);
+
+        // Update header settings with locale-aware branding
+        $header = get_option('azadi_header_settings', []);
+        if (!is_array($header)) {
+            $header = [];
+        }
+        $header['fa'] = $header['fa'] ?? [];
+        $header['en'] = $header['en'] ?? [];
+        $header['fa']['brand'] = 'قهوه آزادی';
+        $header['en']['brand'] = 'Azadi Coffee';
+        update_option('azadi_header_settings', $header);
+
+        // Redirect back with a success notice
+        $location = add_query_arg([
+            'page' => 'azadi-setup',
+            'setup' => 'done',
+        ], admin_url('admin.php'));
+
+        wp_safe_redirect($location);
+        exit;
+    }
+
+    public static function admin_notices(): void {
+        if (!current_user_can('manage_options')) {
+            return;
+        }
+
+        $screen = get_current_screen();
+        if (!$screen || strpos($screen->id, 'azadi-') === false) {
+            return;
+        }
+
+        $setup_done = get_option('azadi_setup_complete', false);
+        if (!$setup_done) {
+            printf(
+                '<div class="notice notice-warning is-dismissible"><p><strong>%s</strong> %s <a href="%s">%s</a></p></div>',
+                esc_html__('Azadi Coffee setup is not complete.', 'azadi-headless-settings'),
+                esc_html__('Configure the domain and frontend URL in the', 'azadi-headless-settings'),
+                esc_url(admin_url('admin.php?page=azadi-setup')),
+                esc_html__('Setup Wizard', 'azadi-headless-settings')
+            );
+        }
+
+        if (isset($_GET['setup']) && $_GET['setup'] === 'done') {
+            printf(
+                '<div class="notice notice-success is-dismissible"><p>%s</p></div>',
+                esc_html__('✅ Azadi Coffee setup completed successfully.', 'azadi-headless-settings')
+            );
+        }
     }
 
     private static function default_value(string $endpoint): array {

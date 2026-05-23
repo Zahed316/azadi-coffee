@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DocumentLocaleSync } from "@/components/layout/DocumentLocaleSync";
 import { DesignSettingsProvider } from "@/components/settings/DesignSettingsProvider";
 import { getThemeSettings, themeSettingsToCssVariables } from "@/lib/theme-settings";
+import { defaultDesignSettings } from "@/lib/settings/design-presets";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -25,7 +26,12 @@ export default async function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const themeSettings = await getThemeSettings();
+  let themeSettings;
+  try {
+    themeSettings = await getThemeSettings();
+  } catch {
+    themeSettings = defaultDesignSettings;
+  }
 
   return (
     <html

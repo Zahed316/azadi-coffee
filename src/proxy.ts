@@ -1,31 +1,9 @@
 import { NextResponse, type NextRequest } from "next/server";
 
+const LOCALE_COOKIE = "azadi_locale";
+
 function resolveLocale(pathname: string): "fa" | "en" {
   return pathname.startsWith("/en") ? "en" : "fa";
-}
-
-function prefersEnglish(acceptLanguage: string | null): boolean {
-  if (!acceptLanguage) return false;
-  try {
-    const locales = acceptLanguage
-      .split(",")
-      .map((entry) => {
-        const parts = entry.trim().split(";");
-        const locale = parts[0]?.trim().toLowerCase() || "";
-        const quality = parts[1] ? parseFloat(parts[1].replace("q=", "")) : 1;
-        return { locale, quality };
-      })
-      .sort((a, b) => b.quality - a.quality);
-
-    for (const { locale } of locales) {
-      if (locale.startsWith("en")) return true;
-      if (locale.startsWith("fa") || locale.startsWith("ar") || locale.startsWith("ku")) return false;
-    }
-
-    return false;
-  } catch {
-    return false;
-  }
 }
 
 export function proxy(request: NextRequest) {
@@ -33,17 +11,38 @@ export function proxy(request: NextRequest) {
   const locale = resolveLocale(pathname);
 
   if (pathname === "/") {
-    const acceptLanguage = request.headers.get("Accept-Language");
-    if (prefersEnglish(acceptLanguage)) {
+    const stored = request.cookies.get(LOCALE_COOKIE)?.value;
+    if (stored === "en") {
       const url = request.nextUrl.clone();
       url.pathname = "/en";
-      return NextResponse.redirect(url);
+      const response = NextResponse.redirect(url);
+      response.cookies.set(LOCALE_COOKIE, "en", {
+        path: "/",
+        maxAge: 60 * 60 * 24 * 365,
+        sameSite: "lax",
+      });
+      return response;
     }
   }
 
   const response = NextResponse.next();
   response.headers.set("x-locale", locale);
   response.headers.set("x-dir", locale === "en" ? "ltr" : "rtl");
+
+  if (pathname.startsWith("/en")) {
+    response.cookies.set(LOCALE_COOKIE, "en", {
+      path: "/",
+      maxAge: 60 * 60 * 24 * 365,
+      sameSite: "lax",
+    });
+  } else {
+    response.cookies.set(LOCALE_COOKIE, "fa", {
+      path: "/",
+      maxAge: 60 * 60 * 24 * 365,
+      sameSite: "lax",
+    });
+  }
+
   return response;
 }
 
