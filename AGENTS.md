@@ -27,19 +27,6 @@ npx tsc --noEmit         # TypeScript check (strict mode)
 - `getPageBySlug(slug, locale)` fetches WP pages with slug candidates (`en-slug`, `en/slug`, `slug`).
 - `safeApiFetch(path, fallback)` never throws — returns `fallback` on error or missing API URL.
 
-## Project Agents
-
-Six improved global agents (`debugger`, `doc-writer`, `reviewer`, `refactorer`, `researcher`, `test-engineer`) live at `~/.config/opencode/agents/` with model assignments and tighter prompts.
-
-Five project-local agents defined in `opencode.json`:
-| Agent | Purpose |
-|---|---|
-| `devops` | Docker, deploy, server automation |
-| `woocommerce` | WooCommerce/WP headless integration |
-| `seo` | Metadata, OG tags, JSON-LD, sitemap |
-| `bilingual` | Persian/English i18n, RTL, locale routing |
-| `product-manager` | Feature planning, scope, acceptance criteria |
-
 ## Caveats
 
 - **No test framework installed.** No Jest, Playwright, or Vitest config.
