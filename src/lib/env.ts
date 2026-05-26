@@ -1,16 +1,21 @@
 import { z } from "zod";
 
+/** Convert empty strings to undefined so `.optional()` works for env vars set to `""` */
+function emptyStr(v: unknown) {
+  return v === "" ? undefined : v;
+}
+
 const serverEnvSchema = z.object({
-  NEXT_PUBLIC_SITE_URL: z.string().url().default("http://localhost:3000"),
-  DATABASE_URL: z.string().min(1).optional(),
-  ADMIN_EMAIL: z.string().email().optional(),
-  ADMIN_PASSWORD: z.string().min(12).optional(),
-  ADMIN_SESSION_SECRET: z.string().min(32).optional(),
-  ZARINPAL_MERCHANT_ID: z.string().min(1).optional(),
-  ZARINPAL_SANDBOX: z.string().default("true"),
-  RESEND_API_KEY: z.string().min(1).optional(),
-  CONTACT_EMAIL: z.string().email().default("hello@azadicoffee.com"),
-  WHOLESALE_EMAIL: z.string().email().default("wholesale@azadicoffee.com"),
+  NEXT_PUBLIC_SITE_URL: z.preprocess(emptyStr, z.string().url()).default("http://localhost:3000"),
+  DATABASE_URL: z.preprocess(emptyStr, z.string().min(1)).optional(),
+  ADMIN_EMAIL: z.preprocess(emptyStr, z.string().email()).optional(),
+  ADMIN_PASSWORD: z.preprocess(emptyStr, z.string().min(8)).optional(),
+  ADMIN_SESSION_SECRET: z.preprocess(emptyStr, z.string().min(32)).optional(),
+  ZARINPAL_MERCHANT_ID: z.preprocess(emptyStr, z.string().min(1)).optional(),
+  ZARINPAL_SANDBOX: z.preprocess(emptyStr, z.string()).default("true"),
+  RESEND_API_KEY: z.preprocess(emptyStr, z.string().min(1)).optional(),
+  CONTACT_EMAIL: z.preprocess(emptyStr, z.string().email()).default("hello@azadicoffee.com"),
+  WHOLESALE_EMAIL: z.preprocess(emptyStr, z.string().email()).default("wholesale@azadicoffee.com"),
 });
 
 export function getServerEnv() {
