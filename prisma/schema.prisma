@@ -1,0 +1,247 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum Role {
+  ADMIN
+  STAFF
+}
+
+enum ProductStatus {
+  DRAFT
+  ACTIVE
+  ARCHIVED
+}
+
+enum InventoryStatus {
+  AVAILABLE
+  LOW
+  SOLD_OUT
+}
+
+enum InventoryMovementType {
+  ADJUSTMENT
+  SALE
+  RESTOCK
+  RETURN
+}
+
+enum OrderStatus {
+  PENDING_PAYMENT
+  PAID
+  PROCESSING
+  SHIPPED
+  COMPLETED
+  CANCELLED
+  FAILED
+}
+
+enum PaymentStatus {
+  PENDING
+  REQUESTED
+  SUCCEEDED
+  FAILED
+  CANCELLED
+}
+
+enum PaymentProvider {
+  ZARINPAL
+}
+
+model User {
+  id           String   @id @default(cuid())
+  email        String   @unique
+  name         String
+  role         Role     @default(ADMIN)
+  passwordHash String
+  sessions     AdminSession[]
+  auditLogs    AuditLog[]
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+}
+
+model AdminSession {
+  id        String   @id @default(cuid())
+  tokenHash String   @unique
+  userId    String
+  user      User     @relation(fields: [userId], references: [id], onDelete: Cascade)
+  expiresAt DateTime
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([expiresAt])
+}
+
+model Product {
+  id             String          @id @default(cuid())
+  slug           String          @unique
+  nameFa         String
+  nameEn         String
+  descriptionFa  String?
+  descriptionEn  String?
+  status         ProductStatus   @default(ACTIVE)
+  inventory      InventoryStatus @default(AVAILABLE)
+  image          String?
+  imageAlt       String?
+  variants       ProductVariant[]
+  movements      InventoryMovement[]
+  createdAt      DateTime        @default(now())
+  updatedAt      DateTime        @updatedAt
+}
+
+model ProductVariant {
+  id          String      @id @default(cuid())
+  productId   String
+  product     Product     @relation(fields: [productId], references: [id], onDelete: Cascade)
+  sku         String      @unique
+  weightGram  Int
+  priceToman  Int
+  stock       Int         @default(0)
+  orderItems  OrderItem[]
+  createdAt   DateTime    @default(now())
+  updatedAt   DateTime    @updatedAt
+
+  @@index([productId])
+}
+
+model InventoryMovement {
+  id        String                @id @default(cuid())
+  productId String
+  product   Product               @relation(fields: [productId], references: [id], onDelete: Cascade)
+  type      InventoryMovementType
+  quantity  Int
+  note      String?
+  createdAt DateTime              @default(now())
+
+  @@index([productId])
+}
+
+model CartSnapshot {
+  id        String   @id @default(cuid())
+  payload   Json
+  createdAt DateTime @default(now())
+  order     Order?
+}
+
+model Customer {
+  id        String    @id @default(cuid())
+  phone     String    @unique
+  name      String?
+  email     String?
+  addresses Address[]
+  orders    Order[]
+  createdAt DateTime  @default(now())
+  updatedAt DateTime  @updatedAt
+}
+
+model Address {
+  id         String   @id @default(cuid())
+  customerId String
+  customer   Customer @relation(fields: [customerId], references: [id], onDelete: Cascade)
+  fullName   String?
+  phone      String
+  line1      String
+  city       String?
+  province   String?
+  postalCode String?
+  createdAt  DateTime @default(now())
+  orders     Order[]
+
+  @@index([customerId])
+}
+
+model Order {
+  id             String        @id @default(cuid())
+  orderNumber    Int           @unique @default(autoincrement())
+  status         OrderStatus   @default(PENDING_PAYMENT)
+  customerId     String
+  customer       Customer      @relation(fields: [customerId], references: [id])
+  addressId      String
+  address        Address       @relation(fields: [addressId], references: [id])
+  cartSnapshotId String?       @unique
+  cartSnapshot   CartSnapshot? @relation(fields: [cartSnapshotId], references: [id])
+  items          OrderItem[]
+  payments       Payment[]
+  subtotalToman  Int
+  shippingToman  Int           @default(0)
+  totalToman     Int
+  notes          String?
+  createdAt      DateTime      @default(now())
+  updatedAt      DateTime      @updatedAt
+
+  @@index([customerId])
+  @@index([status])
+  @@index([createdAt])
+}
+
+model OrderItem {
+  id             String          @id @default(cuid())
+  orderId        String
+  order          Order           @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  productSlug    String
+  variantId      String?
+  variant        ProductVariant? @relation(fields: [variantId], references: [id])
+  nameFa         String
+  nameEn         String
+  quantity       Int
+  unitPriceToman Int
+  lineTotalToman Int
+
+  @@index([orderId])
+  @@index([productSlug])
+}
+
+model Payment {
+  id          String          @id @default(cuid())
+  orderId     String
+  order       Order           @relation(fields: [orderId], references: [id], onDelete: Cascade)
+  provider    PaymentProvider @default(ZARINPAL)
+  status      PaymentStatus   @default(PENDING)
+  amountToman Int
+  authority   String?         @unique
+  refId       String?
+  rawRequest  Json?
+  rawVerify   Json?
+  errorCode   String?
+  errorText   String?
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+
+  @@index([orderId])
+  @@index([status])
+}
+
+model ContactSubmission {
+  id        String   @id @default(cuid())
+  name      String
+  phone     String
+  message   String
+  locale    String   @default("fa")
+  createdAt DateTime @default(now())
+}
+
+model WholesaleInquiry {
+  id           String   @id @default(cuid())
+  businessName String
+  weeklyUsage  String
+  details      String
+  locale       String   @default("fa")
+  createdAt    DateTime @default(now())
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  userId    String?
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+  action    String
+  target    String?
+  metadata  Json?
+  createdAt DateTime @default(now())
+
+  @@index([userId])
+  @@index([action])
+}

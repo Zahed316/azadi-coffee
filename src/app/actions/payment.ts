@@ -13,7 +13,7 @@ export async function initiatePayment(_prevState: unknown, formData: FormData) {
     return { error: "Order ID is required." };
   }
 
-  const order = getOrder(orderId);
+  const order = await getOrder(orderId);
   if (!order) {
     return { error: "Order not found." };
   }
@@ -26,10 +26,10 @@ export async function initiatePayment(_prevState: unknown, formData: FormData) {
   const description = `Order #${order.orderNumber}`;
   const callbackUrl = `${siteUrl}/api/payment/callback?order_id=${orderId}`;
 
-  const result = await requestPayment({ amount, description, callbackUrl });
+  const result = await requestPayment({ amount, description, callbackUrl, mobile: order.phone });
 
   if (result.success) {
-    setOrderAuthority(orderId, result.authority);
+    await setOrderAuthority(orderId, result.authority);
     redirect(result.gatewayUrl);
   }
 

@@ -281,7 +281,7 @@ components/layout/Footer              ──► PageShell
 |----------|-----------|
 | No `[locale]` dynamic route | Simpler static generation, explicit FA/EN separation, no route param threading |
 | `locale` as prop drilling | Explicit data flow — no context needed for server components |
-| In-memory order store | MVP speed — no database setup, trivial to replace later |
+| Prisma/PostgreSQL order store | Persistent standalone ecommerce records without WordPress, WooCommerce, or a CMS |
 | Reducer-based cart | Testable pure functions, predictable state transitions |
 | CSS variables for theming | Framework-agnostic, works with Tailwind v4 `@theme inline`, zero JS for initial render |
 | `useSyncExternalStore` for persistence | React 19 official pattern for external stores, cross-tab sync |

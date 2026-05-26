@@ -20,7 +20,7 @@ You handle the Zarinpal payment gateway integration, order flow, and checkout sy
 ## Key Files
 - `src/lib/zarinpal.ts` — `requestPayment()`, `verifyPayment()`, types
 - `src/app/actions/payment.ts` — Server Action wrapping requestPayment
-- `src/app/api/checkout/route.ts` — POST, creates in-memory order
+- `src/app/api/checkout/route.ts` — POST, creates Prisma order/payment records
 - `src/app/api/payment/callback/route.ts` — GET, handles Zarinpal return
 - `src/lib/orders/store.ts` — In-memory store: `create()`, `get()`, `update()`, `setAuthority()`
 - `src/components/cart/PayButton.tsx` — Client button calling Server Action

@@ -1,8 +1,9 @@
 const SANDBOX_REQUEST_URL = "https://sandbox.zarinpal.com/pg/v4/payment/request.json";
 const PRODUCTION_REQUEST_URL = "https://api.zarinpal.com/pg/v4/payment/request.json";
+const SANDBOX_VERIFY_URL = "https://sandbox.zarinpal.com/pg/v4/payment/verify.json";
+const PRODUCTION_VERIFY_URL = "https://api.zarinpal.com/pg/v4/payment/verify.json";
 const SANDBOX_PAY_URL = "https://sandbox.zarinpal.com/pg/StartPay";
 const PRODUCTION_PAY_URL = "https://www.zarinpal.com/pg/StartPay";
-const VERIFY_URL = "https://api.zarinpal.com/pg/v4/payment/verify.json";
 
 function isSandbox(): boolean {
   return process.env.ZARINPAL_SANDBOX !== "false";
@@ -77,6 +78,7 @@ export async function verifyPayment(params: {
   amount: number;
 }): Promise<PaymentVerifyResult> {
   const merchantId = getMerchantId();
+  const url = isSandbox() ? SANDBOX_VERIFY_URL : PRODUCTION_VERIFY_URL;
 
   const body = {
     merchant_id: merchantId,
@@ -84,7 +86,7 @@ export async function verifyPayment(params: {
     amount: params.amount,
   };
 
-  const response = await fetch(VERIFY_URL, {
+  const response = await fetch(url, {
     method: "POST",
     headers: { "Content-Type": "application/json", Accept: "application/json" },
     body: JSON.stringify(body),

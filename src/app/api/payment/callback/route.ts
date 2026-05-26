@@ -1,6 +1,7 @@
 import { NextResponse } from "next/server";
 import { getOrder, updateOrderStatus } from "@/lib/orders/store";
 import { verifyPayment } from "@/lib/zarinpal";
+import { sendOrderPaidNotifications } from "@/lib/notifications/email";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
@@ -19,30 +20,44 @@ export async function GET(request: Request) {
   }
 
   try {
-    const order = getOrder(orderId);
+    const order = await getOrder(orderId);
 
     if (!order) {
       return redirectTo(`/order/${orderId}?status=error`);
     }
 
+    if (order.status === "completed") {
+      return redirectTo(`/order/${orderId}?status=success`);
+    }
+
     if (status !== "OK" && status !== "1") {
-      updateOrderStatus(orderId, "failed");
+      await updateOrderStatus(orderId, "failed");
       return redirectTo(`/order/${orderId}?status=failed`);
     }
 
     if (!authority) {
-      updateOrderStatus(orderId, "failed");
+      await updateOrderStatus(orderId, "failed");
+      return redirectTo(`/order/${orderId}?status=failed`);
+    }
+
+    if (order.zarinpalAuthority && order.zarinpalAuthority !== authority) {
+      await updateOrderStatus(orderId, "failed");
       return redirectTo(`/order/${orderId}?status=failed`);
     }
 
     const result = await verifyPayment({ authority, amount: order.totalToman });
 
     if (result.success) {
-      updateOrderStatus(orderId, "completed", String(result.refId));
+      const paidOrder = await updateOrderStatus(orderId, "completed", String(result.refId));
+      if (paidOrder) {
+        await sendOrderPaidNotifications(paidOrder).catch((notifyError) => {
+          console.error("Order notification error:", notifyError);
+        });
+      }
       return redirectTo(`/order/${orderId}?status=success`);
     }
 
-    updateOrderStatus(orderId, "failed");
+    await updateOrderStatus(orderId, "failed");
     return redirectTo(`/order/${orderId}?status=failed`);
   } catch (error) {
     console.error("Payment callback error:", error);

@@ -58,7 +58,78 @@
       "npm run build"
     ]
   },
+  "src/app/admin/actions.ts": {
+    "directImporters": [
+      "src/app/admin/login/LoginForm.tsx",
+      "src/app/admin/page.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/admin/login/LoginForm.tsx",
+      "src/app/admin/login/page.tsx",
+      "src/app/admin/page.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/admin/login/LoginForm.tsx": {
+    "directImporters": [
+      "src/app/admin/login/page.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/admin/login/page.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/admin/login/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/admin/orders/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/admin/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
   "src/app/api/checkout/route.ts": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/api/health/route.ts": {
     "directImporters": [],
     "transitiveConsumers": [],
     "tests": [],
@@ -953,6 +1024,7 @@
       "src/app/en/blog/page.tsx",
       "src/app/en/page.tsx",
       "src/app/page.tsx",
+      "src/app/sitemap.ts",
       "src/data/posts.test.ts"
     ],
     "transitiveConsumers": [
@@ -962,6 +1034,7 @@
       "src/app/en/blog/page.tsx",
       "src/app/en/page.tsx",
       "src/app/page.tsx",
+      "src/app/sitemap.ts",
       "src/data/posts.test.ts"
     ],
     "tests": [
@@ -975,22 +1048,37 @@
   },
   "src/data/products.ts": {
     "directImporters": [
+      "src/app/admin/page.tsx",
       "src/app/en/page.tsx",
       "src/app/en/shop/[slug]/page.tsx",
       "src/app/en/shop/page.tsx",
       "src/app/page.tsx",
       "src/app/shop/[slug]/page.tsx",
       "src/app/shop/page.tsx",
-      "src/data/products.test.ts"
+      "src/app/sitemap.ts",
+      "src/data/products.test.ts",
+      "src/lib/orders/store.ts"
     ],
     "transitiveConsumers": [
+      "src/app/actions/payment.ts",
+      "src/app/admin/orders/page.tsx",
+      "src/app/admin/page.tsx",
+      "src/app/api/checkout/route.ts",
+      "src/app/api/payment/callback/route.ts",
+      "src/app/en/order/[id]/page.tsx",
       "src/app/en/page.tsx",
       "src/app/en/shop/[slug]/page.tsx",
       "src/app/en/shop/page.tsx",
+      "src/app/order/[id]/page.tsx",
       "src/app/page.tsx",
       "src/app/shop/[slug]/page.tsx",
       "src/app/shop/page.tsx",
-      "src/data/products.test.ts"
+      "src/app/sitemap.ts",
+      "src/components/cart/OrderStatus.tsx",
+      "src/components/cart/PayButton.tsx",
+      "src/data/products.test.ts",
+      "src/lib/orders/store.test.ts",
+      "src/lib/orders/store.ts"
     ],
     "tests": [
       "src/data/products.test.ts"
@@ -999,6 +1087,26 @@
     "risk": "medium",
     "suggestedValidation": [
       "npx vitest src/data/products.test.ts"
+    ]
+  },
+  "src/lib/auth/admin.ts": {
+    "directImporters": [
+      "src/app/admin/actions.ts",
+      "src/app/admin/orders/page.tsx",
+      "src/app/admin/page.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/admin/actions.ts",
+      "src/app/admin/login/LoginForm.tsx",
+      "src/app/admin/login/page.tsx",
+      "src/app/admin/orders/page.tsx",
+      "src/app/admin/page.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
     ]
   },
   "src/lib/cart/cart-context.tsx": {
@@ -1186,6 +1294,66 @@
       "npm run build"
     ]
   },
+  "src/lib/db/prisma.ts": {
+    "directImporters": [
+      "src/app/actions/contact.ts",
+      "src/app/actions/wholesale.ts",
+      "src/app/api/health/route.ts",
+      "src/lib/auth/admin.ts",
+      "src/lib/orders/store.ts"
+    ],
+    "transitiveConsumers": [
+      "src/app/actions/contact.ts",
+      "src/app/actions/payment.ts",
+      "src/app/actions/wholesale.ts",
+      "src/app/admin/actions.ts",
+      "src/app/admin/login/LoginForm.tsx",
+      "src/app/admin/login/page.tsx",
+      "src/app/admin/orders/page.tsx",
+      "src/app/admin/page.tsx",
+      "src/app/api/checkout/route.ts",
+      "src/app/api/health/route.ts",
+      "src/app/api/payment/callback/route.ts",
+      "src/app/contact/page.tsx",
+      "src/app/en/contact/page.tsx",
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/en/wholesale/page.tsx",
+      "src/app/order/[id]/page.tsx",
+      "src/app/wholesale/page.tsx",
+      "src/components/cart/OrderStatus.tsx",
+      "src/components/cart/PayButton.tsx",
+      "src/components/forms/ContactForm.tsx",
+      "src/components/forms/WholesaleForm.tsx",
+      "src/lib/auth/admin.ts",
+      "src/lib/orders/store.test.ts",
+      "src/lib/orders/store.ts"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/lib/env.ts": {
+    "directImporters": [
+      "src/lib/auth/admin.ts"
+    ],
+    "transitiveConsumers": [
+      "src/app/admin/actions.ts",
+      "src/app/admin/login/LoginForm.tsx",
+      "src/app/admin/login/page.tsx",
+      "src/app/admin/orders/page.tsx",
+      "src/app/admin/page.tsx",
+      "src/lib/auth/admin.ts"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
   "src/lib/format/currency.ts": {
     "directImporters": [
       "src/app/en/shop/[slug]/page.tsx",
@@ -1291,15 +1459,35 @@
       "npm run build"
     ]
   },
+  "src/lib/notifications/email.ts": {
+    "directImporters": [
+      "src/app/api/payment/callback/route.ts"
+    ],
+    "transitiveConsumers": [
+      "src/app/api/payment/callback/route.ts"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
   "src/lib/orders/store.ts": {
     "directImporters": [
       "src/app/actions/payment.ts",
+      "src/app/admin/orders/page.tsx",
+      "src/app/admin/page.tsx",
       "src/app/api/checkout/route.ts",
       "src/app/api/payment/callback/route.ts",
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/order/[id]/page.tsx",
       "src/lib/orders/store.test.ts"
     ],
     "transitiveConsumers": [
       "src/app/actions/payment.ts",
+      "src/app/admin/orders/page.tsx",
+      "src/app/admin/page.tsx",
       "src/app/api/checkout/route.ts",
       "src/app/api/payment/callback/route.ts",
       "src/app/en/order/[id]/page.tsx",
@@ -1315,6 +1503,20 @@
     "risk": "low",
     "suggestedValidation": [
       "npx vitest src/lib/orders/store.test.ts"
+    ]
+  },
+  "src/lib/security/rate-limit.ts": {
+    "directImporters": [
+      "src/app/api/checkout/route.ts"
+    ],
+    "transitiveConsumers": [
+      "src/app/api/checkout/route.ts"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
     ]
   },
   "src/lib/seo/schema.ts": {

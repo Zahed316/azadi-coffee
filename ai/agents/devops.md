@@ -57,12 +57,12 @@ For production, set `ZARINPAL_SANDBOX=false` and provide real credentials.
 
 ## Monitoring
 - Check `/api/checkout` and `/api/payment/callback` logs
-- Monitor in-memory order store (note: orders are lost on restart — needs DB)
+- Monitor PostgreSQL availability, Prisma migration status, and payment callback errors
 - Set up error alerting for Resend API failures
 - Monitor Next.js telemetry (`NEXT_TELEMETRY_DISABLED=1` is set in Docker)
 
 ## Known Gaps
-- No persistent database for orders (in-memory only — lost on restart)
+- Missing or stale Prisma migrations block checkout, payments, and admin workflows
 - No health check endpoint
 - No structured logging
 - No CI/CD pipeline configured

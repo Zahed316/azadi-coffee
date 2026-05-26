@@ -1,57 +1,44 @@
 import { NextResponse } from "next/server";
+import { z } from "zod";
 import { createOrder } from "@/lib/orders/store";
+import { checkRateLimit, getClientIp } from "@/lib/security/rate-limit";
+
+const checkoutSchema = z.object({
+  phone: z.string().trim().min(6).max(32),
+  address: z.string().trim().min(8).max(1000),
+  paymentMethod: z.literal("zarinpal").default("zarinpal"),
+  items: z.array(z.object({
+    slug: z.string().min(1).max(120),
+    name: z.string().optional().default(""),
+    nameEn: z.string().optional().default(""),
+    priceToman: z.number().optional().default(0),
+    weightGram: z.number().optional().default(250),
+    quantity: z.number().int().min(1).max(20),
+  })).min(1).max(25),
+});
 
 export async function POST(request: Request) {
+  const ip = getClientIp(request);
+  const rateLimit = checkRateLimit(`checkout:${ip}`, 8, 60_000);
+  if (!rateLimit.ok) {
+    return NextResponse.json(
+      { error: "درخواست های شما زیاد است. لطفا کمی بعد دوباره تلاش کنید." },
+      { status: 429 },
+    );
+  }
+
   try {
     const body = await request.json();
+    const parsed = checkoutSchema.safeParse(body);
 
-    if (!body || typeof body !== "object") {
+    if (!parsed.success) {
       return NextResponse.json(
-        { error: "درخواست نامعتبر است." },
+        { error: "اطلاعات سفارش معتبر نیست." },
         { status: 400 },
       );
     }
 
-    const phone = typeof body.phone === "string" ? body.phone.trim() : "";
-    const address = typeof body.address === "string" ? body.address.trim() : "";
-    const paymentMethod = typeof body.paymentMethod === "string" ? body.paymentMethod : "zarinpal";
-
-    if (!Array.isArray(body.items) || body.items.length === 0) {
-      return NextResponse.json(
-        { error: "حداقل یک محصول برای ثبت سفارش الزامی است." },
-        { status: 400 },
-      );
-    }
-
-    if (!phone) {
-      return NextResponse.json(
-        { error: "شماره تماس الزامی است." },
-        { status: 400 },
-      );
-    }
-
-    if (!address) {
-      return NextResponse.json(
-        { error: "آدرس ارسال الزامی است." },
-        { status: 400 },
-      );
-    }
-
-    const items = body.items.map((item: Record<string, unknown>) => ({
-      slug: String(item.slug || ""),
-      name: String(item.name || ""),
-      nameEn: String(item.nameEn || ""),
-      priceToman: Number(item.priceToman) || 0,
-      weightGram: Number(item.weightGram) || 250,
-      quantity: Math.max(1, Number(item.quantity) || 1),
-    }));
-
-    const order = createOrder({
-      phone,
-      address,
-      paymentMethod,
-      items,
-    });
+    const order = await createOrder(parsed.data);
 
     return NextResponse.json({
       success: true,
@@ -60,7 +47,8 @@ export async function POST(request: Request) {
       totalToman: order.totalToman,
     });
   } catch (error) {
-    console.error("Checkout error:", error);
+    const message = error instanceof Error ? error.message : "Checkout failed.";
+    console.error("Checkout error:", message);
     return NextResponse.json(
       { error: "خطا در ثبت سفارش. لطفا دوباره تلاش کنید." },
       { status: 500 },

@@ -87,7 +87,7 @@ export default async function EnglishHome() {
           The product, voice, and content are built around specialty coffee and the Iranian market.
         </p>
         <div className="grid border border-ink">
-          {["Minimal", "Persian-first", "Product-led", "Ready for WooCommerce"].map((item) => (
+          {["Minimal", "Persian-first", "Product-led", "Standalone, no CMS"].map((item) => (
             <p key={item} className="border-b border-ink p-4 last:border-b-0">
               {item}
             </p>

@@ -1,6 +1,7 @@
 "use server";
 
 import { Resend } from "resend";
+import { prisma } from "@/lib/db/prisma";
 
 type ContactState = {
   error?: string;
@@ -15,6 +16,12 @@ export async function submitContact(_prevState: ContactState, formData: FormData
   if (!name) return { error: "نام الزامی است." };
   if (!phone) return { error: "شماره تماس الزامی است." };
   if (!message || message.length < 10) return { error: "پیام باید حداقل ۱۰ کاراکتر باشد." };
+
+  if (process.env.DATABASE_URL) {
+    await prisma.contactSubmission.create({
+      data: { name, phone, message, locale: "fa" },
+    });
+  }
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {

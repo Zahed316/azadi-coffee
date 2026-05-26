@@ -9,6 +9,21 @@
       },
       {
         "kind": "const",
+        "file": "src/app/admin/login/page.tsx",
+        "signature": "  export const metadata = { title: \"Admin login\" };\n  \n  export default function AdminLoginPage() {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/admin/orders/page.tsx",
+        "signature": "  export const metadata = { title: \"Admin orders\" };\n  \n  export default async function AdminOrdersPage() {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/admin/page.tsx",
+        "signature": "  export const metadata = { title: \"Admin dashboard\" };\n  \n  export default async function AdminPage() {"
+      },
+      {
+        "kind": "const",
         "file": "src/app/blog/page.tsx",
         "signature": "  export const metadata = { title: \"وبلاگ\" };\n  \n  export default async function BlogPage() {"
       },
@@ -60,7 +75,7 @@
       {
         "kind": "const",
         "file": "src/app/en/order/[id]/page.tsx",
-        "signature": "  export const metadata = { title: \"Order result\" };\n  \n  export default async function EnglishOrderPage({ params }: { params: Promise<{ id: string }> }) {"
+        "signature": "  export const metadata = { title: \"Order result\" };\n  export const dynamic = \"force-dynamic\";\n  \n  export default async function EnglishOrderPage({ params }: { params: Promise<{ id: string }> }) {"
       },
       {
         "kind": "const",
@@ -90,7 +105,7 @@
       {
         "kind": "const",
         "file": "src/app/order/[id]/page.tsx",
-        "signature": "  export const metadata = { title: \"نتیجه سفارش\" };\n  \n  export default async function OrderPage({ params }: { params: Promise<{ id: string }> }) {"
+        "signature": "  export const metadata = { title: \"نتیجه سفارش\" };\n  export const dynamic = \"force-dynamic\";\n  \n  export default async function OrderPage({ params }: { params: Promise<{ id: string }> }) {"
       },
       {
         "kind": "const",
@@ -160,6 +175,78 @@
       "src/components/forms/WholesaleForm.tsx"
     ]
   },
+  "submitAdminLogin": {
+    "name": "submitAdminLogin",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/admin/actions.ts",
+        "signature": "  export async function submitAdminLogin(_prevState: { error?: string }, formData: FormData) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/admin/login/LoginForm.tsx"
+    ]
+  },
+  "submitAdminLogout": {
+    "name": "submitAdminLogout",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/admin/actions.ts",
+        "signature": "  export async function submitAdminLogout() {"
+      }
+    ],
+    "usedBy": [
+      "src/app/admin/page.tsx"
+    ]
+  },
+  "LoginForm": {
+    "name": "LoginForm",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/admin/login/LoginForm.tsx",
+        "signature": "  export function LoginForm() {"
+      }
+    ],
+    "usedBy": [
+      "src/app/admin/login/page.tsx"
+    ]
+  },
+  "AdminLoginPage": {
+    "name": "AdminLoginPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/admin/login/page.tsx",
+        "signature": "  export default function AdminLoginPage() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "AdminOrdersPage": {
+    "name": "AdminOrdersPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/admin/orders/page.tsx",
+        "signature": "  export default async function AdminOrdersPage() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "AdminPage": {
+    "name": "AdminPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/admin/page.tsx",
+        "signature": "  export default async function AdminPage() {"
+      }
+    ],
+    "usedBy": []
+  },
   "POST": {
     "name": "POST",
     "files": [
@@ -174,6 +261,11 @@
   "GET": {
     "name": "GET",
     "files": [
+      {
+        "kind": "function",
+        "file": "src/app/api/health/route.ts",
+        "signature": "  export async function GET() {"
+      },
       {
         "kind": "function",
         "file": "src/app/api/payment/callback/route.ts",
@@ -395,6 +487,22 @@
         "kind": "function",
         "file": "src/app/en/not-found.tsx",
         "signature": "  export default function EnglishNotFound() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "dynamic": {
+    "name": "dynamic",
+    "files": [
+      {
+        "kind": "const",
+        "file": "src/app/en/order/[id]/page.tsx",
+        "signature": "  export const dynamic = \"force-dynamic\";\n  \n  export default async function EnglishOrderPage({ params }: { params: Promise<{ id: string }> }) {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/order/[id]/page.tsx",
+        "signature": "  export const dynamic = \"force-dynamic\";\n  \n  export default async function OrderPage({ params }: { params: Promise<{ id: string }> }) {"
       }
     ],
     "usedBy": []
@@ -682,7 +790,7 @@
       {
         "kind": "function",
         "file": "src/components/cart/OrderStatus.tsx",
-        "signature": "  export function OrderStatus({ orderId, locale = \"fa\" }: Props) {"
+        "signature": "  export function OrderStatus({ orderId, locale = \"fa\", order }: Props) {"
       }
     ],
     "usedBy": [
@@ -1082,6 +1190,7 @@
       "src/app/en/blog/page.tsx",
       "src/app/en/page.tsx",
       "src/app/page.tsx",
+      "src/app/sitemap.ts",
       "src/data/posts.test.ts"
     ]
   },
@@ -1143,12 +1252,14 @@
       }
     ],
     "usedBy": [
+      "src/app/admin/page.tsx",
       "src/app/en/page.tsx",
       "src/app/en/shop/[slug]/page.tsx",
       "src/app/en/shop/page.tsx",
       "src/app/page.tsx",
       "src/app/shop/[slug]/page.tsx",
       "src/app/shop/page.tsx",
+      "src/app/sitemap.ts",
       "src/data/products.test.ts"
     ]
   },
@@ -1164,7 +1275,59 @@
     "usedBy": [
       "src/app/en/shop/[slug]/page.tsx",
       "src/app/shop/[slug]/page.tsx",
-      "src/data/products.test.ts"
+      "src/data/products.test.ts",
+      "src/lib/orders/store.ts"
+    ]
+  },
+  "loginAdmin": {
+    "name": "loginAdmin",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/auth/admin.ts",
+        "signature": "  export async function loginAdmin(email: string, password: string) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/admin/actions.ts"
+    ]
+  },
+  "logoutAdmin": {
+    "name": "logoutAdmin",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/auth/admin.ts",
+        "signature": "  export async function logoutAdmin() {"
+      }
+    ],
+    "usedBy": [
+      "src/app/admin/actions.ts"
+    ]
+  },
+  "getAdminUser": {
+    "name": "getAdminUser",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/auth/admin.ts",
+        "signature": "  export async function getAdminUser() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "requireAdminUser": {
+    "name": "requireAdminUser",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/auth/admin.ts",
+        "signature": "  export async function requireAdminUser() {"
+      }
+    ],
+    "usedBy": [
+      "src/app/admin/orders/page.tsx",
+      "src/app/admin/page.tsx"
     ]
   },
   "CartContextValue": {
@@ -1335,6 +1498,60 @@
     ],
     "usedBy": []
   },
+  "prisma": {
+    "name": "prisma",
+    "files": [
+      {
+        "kind": "const",
+        "file": "src/lib/db/prisma.ts",
+        "signature": "  export const prisma =\n  globalForPrisma.prisma ??\n  new PrismaClient(\n  process.env.DATABASE_URL\n  ? {"
+      }
+    ],
+    "usedBy": [
+      "src/app/actions/contact.ts",
+      "src/app/actions/wholesale.ts",
+      "src/app/api/health/route.ts",
+      "src/lib/auth/admin.ts",
+      "src/lib/orders/store.ts"
+    ]
+  },
+  "assertDatabaseConfigured": {
+    "name": "assertDatabaseConfigured",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/db/prisma.ts",
+        "signature": "  export function assertDatabaseConfigured() {"
+      }
+    ],
+    "usedBy": [
+      "src/lib/orders/store.ts"
+    ]
+  },
+  "getServerEnv": {
+    "name": "getServerEnv",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/env.ts",
+        "signature": "  export function getServerEnv() {"
+      }
+    ],
+    "usedBy": [
+      "src/lib/auth/admin.ts"
+    ]
+  },
+  "requireProductionEnv": {
+    "name": "requireProductionEnv",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/env.ts",
+        "signature": "  export function requireProductionEnv() {"
+      }
+    ],
+    "usedBy": []
+  },
   "formatToman": {
     "name": "formatToman",
     "files": [
@@ -1437,6 +1654,30 @@
       "src/components/layout/LanguageSwitch.tsx"
     ]
   },
+  "sendOrderPaidNotifications": {
+    "name": "sendOrderPaidNotifications",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/notifications/email.ts",
+        "signature": "  export async function sendOrderPaidNotifications(order: LocalOrder) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/api/payment/callback/route.ts"
+    ]
+  },
+  "PublicOrderStatus": {
+    "name": "PublicOrderStatus",
+    "files": [
+      {
+        "kind": "type",
+        "file": "src/lib/orders/store.ts",
+        "signature": "  export type PublicOrderStatus =\n  | \"pending\"\n  | \"processing\"\n  | \"completed\"\n  | \"failed\"\n  | \"cancelled\";\n  \n  export type LocalOrder = {"
+      }
+    ],
+    "usedBy": []
+  },
   "LocalOrder": {
     "name": "LocalOrder",
     "files": [
@@ -1459,18 +1700,30 @@
     ],
     "usedBy": []
   },
+  "priceCartItems": {
+    "name": "priceCartItems",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/orders/store.ts",
+        "signature": "  export function priceCartItems(items: CartItem[]) {"
+      }
+    ],
+    "usedBy": [
+      "src/lib/orders/store.test.ts"
+    ]
+  },
   "createOrder": {
     "name": "createOrder",
     "files": [
       {
         "kind": "function",
         "file": "src/lib/orders/store.ts",
-        "signature": "  export function createOrder(input: CreateOrderInput): LocalOrder {"
+        "signature": "  export async function createOrder(input: CreateOrderInput): Promise<LocalOrder> {"
       }
     ],
     "usedBy": [
-      "src/app/api/checkout/route.ts",
-      "src/lib/orders/store.test.ts"
+      "src/app/api/checkout/route.ts"
     ]
   },
   "getOrder": {
@@ -1479,27 +1732,14 @@
       {
         "kind": "function",
         "file": "src/lib/orders/store.ts",
-        "signature": "  export function getOrder(id: string): LocalOrder | undefined {"
+        "signature": "  export async function getOrder(id: string): Promise<LocalOrder | undefined> {"
       }
     ],
     "usedBy": [
       "src/app/actions/payment.ts",
       "src/app/api/payment/callback/route.ts",
-      "src/lib/orders/store.test.ts"
-    ]
-  },
-  "updateOrderStatus": {
-    "name": "updateOrderStatus",
-    "files": [
-      {
-        "kind": "function",
-        "file": "src/lib/orders/store.ts",
-        "signature": "  export function updateOrderStatus(\n  id: string,\n  status: LocalOrder[\"status\"],\n  zarinpalRefId?: string,\n  ): LocalOrder | undefined {"
-      }
-    ],
-    "usedBy": [
-      "src/app/api/payment/callback/route.ts",
-      "src/lib/orders/store.test.ts"
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/order/[id]/page.tsx"
     ]
   },
   "setOrderAuthority": {
@@ -1508,11 +1748,64 @@
       {
         "kind": "function",
         "file": "src/lib/orders/store.ts",
-        "signature": "  export function setOrderAuthority(id: string, authority: string): LocalOrder | undefined {"
+        "signature": "  export async function setOrderAuthority(id: string, authority: string): Promise<LocalOrder | undefined> {"
       }
     ],
     "usedBy": [
       "src/app/actions/payment.ts"
+    ]
+  },
+  "updateOrderStatus": {
+    "name": "updateOrderStatus",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/orders/store.ts",
+        "signature": "  export async function updateOrderStatus(\n  id: string,\n  status: PublicOrderStatus,\n  zarinpalRefId?: string,\n  ): Promise<LocalOrder | undefined> {"
+      }
+    ],
+    "usedBy": [
+      "src/app/api/payment/callback/route.ts"
+    ]
+  },
+  "getAdminOrders": {
+    "name": "getAdminOrders",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/orders/store.ts",
+        "signature": "  export async function getAdminOrders() {"
+      }
+    ],
+    "usedBy": [
+      "src/app/admin/orders/page.tsx",
+      "src/app/admin/page.tsx"
+    ]
+  },
+  "checkRateLimit": {
+    "name": "checkRateLimit",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/security/rate-limit.ts",
+        "signature": "  export function checkRateLimit(key: string, limit = 10, windowMs = 60_000) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/api/checkout/route.ts"
+    ]
+  },
+  "getClientIp": {
+    "name": "getClientIp",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/security/rate-limit.ts",
+        "signature": "  export function getClientIp(request: Request) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/api/checkout/route.ts"
     ]
   },
   "productJsonLd": {
@@ -1521,7 +1814,7 @@
       {
         "kind": "function",
         "file": "src/lib/seo/schema.ts",
-        "signature": "  export function productJsonLd(product: CoffeeProduct) {"
+        "signature": "  export function productJsonLd(product: CoffeeProduct, locale: \"fa\" | \"en\" = \"fa\") {"
       }
     ],
     "usedBy": [

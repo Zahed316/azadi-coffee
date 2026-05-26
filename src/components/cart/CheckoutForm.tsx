@@ -12,25 +12,6 @@ export function CheckoutForm({ locale = "fa" }: { locale?: Locale }) {
   const [error, setError] = useState("");
   const [phone, setPhone] = useState("");
   const [address, setAddress] = useState("");
-  const [gateway, setGateway] = useState("zarinpal");
-
-  const gateways = locale === "en"
-    ? [
-        ["zarinpal", "Zarinpal"],
-        ["behpardakht", "Behpardakht Mellat"],
-        ["idpay", "IDPay"],
-      ]
-    : [
-        ["zarinpal", "زرین پال"],
-        ["behpardakht", "به پرداخت ملت"],
-        ["idpay", "آی دی پی"],
-      ];
-
-  const gatewayTitles: Record<string, string> = {
-    zarinpal: locale === "en" ? "Zarinpal" : "زرین پال",
-    behpardakht: locale === "en" ? "Behpardakht Mellat" : "به پرداخت ملت",
-    idpay: locale === "en" ? "IDPay" : "آی دی پی",
-  };
 
   if (items.length === 0) {
     return (
@@ -66,8 +47,7 @@ export function CheckoutForm({ locale = "fa" }: { locale?: Locale }) {
         body: JSON.stringify({
           phone: phone.trim(),
           address: address.trim(),
-          paymentMethod: gateway,
-          paymentMethodTitle: gatewayTitles[gateway],
+          paymentMethod: "zarinpal",
           items,
         }),
       });
@@ -78,7 +58,7 @@ export function CheckoutForm({ locale = "fa" }: { locale?: Locale }) {
       }
 
       clearCart();
-      router.push(`/order/${data.orderId}?status=pending`);
+      router.push(`${locale === "en" ? "/en" : ""}/order/${data.orderId}?status=pending`);
     } catch (err) {
       setError(err instanceof Error ? err.message : (locale === "en" ? "An error occurred." : "خطایی رخ داد."));
       setSubmitting(false);
@@ -130,18 +110,10 @@ export function CheckoutForm({ locale = "fa" }: { locale?: Locale }) {
         <legend className="px-2 text-sm font-bold">
           {locale === "en" ? "Payment gateway" : "درگاه پرداخت"}
         </legend>
-        {gateways.map(([id, label]) => (
-          <label key={id} className="flex items-center justify-between gap-4">
-            <span>{label}</span>
-            <input
-              type="radio"
-              name="gateway"
-              value={id}
-              checked={gateway === id}
-              onChange={() => setGateway(id)}
-            />
-          </label>
-        ))}
+        <label className="flex items-center justify-between gap-4">
+          <span>{locale === "en" ? "Zarinpal" : "زرین پال"}</span>
+          <input type="radio" name="gateway" value="zarinpal" checked readOnly />
+        </label>
       </fieldset>
 
       <button

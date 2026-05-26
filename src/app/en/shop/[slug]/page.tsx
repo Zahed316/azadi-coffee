@@ -24,7 +24,7 @@ export default async function EnglishProductPage({ params }: { params: Promise<{
 
   return (
     <PageShell locale="en">
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd(product)) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productJsonLd(product, "en")) }} />
       <section className="container-shell grid gap-10 py-12 lg:grid-cols-[1fr_420px]">
         <div className="grid gap-4 md:grid-cols-2">
           <div className="relative aspect-square border border-ink bg-warm-paper md:col-span-2 overflow-hidden">

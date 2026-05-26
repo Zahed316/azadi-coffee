@@ -23,8 +23,8 @@ Copy `.env.example` to `.env.local` and fill in your credentials.
 - **Page-stack homepage:** 6 tabbed panels (Home, Shop, Roastery, Blog, About, Contact) via `PageStackLayout` — horizontal stack on desktop, vertical on mobile.
 - **Live theming:** `DesignSettingsProvider` (useSyncExternalStore + localStorage), full dashboard at `/dashboard/design` with 5 presets, color pickers, font upload, sliders. Storage key: `azadi.design.settings.v1`.
 - **Cart system:** localStorage-backed reducer (`ADD_ITEM`, `REMOVE_ITEM`, `UPDATE_QUANTITY`, `CLEAR`), React Context with hydration-safe SSR. Storage key: `azadi_cart_v1`.
-- **Order flow:** Cart → `/checkout` → `POST /api/checkout` → in-memory order → PayButton (Server Action) → Zarinpal redirect → `/api/payment/callback` verify → order result.
-- **Seed data only:** All product/blog data comes from `src/data/` — TypeScript arrays with no database or external CMS.
+- **Order flow:** Cart → `/checkout` → `POST /api/checkout` → Prisma order/payment records → PayButton (Server Action) → Zarinpal redirect → `/api/payment/callback` verify → order result.
+- **Standalone data split:** Product/blog content comes from `src/data/` TypeScript arrays; orders, payments, admin sessions, leads, and audits persist through Prisma/PostgreSQL. No WordPress, WooCommerce, or external CMS.
 - **Data layer:** `src/data/products.ts` and `src/data/posts.ts` provide typed data with bilingual FA/EN fields. See [data-layer.md](./agents/data-layer.md) for the update workflow and how to swap to an external backend later.
 
 ## Skills (Workflow Playbooks)

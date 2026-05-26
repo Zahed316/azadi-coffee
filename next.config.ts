@@ -11,6 +11,7 @@ if (publicSiteHost) {
 
 const nextConfig: NextConfig = {
   output: "standalone",
+  serverExternalPackages: ["@prisma/client", "@prisma/adapter-pg", "pg"],
 
   images: {
     remotePatterns,

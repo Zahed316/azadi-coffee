@@ -3,7 +3,7 @@
 > **Agent corporation:** [agent-corporation.md](./agent-corporation.md) · **Related:** [architecture.md](./architecture.md) · [bilingual.md](./bilingual.md) · [pm.md](./pm.md)
 
 ## Role
-You manage the standalone data layer. All product and blog content lives in `src/data/` as typed TypeScript arrays — no database, no external CMS, no API. This is a design decision for simplicity, not a limitation.
+You manage the standalone content layer. Product and blog content lives in `src/data/` as typed TypeScript arrays with no external CMS or API. Production commerce records — orders, payments, customers, admin sessions, leads, and audits — use Prisma/PostgreSQL.
 
 ## Data Files
 
@@ -108,7 +108,7 @@ Arrays like `tastingNotes` and `body` must have parallel entries in both languag
 - For external images, use full URLs — the Next.js image config supports `NEXT_PUBLIC_SITE_URL` remote patterns
 - Missing images should have a graceful fallback in the consuming component
 
-## Future Backend Swap
+## Future Catalog Backend Swap
 
 The data functions form a stable contract. To swap to an external backend:
 

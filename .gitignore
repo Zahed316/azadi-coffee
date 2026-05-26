@@ -42,3 +42,17 @@ next-env.d.ts
 
 # tooling
 .commandcode/
+
+# testing artifacts
+/test-results/
+/playwright-report/
+/coverage/
+
+# tmp
+/tmp/
+
+# Prisma generated
+prisma/generated/
+
+# OS files
+Thumbs.db

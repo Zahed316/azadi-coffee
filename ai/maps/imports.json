@@ -29,6 +29,14 @@
         "alias": "Resend",
         "source": "resend",
         "resolved": null
+      },
+      {
+        "name": "prisma",
+        "alias": "prisma",
+        "source": "src/lib/db/prisma",
+        "resolved": [
+          "src/lib/db/prisma.ts"
+        ]
       }
     ],
     "importedBy": [
@@ -91,6 +99,14 @@
         "alias": "Resend",
         "source": "resend",
         "resolved": null
+      },
+      {
+        "name": "prisma",
+        "alias": "prisma",
+        "source": "src/lib/db/prisma",
+        "resolved": [
+          "src/lib/db/prisma.ts"
+        ]
       }
     ],
     "importedBy": [
@@ -99,6 +115,186 @@
     "exports": [
       {
         "name": "submitWholesale",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/admin/actions.ts": {
+    "imports": [
+      {
+        "name": "redirect",
+        "alias": "redirect",
+        "source": "next/navigation",
+        "resolved": null
+      },
+      {
+        "name": "loginAdmin",
+        "alias": "loginAdmin",
+        "source": "src/lib/auth/admin",
+        "resolved": [
+          "src/lib/auth/admin.ts"
+        ]
+      },
+      {
+        "name": "logoutAdmin",
+        "alias": "logoutAdmin",
+        "source": "src/lib/auth/admin",
+        "resolved": [
+          "src/lib/auth/admin.ts"
+        ]
+      }
+    ],
+    "importedBy": [
+      "src/app/admin/login/LoginForm.tsx",
+      "src/app/admin/page.tsx"
+    ],
+    "exports": [
+      {
+        "name": "submitAdminLogin",
+        "kind": "function"
+      },
+      {
+        "name": "submitAdminLogout",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/admin/login/LoginForm.tsx": {
+    "imports": [
+      {
+        "name": "useActionState",
+        "alias": "useActionState",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "submitAdminLogin",
+        "alias": "submitAdminLogin",
+        "source": "src/app/admin/actions",
+        "resolved": [
+          "src/app/admin/actions.ts"
+        ]
+      }
+    ],
+    "importedBy": [
+      "src/app/admin/login/page.tsx"
+    ],
+    "exports": [
+      {
+        "name": "LoginForm",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/admin/login/page.tsx": {
+    "imports": [
+      {
+        "name": "LoginForm",
+        "alias": "LoginForm",
+        "source": "src/app/admin/login/LoginForm",
+        "resolved": [
+          "src/app/admin/login/LoginForm.tsx"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "AdminLoginPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/admin/orders/page.tsx": {
+    "imports": [
+      {
+        "name": "requireAdminUser",
+        "alias": "requireAdminUser",
+        "source": "src/lib/auth/admin",
+        "resolved": [
+          "src/lib/auth/admin.ts"
+        ]
+      },
+      {
+        "name": "getAdminOrders",
+        "alias": "getAdminOrders",
+        "source": "src/lib/orders/store",
+        "resolved": [
+          "src/lib/orders/store.ts"
+        ]
+      },
+      {
+        "name": "default",
+        "alias": "Link",
+        "source": "next/link",
+        "resolved": null
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "AdminOrdersPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/admin/page.tsx": {
+    "imports": [
+      {
+        "name": "requireAdminUser",
+        "alias": "requireAdminUser",
+        "source": "src/lib/auth/admin",
+        "resolved": [
+          "src/lib/auth/admin.ts"
+        ]
+      },
+      {
+        "name": "getProducts",
+        "alias": "getProducts",
+        "source": "src/data/products",
+        "resolved": [
+          "src/data/products.ts"
+        ]
+      },
+      {
+        "name": "getAdminOrders",
+        "alias": "getAdminOrders",
+        "source": "src/lib/orders/store",
+        "resolved": [
+          "src/lib/orders/store.ts"
+        ]
+      },
+      {
+        "name": "submitAdminLogout",
+        "alias": "submitAdminLogout",
+        "source": "src/app/admin/actions",
+        "resolved": [
+          "src/app/admin/actions.ts"
+        ]
+      },
+      {
+        "name": "default",
+        "alias": "Link",
+        "source": "next/link",
+        "resolved": null
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "AdminPage",
         "kind": "function"
       }
     ]
@@ -112,11 +308,33 @@
         "resolved": null
       },
       {
+        "name": "z",
+        "alias": "z",
+        "source": "zod",
+        "resolved": null
+      },
+      {
         "name": "createOrder",
         "alias": "createOrder",
         "source": "src/lib/orders/store",
         "resolved": [
           "src/lib/orders/store.ts"
+        ]
+      },
+      {
+        "name": "checkRateLimit",
+        "alias": "checkRateLimit",
+        "source": "src/lib/security/rate-limit",
+        "resolved": [
+          "src/lib/security/rate-limit.ts"
+        ]
+      },
+      {
+        "name": "getClientIp",
+        "alias": "getClientIp",
+        "source": "src/lib/security/rate-limit",
+        "resolved": [
+          "src/lib/security/rate-limit.ts"
         ]
       }
     ],
@@ -124,6 +342,31 @@
     "exports": [
       {
         "name": "POST",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/api/health/route.ts": {
+    "imports": [
+      {
+        "name": "NextResponse",
+        "alias": "NextResponse",
+        "source": "next/server",
+        "resolved": null
+      },
+      {
+        "name": "prisma",
+        "alias": "prisma",
+        "source": "src/lib/db/prisma",
+        "resolved": [
+          "src/lib/db/prisma.ts"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "GET",
         "kind": "function"
       }
     ]
@@ -158,6 +401,14 @@
         "source": "src/lib/zarinpal",
         "resolved": [
           "src/lib/zarinpal.ts"
+        ]
+      },
+      {
+        "name": "sendOrderPaidNotifications",
+        "alias": "sendOrderPaidNotifications",
+        "source": "src/lib/notifications/email",
+        "resolved": [
+          "src/lib/notifications/email.ts"
         ]
       }
     ],
@@ -631,12 +882,24 @@
         "resolved": [
           "src/components/cart/OrderStatus.tsx"
         ]
+      },
+      {
+        "name": "getOrder",
+        "alias": "getOrder",
+        "source": "src/lib/orders/store",
+        "resolved": [
+          "src/lib/orders/store.ts"
+        ]
       }
     ],
     "importedBy": [],
     "exports": [
       {
         "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "dynamic",
         "kind": "const"
       },
       {
@@ -1025,12 +1288,24 @@
         "resolved": [
           "src/components/cart/OrderStatus.tsx"
         ]
+      },
+      {
+        "name": "getOrder",
+        "alias": "getOrder",
+        "source": "src/lib/orders/store",
+        "resolved": [
+          "src/lib/orders/store.ts"
+        ]
       }
     ],
     "importedBy": [],
     "exports": [
       {
         "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "dynamic",
         "kind": "const"
       },
       {
@@ -1270,7 +1545,24 @@
     ]
   },
   "src/app/sitemap.ts": {
-    "imports": [],
+    "imports": [
+      {
+        "name": "getPosts",
+        "alias": "getPosts",
+        "source": "src/data/posts",
+        "resolved": [
+          "src/data/posts.ts"
+        ]
+      },
+      {
+        "name": "getProducts",
+        "alias": "getProducts",
+        "source": "src/data/products",
+        "resolved": [
+          "src/data/products.ts"
+        ]
+      }
+    ],
     "importedBy": [],
     "exports": [
       {
@@ -2379,6 +2671,7 @@
       "src/app/en/blog/page.tsx",
       "src/app/en/page.tsx",
       "src/app/page.tsx",
+      "src/app/sitemap.ts",
       "src/data/posts.test.ts"
     ],
     "exports": [
@@ -2447,13 +2740,16 @@
   "src/data/products.ts": {
     "imports": [],
     "importedBy": [
+      "src/app/admin/page.tsx",
       "src/app/en/page.tsx",
       "src/app/en/shop/[slug]/page.tsx",
       "src/app/en/shop/page.tsx",
       "src/app/page.tsx",
       "src/app/shop/[slug]/page.tsx",
       "src/app/shop/page.tsx",
-      "src/data/products.test.ts"
+      "src/app/sitemap.ts",
+      "src/data/products.test.ts",
+      "src/lib/orders/store.ts"
     ],
     "exports": [
       {
@@ -2474,6 +2770,79 @@
       },
       {
         "name": "getProductBySlug",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/lib/auth/admin.ts": {
+    "imports": [
+      {
+        "name": "createHmac",
+        "alias": "createHmac",
+        "source": "node:crypto",
+        "resolved": null
+      },
+      {
+        "name": "randomBytes",
+        "alias": "randomBytes",
+        "source": "node:crypto",
+        "resolved": null
+      },
+      {
+        "name": "timingSafeEqual",
+        "alias": "timingSafeEqual",
+        "source": "node:crypto",
+        "resolved": null
+      },
+      {
+        "name": "cookies",
+        "alias": "cookies",
+        "source": "next/headers",
+        "resolved": null
+      },
+      {
+        "name": "redirect",
+        "alias": "redirect",
+        "source": "next/navigation",
+        "resolved": null
+      },
+      {
+        "name": "prisma",
+        "alias": "prisma",
+        "source": "src/lib/db/prisma",
+        "resolved": [
+          "src/lib/db/prisma.ts"
+        ]
+      },
+      {
+        "name": "getServerEnv",
+        "alias": "getServerEnv",
+        "source": "src/lib/env",
+        "resolved": [
+          "src/lib/env.ts"
+        ]
+      }
+    ],
+    "importedBy": [
+      "src/app/admin/actions.ts",
+      "src/app/admin/orders/page.tsx",
+      "src/app/admin/page.tsx"
+    ],
+    "exports": [
+      {
+        "name": "loginAdmin",
+        "kind": "function"
+      },
+      {
+        "name": "logoutAdmin",
+        "kind": "function"
+      },
+      {
+        "name": "getAdminUser",
+        "kind": "function"
+      },
+      {
+        "name": "requireAdminUser",
         "kind": "function"
       }
     ]
@@ -2738,6 +3107,62 @@
       }
     ]
   },
+  "src/lib/db/prisma.ts": {
+    "imports": [
+      {
+        "name": "PrismaClient",
+        "alias": "PrismaClient",
+        "source": "@prisma/client",
+        "resolved": null
+      },
+      {
+        "name": "PrismaPg",
+        "alias": "PrismaPg",
+        "source": "@prisma/adapter-pg",
+        "resolved": null
+      }
+    ],
+    "importedBy": [
+      "src/app/actions/contact.ts",
+      "src/app/actions/wholesale.ts",
+      "src/app/api/health/route.ts",
+      "src/lib/auth/admin.ts",
+      "src/lib/orders/store.ts"
+    ],
+    "exports": [
+      {
+        "name": "prisma",
+        "kind": "const"
+      },
+      {
+        "name": "assertDatabaseConfigured",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/lib/env.ts": {
+    "imports": [
+      {
+        "name": "z",
+        "alias": "z",
+        "source": "zod",
+        "resolved": null
+      }
+    ],
+    "importedBy": [
+      "src/lib/auth/admin.ts"
+    ],
+    "exports": [
+      {
+        "name": "getServerEnv",
+        "kind": "function"
+      },
+      {
+        "name": "requireProductionEnv",
+        "kind": "function"
+      }
+    ]
+  },
   "src/lib/format/currency.test.ts": {
     "imports": [
       {
@@ -2835,17 +3260,30 @@
       }
     ]
   },
+  "src/lib/notifications/email.ts": {
+    "imports": [
+      {
+        "name": "Resend",
+        "alias": "Resend",
+        "source": "resend",
+        "resolved": null
+      }
+    ],
+    "importedBy": [
+      "src/app/api/payment/callback/route.ts"
+    ],
+    "exports": [
+      {
+        "name": "sendOrderPaidNotifications",
+        "kind": "function"
+      }
+    ]
+  },
   "src/lib/orders/store.test.ts": {
     "imports": [
       {
         "name": "describe",
         "alias": "describe",
-        "source": "vitest",
-        "resolved": null
-      },
-      {
-        "name": "it",
-        "alias": "it",
         "source": "vitest",
         "resolved": null
       },
@@ -2856,30 +3294,14 @@
         "resolved": null
       },
       {
-        "name": "beforeEach",
-        "alias": "beforeEach",
+        "name": "it",
+        "alias": "it",
         "source": "vitest",
         "resolved": null
       },
       {
-        "name": "createOrder",
-        "alias": "createOrder",
-        "source": "src/lib/orders/store",
-        "resolved": [
-          "src/lib/orders/store.ts"
-        ]
-      },
-      {
-        "name": "getOrder",
-        "alias": "getOrder",
-        "source": "src/lib/orders/store",
-        "resolved": [
-          "src/lib/orders/store.ts"
-        ]
-      },
-      {
-        "name": "updateOrderStatus",
-        "alias": "updateOrderStatus",
+        "name": "priceCartItems",
+        "alias": "priceCartItems",
         "source": "src/lib/orders/store",
         "resolved": [
           "src/lib/orders/store.ts"
@@ -2890,14 +3312,53 @@
     "exports": []
   },
   "src/lib/orders/store.ts": {
-    "imports": [],
+    "imports": [
+      {
+        "name": "Prisma",
+        "alias": "Prisma",
+        "source": "@prisma/client",
+        "resolved": null
+      },
+      {
+        "name": "getProductBySlug",
+        "alias": "getProductBySlug",
+        "source": "src/data/products",
+        "resolved": [
+          "src/data/products.ts"
+        ]
+      },
+      {
+        "name": "assertDatabaseConfigured",
+        "alias": "assertDatabaseConfigured",
+        "source": "src/lib/db/prisma",
+        "resolved": [
+          "src/lib/db/prisma.ts"
+        ]
+      },
+      {
+        "name": "prisma",
+        "alias": "prisma",
+        "source": "src/lib/db/prisma",
+        "resolved": [
+          "src/lib/db/prisma.ts"
+        ]
+      }
+    ],
     "importedBy": [
       "src/app/actions/payment.ts",
+      "src/app/admin/orders/page.tsx",
+      "src/app/admin/page.tsx",
       "src/app/api/checkout/route.ts",
       "src/app/api/payment/callback/route.ts",
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/order/[id]/page.tsx",
       "src/lib/orders/store.test.ts"
     ],
     "exports": [
+      {
+        "name": "PublicOrderStatus",
+        "kind": "type"
+      },
       {
         "name": "LocalOrder",
         "kind": "type"
@@ -2905,6 +3366,10 @@
       {
         "name": "CreateOrderInput",
         "kind": "type"
+      },
+      {
+        "name": "priceCartItems",
+        "kind": "function"
       },
       {
         "name": "createOrder",
@@ -2915,11 +3380,31 @@
         "kind": "function"
       },
       {
+        "name": "setOrderAuthority",
+        "kind": "function"
+      },
+      {
         "name": "updateOrderStatus",
         "kind": "function"
       },
       {
-        "name": "setOrderAuthority",
+        "name": "getAdminOrders",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/lib/security/rate-limit.ts": {
+    "imports": [],
+    "importedBy": [
+      "src/app/api/checkout/route.ts"
+    ],
+    "exports": [
+      {
+        "name": "checkRateLimit",
+        "kind": "function"
+      },
+      {
+        "name": "getClientIp",
         "kind": "function"
       }
     ]

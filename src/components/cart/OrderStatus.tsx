@@ -3,11 +3,13 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import type { Locale } from "@/lib/i18n";
+import type { LocalOrder } from "@/lib/orders/store";
 import { PayButton } from "./PayButton";
 
 type Props = {
   orderId: string;
   locale?: Locale;
+  order?: LocalOrder | null;
 };
 
 const statusConfig: Record<string, { fa: { title: string; text: string }; en: { title: string; text: string } }> = {
@@ -29,9 +31,9 @@ const statusConfig: Record<string, { fa: { title: string; text: string }; en: { 
   },
 };
 
-export function OrderStatus({ orderId, locale = "fa" }: Props) {
+export function OrderStatus({ orderId, locale = "fa", order }: Props) {
   const searchParams = useSearchParams();
-  const status = searchParams.get("status") || "pending";
+  const status = searchParams.get("status") || order?.status || "pending";
   const config = statusConfig[status] || statusConfig.pending;
   const content = locale === "en" ? config.en : config.fa;
 
@@ -44,8 +46,17 @@ export function OrderStatus({ orderId, locale = "fa" }: Props) {
         <h1 className="mt-3 text-4xl font-bold">{content.title}</h1>
         <p className="mt-5 leading-8 text-stone">
           {content.text}{" "}
-          <span className="font-mono text-ink">{orderId}</span>
+          <span className="font-mono text-ink">{order?.orderNumber ? `#${order.orderNumber}` : orderId}</span>
         </p>
+
+        {order && (
+          <div className="mt-5 border border-line p-4 text-sm">
+            <div className="flex justify-between gap-4">
+              <span>{locale === "en" ? "Total" : "مبلغ کل"}</span>
+              <strong>{locale === "en" ? `${order.totalToman.toLocaleString()} toman` : `${order.totalToman.toLocaleString("fa-IR")} تومان`}</strong>
+            </div>
+          </div>
+        )}
 
         {status === "failed" && (
           <Link

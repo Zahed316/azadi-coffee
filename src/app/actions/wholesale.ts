@@ -1,6 +1,7 @@
 "use server";
 
 import { Resend } from "resend";
+import { prisma } from "@/lib/db/prisma";
 
 type WholesaleState = {
   error?: string;
@@ -15,6 +16,12 @@ export async function submitWholesale(_prevState: WholesaleState, formData: Form
   if (!businessName) return { error: "Business name is required." };
   if (!weeklyUsage) return { error: "Weekly usage estimate is required." };
   if (!details || details.length < 10) return { error: "Details must be at least 10 characters." };
+
+  if (process.env.DATABASE_URL) {
+    await prisma.wholesaleInquiry.create({
+      data: { businessName, weeklyUsage, details, locale: "fa" },
+    });
+  }
 
   const apiKey = process.env.RESEND_API_KEY;
   if (!apiKey) {

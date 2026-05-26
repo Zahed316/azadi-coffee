@@ -85,7 +85,7 @@ export default async function Home() {
           محصول و هویت آن برای قهوه تخصصی و بازار فارسی طراحی شده است.
         </p>
         <div className="grid border border-ink">
-          {["مینیمال", "فارسی و راست چین", "محصول محور", "آماده اتصال به WooCommerce"].map((item) => (
+          {["مینیمال", "فارسی و راست چین", "محصول محور", "مستقل و بدون CMS"].map((item) => (
             <p key={item} className="border-b border-ink p-4 last:border-b-0">
               {item}
             </p>
