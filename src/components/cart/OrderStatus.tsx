@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { useSearchParams } from "next/navigation";
 import type { Locale } from "@/lib/i18n";
+import { PayButton } from "./PayButton";
 
 type Props = {
   orderId: string;
@@ -19,8 +20,8 @@ const statusConfig: Record<string, { fa: { title: string; text: string }; en: { 
     en: { title: "Payment failed", text: "Payment was not completed. Please try again or choose another payment method." },
   },
   pending: {
-    fa: { title: "در انتظار پرداخت", text: "سفارش شما ثبت شد اما هنوز پرداخت نشده است. برای تکمیل خرید به درگاه پرداخت هدایت می شوید." },
-    en: { title: "Pending payment", text: "Your order has been created but payment is pending. You will be redirected to the payment gateway." },
+    fa: { title: "در انتظار پرداخت", text: "سفارش شما ثبت شد. برای ادامه روی دکمه زیر کلیک کنید." },
+    en: { title: "Pending payment", text: "Your order has been created. Click below to proceed with payment." },
   },
   error: {
     fa: { title: "خطا در پردازش", text: "مشکلی در پردازش سفارش پیش آمد. لطفا با پشتیبانی تماس بگیرید." },
@@ -64,13 +65,7 @@ export function OrderStatus({ orderId, locale = "fa" }: Props) {
           </Link>
         )}
 
-        {status === "pending" && (
-          <div className="mt-6">
-            <div className="h-1 w-full bg-warm-paper">
-              <div className="h-1 w-1/3 animate-pulse bg-coffee" />
-            </div>
-          </div>
-        )}
+        {status === "pending" && <PayButton orderId={orderId} locale={locale} />}
       </div>
     </section>
   );

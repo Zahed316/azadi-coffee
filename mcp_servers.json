@@ -1,0 +1,48 @@
+{
+  "mcpServers": {
+    "open-design": {
+      "command": "node",
+      "args": [
+        "/home/newuser/Documents/open design/apps/daemon/dist/cli.js",
+        "mcp"
+      ],
+      "env": {
+        "OD_DATA_DIR": "/home/newuser/Documents/open design/.od",
+        "OD_SIDECAR_IPC_PATH": "/tmp/open-design/ipc/default/daemon.sock"
+      }
+    },
+    "filesystem": {
+      "command": "npx",
+      "args": [
+        "mcp-server-filesystem",
+        "/home/newuser/azadi-roastery/azadi-coffee",
+        "/home/newuser/azadi-roastery/azadi-coffee/ai",
+        "/home/newuser/azadi-roastery/azadi-coffee/src",
+        "/home/newuser/azadi-roastery/azadi-coffee/tests"
+      ]
+    },
+    "sequential-thinking": {
+      "command": "npx",
+      "args": ["mcp-server-sequential-thinking"]
+    },
+    "memory": {
+      "command": "npx",
+      "args": [
+        "mcp-server-memory",
+        "--memory-path",
+        "/home/newuser/azadi-roastery/azadi-coffee/ai/memory/memory.json"
+      ]
+    },
+    "brave-search": {
+      "command": "npx",
+      "args": ["mcp-server-brave-search"],
+      "env": {
+        "BRAVE_API_KEY": "${BRAVE_API_KEY}"
+      }
+    },
+    "bash": {
+      "command": "npx",
+      "args": ["bash-mcp"]
+    }
+  }
+}

@@ -78,7 +78,7 @@ export function CheckoutForm({ locale = "fa" }: { locale?: Locale }) {
       }
 
       clearCart();
-      router.push(data.redirectUrl);
+      router.push(`/order/${data.orderId}?status=pending`);
     } catch (err) {
       setError(err instanceof Error ? err.message : (locale === "en" ? "An error occurred." : "خطایی رخ داد."));
       setSubmitting(false);

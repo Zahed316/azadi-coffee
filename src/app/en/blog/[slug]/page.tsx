@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import { PageShell } from "@/components/layout/PageShell";
-import { getPostBySlug, getPosts } from "@/lib/wordpress";
+import { getPostBySlug, getPosts } from "@/data/posts";
 
 export async function generateStaticParams() {
   const posts = await getPosts("en");

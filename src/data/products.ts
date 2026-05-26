@@ -97,3 +97,11 @@ export const products: CoffeeProduct[] = [
 export function getProduct(slug: string) {
   return products.find((product) => product.slug === slug);
 }
+
+export function getProducts(_locale?: string) {
+  return products;
+}
+
+export function getProductBySlug(slug: string, _locale?: string) {
+  return getProduct(slug) ?? null;
+}

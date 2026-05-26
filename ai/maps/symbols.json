@@ -1,0 +1,1838 @@
+{
+  "metadata": {
+    "name": "metadata",
+    "files": [
+      {
+        "kind": "const",
+        "file": "src/app/about/page.tsx",
+        "signature": "  export const metadata = { title: \"درباره آزادی\" };\n  \n  export default function AboutPage() {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/blog/page.tsx",
+        "signature": "  export const metadata = { title: \"وبلاگ\" };\n  \n  export default async function BlogPage() {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/cart/page.tsx",
+        "signature": "  export const metadata = { title: \"سبد خرید\" };\n  \n  export default function CartPage() {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/checkout/page.tsx",
+        "signature": "  export const metadata = { title: \"پرداخت\" };\n  \n  export default function CheckoutPage() {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/contact/page.tsx",
+        "signature": "  export const metadata = { title: \"تماس\" };\n  \n  export default function ContactPage() {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/dashboard/design/page.tsx",
+        "signature": "  export const metadata: Metadata = {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/en/about/page.tsx",
+        "signature": "  export const metadata = { title: \"About Azadi\" };\n  \n  export default function EnglishAboutPage() {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/en/blog/page.tsx",
+        "signature": "  export const metadata = { title: \"Journal\" };\n  \n  export default async function EnglishBlogPage() {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/en/cart/page.tsx",
+        "signature": "  export const metadata = { title: \"Cart\" };\n  \n  export default function EnglishCartPage() {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/en/checkout/page.tsx",
+        "signature": "  export const metadata = { title: \"Checkout\" };\n  \n  export default function EnglishCheckoutPage() {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/en/contact/page.tsx",
+        "signature": "  export const metadata = { title: \"Contact\" };\n  \n  export default function EnglishContactPage() {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/en/order/[id]/page.tsx",
+        "signature": "  export const metadata = { title: \"Order result\" };\n  \n  export default async function EnglishOrderPage({ params }: { params: Promise<{ id: string }> }) {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/en/page.tsx",
+        "signature": "  export const metadata = { title: \"Azadi Coffee\" };\n  \n  export default async function EnglishHome() {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/en/roastery/page.tsx",
+        "signature": "  export const metadata = { title: \"Roastery\" };\n  \n  export default function EnglishRoasteryPage() {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/en/shop/page.tsx",
+        "signature": "  export const metadata = { title: \"Shop\" };\n  \n  export default async function EnglishShopPage({ searchParams }: { searchParams: Promise<{ category?: string }> }) {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/en/wholesale/page.tsx",
+        "signature": "  export const metadata = { title: \"Wholesale and B2B\" };\n  \n  export default function EnglishWholesalePage() {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/layout.tsx",
+        "signature": "  export const metadata: Metadata = {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/order/[id]/page.tsx",
+        "signature": "  export const metadata = { title: \"نتیجه سفارش\" };\n  \n  export default async function OrderPage({ params }: { params: Promise<{ id: string }> }) {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/roastery/page.tsx",
+        "signature": "  export const metadata = { title: \"برشته کاری\" };\n  \n  export default function RoasteryPage() {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/shop/page.tsx",
+        "signature": "  export const metadata = { title: \"فروشگاه\" };\n  \n  export default async function ShopPage({ searchParams }: { searchParams: Promise<{ category?: string }> }) {"
+      },
+      {
+        "kind": "const",
+        "file": "src/app/wholesale/page.tsx",
+        "signature": "  export const metadata = { title: \"عمده و B2B\" };\n  \n  export default function WholesalePage() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "AboutPage": {
+    "name": "AboutPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/about/page.tsx",
+        "signature": "  export default function AboutPage() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "submitContact": {
+    "name": "submitContact",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/actions/contact.ts",
+        "signature": "  export async function submitContact(_prevState: ContactState, formData: FormData): Promise<ContactState> {"
+      }
+    ],
+    "usedBy": [
+      "src/components/forms/ContactForm.tsx"
+    ]
+  },
+  "initiatePayment": {
+    "name": "initiatePayment",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/actions/payment.ts",
+        "signature": "  export async function initiatePayment(_prevState: unknown, formData: FormData) {"
+      }
+    ],
+    "usedBy": [
+      "src/components/cart/PayButton.tsx"
+    ]
+  },
+  "submitWholesale": {
+    "name": "submitWholesale",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/actions/wholesale.ts",
+        "signature": "  export async function submitWholesale(_prevState: WholesaleState, formData: FormData): Promise<WholesaleState> {"
+      }
+    ],
+    "usedBy": [
+      "src/components/forms/WholesaleForm.tsx"
+    ]
+  },
+  "POST": {
+    "name": "POST",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/api/checkout/route.ts",
+        "signature": "  export async function POST(request: Request) {"
+      }
+    ],
+    "usedBy": []
+  },
+  "GET": {
+    "name": "GET",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/api/payment/callback/route.ts",
+        "signature": "  export async function GET(request: Request) {"
+      }
+    ],
+    "usedBy": []
+  },
+  "generateStaticParams": {
+    "name": "generateStaticParams",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/blog/[slug]/page.tsx",
+        "signature": "  export async function generateStaticParams() {"
+      },
+      {
+        "kind": "function",
+        "file": "src/app/en/blog/[slug]/page.tsx",
+        "signature": "  export async function generateStaticParams() {"
+      },
+      {
+        "kind": "function",
+        "file": "src/app/en/shop/[slug]/page.tsx",
+        "signature": "  export async function generateStaticParams() {"
+      },
+      {
+        "kind": "function",
+        "file": "src/app/shop/[slug]/page.tsx",
+        "signature": "  export async function generateStaticParams() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "generateMetadata": {
+    "name": "generateMetadata",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/blog/[slug]/page.tsx",
+        "signature": "  export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {"
+      },
+      {
+        "kind": "function",
+        "file": "src/app/en/blog/[slug]/page.tsx",
+        "signature": "  export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {"
+      },
+      {
+        "kind": "function",
+        "file": "src/app/en/shop/[slug]/page.tsx",
+        "signature": "  export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {"
+      },
+      {
+        "kind": "function",
+        "file": "src/app/shop/[slug]/page.tsx",
+        "signature": "  export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }) {"
+      }
+    ],
+    "usedBy": []
+  },
+  "BlogPostPage": {
+    "name": "BlogPostPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/blog/[slug]/page.tsx",
+        "signature": "  export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {"
+      }
+    ],
+    "usedBy": []
+  },
+  "BlogPage": {
+    "name": "BlogPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/blog/page.tsx",
+        "signature": "  export default async function BlogPage() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "CartPage": {
+    "name": "CartPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/cart/page.tsx",
+        "signature": "  export default function CartPage() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "CheckoutPage": {
+    "name": "CheckoutPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/checkout/page.tsx",
+        "signature": "  export default function CheckoutPage() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "ContactPage": {
+    "name": "ContactPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/contact/page.tsx",
+        "signature": "  export default function ContactPage() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "DesignSettingsPage": {
+    "name": "DesignSettingsPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/dashboard/design/page.tsx",
+        "signature": "  export default function DesignSettingsPage() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "EnglishAboutPage": {
+    "name": "EnglishAboutPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/en/about/page.tsx",
+        "signature": "  export default function EnglishAboutPage() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "EnglishBlogPostPage": {
+    "name": "EnglishBlogPostPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/en/blog/[slug]/page.tsx",
+        "signature": "  export default async function EnglishBlogPostPage({ params }: { params: Promise<{ slug: string }> }) {"
+      }
+    ],
+    "usedBy": []
+  },
+  "EnglishBlogPage": {
+    "name": "EnglishBlogPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/en/blog/page.tsx",
+        "signature": "  export default async function EnglishBlogPage() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "EnglishCartPage": {
+    "name": "EnglishCartPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/en/cart/page.tsx",
+        "signature": "  export default function EnglishCartPage() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "EnglishCheckoutPage": {
+    "name": "EnglishCheckoutPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/en/checkout/page.tsx",
+        "signature": "  export default function EnglishCheckoutPage() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "EnglishContactPage": {
+    "name": "EnglishContactPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/en/contact/page.tsx",
+        "signature": "  export default function EnglishContactPage() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "EnglishErrorPage": {
+    "name": "EnglishErrorPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/en/error.tsx",
+        "signature": "  export default function EnglishErrorPage({ reset }: { error: Error; reset: () => void }) {"
+      }
+    ],
+    "usedBy": []
+  },
+  "EnglishLoadingPage": {
+    "name": "EnglishLoadingPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/en/loading.tsx",
+        "signature": "  export default function EnglishLoadingPage() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "EnglishNotFound": {
+    "name": "EnglishNotFound",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/en/not-found.tsx",
+        "signature": "  export default function EnglishNotFound() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "EnglishOrderPage": {
+    "name": "EnglishOrderPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/en/order/[id]/page.tsx",
+        "signature": "  export default async function EnglishOrderPage({ params }: { params: Promise<{ id: string }> }) {"
+      }
+    ],
+    "usedBy": []
+  },
+  "EnglishHome": {
+    "name": "EnglishHome",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/en/page.tsx",
+        "signature": "  export default async function EnglishHome() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "EnglishRoasteryPage": {
+    "name": "EnglishRoasteryPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/en/roastery/page.tsx",
+        "signature": "  export default function EnglishRoasteryPage() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "EnglishProductPage": {
+    "name": "EnglishProductPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/en/shop/[slug]/page.tsx",
+        "signature": "  export default async function EnglishProductPage({ params }: { params: Promise<{ slug: string }> }) {"
+      }
+    ],
+    "usedBy": []
+  },
+  "EnglishShopPage": {
+    "name": "EnglishShopPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/en/shop/page.tsx",
+        "signature": "  export default async function EnglishShopPage({ searchParams }: { searchParams: Promise<{ category?: string }> }) {"
+      }
+    ],
+    "usedBy": []
+  },
+  "EnglishWholesalePage": {
+    "name": "EnglishWholesalePage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/en/wholesale/page.tsx",
+        "signature": "  export default function EnglishWholesalePage() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "ErrorPage": {
+    "name": "ErrorPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/error.tsx",
+        "signature": "  export default function ErrorPage({ reset }: { error: Error; reset: () => void }) {"
+      }
+    ],
+    "usedBy": []
+  },
+  "GlobalError": {
+    "name": "GlobalError",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/global-error.tsx",
+        "signature": "  export default function GlobalError({ reset }: { error: Error & { digest?: string }; reset: () => void }) {"
+      }
+    ],
+    "usedBy": []
+  },
+  "RootLayout": {
+    "name": "RootLayout",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/layout.tsx",
+        "signature": "  export default async function RootLayout({"
+      }
+    ],
+    "usedBy": []
+  },
+  "LoadingPage": {
+    "name": "LoadingPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/loading.tsx",
+        "signature": "  export default function LoadingPage() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "NotFound": {
+    "name": "NotFound",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/not-found.tsx",
+        "signature": "  export default function NotFound() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "OrderPage": {
+    "name": "OrderPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/order/[id]/page.tsx",
+        "signature": "  export default async function OrderPage({ params }: { params: Promise<{ id: string }> }) {"
+      }
+    ],
+    "usedBy": []
+  },
+  "Home": {
+    "name": "Home",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/page.tsx",
+        "signature": "  export default async function Home() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "RoasteryPage": {
+    "name": "RoasteryPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/roastery/page.tsx",
+        "signature": "  export default function RoasteryPage() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "robots": {
+    "name": "robots",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/robots.ts",
+        "signature": "  export default function robots(): MetadataRoute.Robots {"
+      }
+    ],
+    "usedBy": []
+  },
+  "ProductPage": {
+    "name": "ProductPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/shop/[slug]/page.tsx",
+        "signature": "  export default async function ProductPage({ params }: { params: Promise<{ slug: string }> }) {"
+      }
+    ],
+    "usedBy": []
+  },
+  "ShopPage": {
+    "name": "ShopPage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/shop/page.tsx",
+        "signature": "  export default async function ShopPage({ searchParams }: { searchParams: Promise<{ category?: string }> }) {"
+      }
+    ],
+    "usedBy": []
+  },
+  "sitemap": {
+    "name": "sitemap",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/sitemap.ts",
+        "signature": "  export default function sitemap(): MetadataRoute.Sitemap {"
+      }
+    ],
+    "usedBy": []
+  },
+  "WholesalePage": {
+    "name": "WholesalePage",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/app/wholesale/page.tsx",
+        "signature": "  export default function WholesalePage() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "BlogCard": {
+    "name": "BlogCard",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/blog/BlogCard.tsx",
+        "signature": "  export function BlogCard({ post, locale = \"fa\" }: { post: BlogPost; locale?: Locale }) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/blog/page.tsx",
+      "src/app/en/blog/page.tsx"
+    ]
+  },
+  "CartButton": {
+    "name": "CartButton",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/cart/CartButton.tsx",
+        "signature": "  export function CartButton() {"
+      }
+    ],
+    "usedBy": [
+      "src/components/layout/Header.tsx"
+    ]
+  },
+  "CartContent": {
+    "name": "CartContent",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/cart/CartContent.tsx",
+        "signature": "  export function CartContent({ locale = \"fa\" }: { locale?: Locale }) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/cart/page.tsx",
+      "src/app/en/cart/page.tsx"
+    ]
+  },
+  "CartProvider": {
+    "name": "CartProvider",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/cart/CartProvider.tsx",
+        "signature": "  export function CartProvider({ children }: { children: ReactNode }) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/layout.tsx"
+    ]
+  },
+  "CheckoutForm": {
+    "name": "CheckoutForm",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/cart/CheckoutForm.tsx",
+        "signature": "  export function CheckoutForm({ locale = \"fa\" }: { locale?: Locale }) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/checkout/page.tsx",
+      "src/app/en/checkout/page.tsx"
+    ]
+  },
+  "OrderStatus": {
+    "name": "OrderStatus",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/cart/OrderStatus.tsx",
+        "signature": "  export function OrderStatus({ orderId, locale = \"fa\" }: Props) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/order/[id]/page.tsx"
+    ]
+  },
+  "PayButton": {
+    "name": "PayButton",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/cart/PayButton.tsx",
+        "signature": "  export function PayButton({ orderId, locale = \"fa\" }: Props) {"
+      }
+    ],
+    "usedBy": [
+      "src/components/cart/OrderStatus.tsx"
+    ]
+  },
+  "QuantityStepper": {
+    "name": "QuantityStepper",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/cart/QuantityStepper.tsx",
+        "signature": "  export function QuantityStepper({ initial = 1 }: { initial?: number }) {"
+      }
+    ],
+    "usedBy": []
+  },
+  "ContactForm": {
+    "name": "ContactForm",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/forms/ContactForm.tsx",
+        "signature": "  export function ContactForm({ locale = \"fa\" }: { locale?: \"fa\" | \"en\" }) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/contact/page.tsx",
+      "src/app/en/contact/page.tsx"
+    ]
+  },
+  "WholesaleForm": {
+    "name": "WholesaleForm",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/forms/WholesaleForm.tsx",
+        "signature": "  export function WholesaleForm({ locale = \"fa\" }: { locale?: \"fa\" | \"en\" }) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/en/wholesale/page.tsx",
+      "src/app/wholesale/page.tsx"
+    ]
+  },
+  "DocumentLocaleSync": {
+    "name": "DocumentLocaleSync",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/layout/DocumentLocaleSync.tsx",
+        "signature": "  export function DocumentLocaleSync() {"
+      }
+    ],
+    "usedBy": [
+      "src/app/layout.tsx"
+    ]
+  },
+  "Footer": {
+    "name": "Footer",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/layout/Footer.tsx",
+        "signature": "  export function Footer({"
+      }
+    ],
+    "usedBy": [
+      "src/components/layout/PageShell.tsx"
+    ]
+  },
+  "NavigationItem": {
+    "name": "NavigationItem",
+    "files": [
+      {
+        "kind": "type",
+        "file": "src/components/layout/Header.tsx",
+        "signature": "  export type NavigationItem = {"
+      }
+    ],
+    "usedBy": []
+  },
+  "Header": {
+    "name": "Header",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/layout/Header.tsx",
+        "signature": "  export function Header({"
+      }
+    ],
+    "usedBy": [
+      "src/components/layout/PageShell.tsx"
+    ]
+  },
+  "LanguageSwitch": {
+    "name": "LanguageSwitch",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/layout/LanguageSwitch.tsx",
+        "signature": "  export function LanguageSwitch({ locale }: { locale: Locale }) {"
+      }
+    ],
+    "usedBy": [
+      "src/components/layout/Header.tsx",
+      "src/components/page-stack/ActivePanel.tsx"
+    ]
+  },
+  "PageShell": {
+    "name": "PageShell",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/layout/PageShell.tsx",
+        "signature": "  export function PageShell({ children, locale = \"fa\" }: { children: ReactNode; locale?: Locale }) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/about/page.tsx",
+      "src/app/blog/[slug]/page.tsx",
+      "src/app/blog/page.tsx",
+      "src/app/cart/page.tsx",
+      "src/app/checkout/page.tsx",
+      "src/app/contact/page.tsx",
+      "src/app/en/about/page.tsx",
+      "src/app/en/blog/[slug]/page.tsx",
+      "src/app/en/blog/page.tsx",
+      "src/app/en/cart/page.tsx",
+      "src/app/en/checkout/page.tsx",
+      "src/app/en/contact/page.tsx",
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/en/roastery/page.tsx",
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/en/shop/page.tsx",
+      "src/app/en/wholesale/page.tsx",
+      "src/app/order/[id]/page.tsx",
+      "src/app/roastery/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/app/shop/page.tsx",
+      "src/app/wholesale/page.tsx"
+    ]
+  },
+  "ActivePanel": {
+    "name": "ActivePanel",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/page-stack/ActivePanel.tsx",
+        "signature": "  export function ActivePanel({ panel, index, locale = \"fa\" }: ActivePanelProps) {"
+      }
+    ],
+    "usedBy": [
+      "src/components/page-stack/PageStackLayout.tsx"
+    ]
+  },
+  "CollapsedTab": {
+    "name": "CollapsedTab",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/page-stack/CollapsedTab.tsx",
+        "signature": "  export function CollapsedTab({ panel, index, onSelect }: CollapsedTabProps) {"
+      }
+    ],
+    "usedBy": [
+      "src/components/page-stack/PageStackLayout.tsx"
+    ]
+  },
+  "PanelTone": {
+    "name": "PanelTone",
+    "files": [
+      {
+        "kind": "type",
+        "file": "src/components/page-stack/PagePanel.tsx",
+        "signature": "  export type PanelTone = \"paper\" | \"warm\" | \"ink\";\n  \n  export type StackPanel = {"
+      }
+    ],
+    "usedBy": []
+  },
+  "StackPanel": {
+    "name": "StackPanel",
+    "files": [
+      {
+        "kind": "type",
+        "file": "src/components/page-stack/PagePanel.tsx",
+        "signature": "  export type StackPanel = {"
+      }
+    ],
+    "usedBy": []
+  },
+  "PagePanel": {
+    "name": "PagePanel",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/page-stack/PagePanel.tsx",
+        "signature": "  export function PagePanel({ children, tone = \"paper\" }: { children: ReactNode; tone?: PanelTone }) {"
+      }
+    ],
+    "usedBy": [
+      "src/components/page-stack/ActivePanel.tsx"
+    ]
+  },
+  "PageStackLayout": {
+    "name": "PageStackLayout",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/page-stack/PageStackLayout.tsx",
+        "signature": "  export function PageStackLayout({ panels, locale = \"fa\" }: { panels: StackPanel[]; locale?: Locale }) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/en/page.tsx",
+      "src/app/page.tsx"
+    ]
+  },
+  "ProductBuyPanel": {
+    "name": "ProductBuyPanel",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/product/ProductBuyPanel.tsx",
+        "signature": "  export function ProductBuyPanel({ product }: { product: CoffeeProduct }) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/shop/[slug]/page.tsx"
+    ]
+  },
+  "ProductBuyPanelEn": {
+    "name": "ProductBuyPanelEn",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/product/ProductBuyPanel.tsx",
+        "signature": "  export function ProductBuyPanelEn({ product }: { product: CoffeeProduct }) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/en/shop/[slug]/page.tsx"
+    ]
+  },
+  "ProductCard": {
+    "name": "ProductCard",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/product/ProductCard.tsx",
+        "signature": "  export function ProductCard({ product, locale = \"fa\" }: { product: CoffeeProduct; locale?: Locale }) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/en/shop/page.tsx",
+      "src/app/shop/page.tsx"
+    ]
+  },
+  "FeaturedProducts": {
+    "name": "FeaturedProducts",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/sections/FeaturedProducts.tsx",
+        "signature": "  export function FeaturedProducts({ products, locale = \"fa\" }: { products: CoffeeProduct[]; locale?: Locale }) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/en/page.tsx",
+      "src/app/page.tsx"
+    ]
+  },
+  "HeroSection": {
+    "name": "HeroSection",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/sections/HeroSection.tsx",
+        "signature": "  export function HeroSection({ locale = \"fa\", settings = {} }: { locale?: Locale; settings?: LandingPageSettings }) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/en/page.tsx",
+      "src/app/page.tsx"
+    ]
+  },
+  "DesignDashboard": {
+    "name": "DesignDashboard",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/settings/DesignDashboard.tsx",
+        "signature": "  export function DesignDashboard() {"
+      }
+    ],
+    "usedBy": [
+      "src/app/dashboard/design/page.tsx"
+    ]
+  },
+  "DesignSettingsProvider": {
+    "name": "DesignSettingsProvider",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/settings/DesignSettingsProvider.tsx",
+        "signature": "  export function DesignSettingsProvider({"
+      }
+    ],
+    "usedBy": [
+      "src/app/layout.tsx"
+    ]
+  },
+  "useDesignSettings": {
+    "name": "useDesignSettings",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/settings/DesignSettingsProvider.tsx",
+        "signature": "  export function useDesignSettings() {"
+      }
+    ],
+    "usedBy": [
+      "src/components/settings/DesignDashboard.tsx"
+    ]
+  },
+  "ButtonLink": {
+    "name": "ButtonLink",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/components/ui/ButtonLink.tsx",
+        "signature": "  export function ButtonLink({ href, children, variant = \"primary\" }: Props) {"
+      }
+    ],
+    "usedBy": []
+  },
+  "BlogPost": {
+    "name": "BlogPost",
+    "files": [
+      {
+        "kind": "type",
+        "file": "src/data/posts.ts",
+        "signature": "  export type BlogPost = {"
+      }
+    ],
+    "usedBy": []
+  },
+  "posts": {
+    "name": "posts",
+    "files": [
+      {
+        "kind": "const",
+        "file": "src/data/posts.ts",
+        "signature": "  export const posts: BlogPost[] = [\n  {"
+      }
+    ],
+    "usedBy": []
+  },
+  "getPost": {
+    "name": "getPost",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/data/posts.ts",
+        "signature": "  export function getPost(slug: string) {"
+      }
+    ],
+    "usedBy": []
+  },
+  "getPosts": {
+    "name": "getPosts",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/data/posts.ts",
+        "signature": "  export function getPosts(_locale?: string) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/blog/[slug]/page.tsx",
+      "src/app/blog/page.tsx",
+      "src/app/en/blog/[slug]/page.tsx",
+      "src/app/en/blog/page.tsx",
+      "src/app/en/page.tsx",
+      "src/app/page.tsx",
+      "src/data/posts.test.ts"
+    ]
+  },
+  "getPostBySlug": {
+    "name": "getPostBySlug",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/data/posts.ts",
+        "signature": "  export function getPostBySlug(slug: string, _locale?: string) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/blog/[slug]/page.tsx",
+      "src/app/en/blog/[slug]/page.tsx",
+      "src/data/posts.test.ts"
+    ]
+  },
+  "CoffeeProduct": {
+    "name": "CoffeeProduct",
+    "files": [
+      {
+        "kind": "type",
+        "file": "src/data/products.ts",
+        "signature": "  export type CoffeeProduct = {"
+      }
+    ],
+    "usedBy": []
+  },
+  "products": {
+    "name": "products",
+    "files": [
+      {
+        "kind": "const",
+        "file": "src/data/products.ts",
+        "signature": "  export const products: CoffeeProduct[] = [\n  {"
+      }
+    ],
+    "usedBy": []
+  },
+  "getProduct": {
+    "name": "getProduct",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/data/products.ts",
+        "signature": "  export function getProduct(slug: string) {"
+      }
+    ],
+    "usedBy": []
+  },
+  "getProducts": {
+    "name": "getProducts",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/data/products.ts",
+        "signature": "  export function getProducts(_locale?: string) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/en/page.tsx",
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/en/shop/page.tsx",
+      "src/app/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/app/shop/page.tsx",
+      "src/data/products.test.ts"
+    ]
+  },
+  "getProductBySlug": {
+    "name": "getProductBySlug",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/data/products.ts",
+        "signature": "  export function getProductBySlug(slug: string, _locale?: string) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/data/products.test.ts"
+    ]
+  },
+  "CartContextValue": {
+    "name": "CartContextValue",
+    "files": [
+      {
+        "kind": "type",
+        "file": "src/lib/cart/cart-context.tsx",
+        "signature": "  export type CartContextValue = {"
+      }
+    ],
+    "usedBy": []
+  },
+  "CartContextProvider": {
+    "name": "CartContextProvider",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/cart/cart-context.tsx",
+        "signature": "  export function CartContextProvider({ children, initialCart }: { children: ReactNode; initialCart?: Cart }) {"
+      }
+    ],
+    "usedBy": [
+      "src/components/cart/CartProvider.tsx"
+    ]
+  },
+  "useCart": {
+    "name": "useCart",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/cart/cart-context.tsx",
+        "signature": "  export function useCart(): CartContextValue {"
+      }
+    ],
+    "usedBy": [
+      "src/components/cart/CartButton.tsx",
+      "src/components/cart/CartContent.tsx",
+      "src/components/cart/CheckoutForm.tsx",
+      "src/components/product/ProductBuyPanel.tsx"
+    ]
+  },
+  "cartReducer": {
+    "name": "cartReducer",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/cart/cart-reducer.ts",
+        "signature": "  export function cartReducer(state: Cart, action: CartAction): Cart {"
+      }
+    ],
+    "usedBy": [
+      "src/lib/cart/cart-context.tsx",
+      "src/lib/cart/cart-reducer.test.ts"
+    ]
+  },
+  "getCartCount": {
+    "name": "getCartCount",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/cart/cart-reducer.ts",
+        "signature": "  export function getCartCount(items: CartItem[]): number {"
+      }
+    ],
+    "usedBy": [
+      "src/lib/cart/cart-context.tsx",
+      "src/lib/cart/cart-reducer.test.ts"
+    ]
+  },
+  "getCartTotal": {
+    "name": "getCartTotal",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/cart/cart-reducer.ts",
+        "signature": "  export function getCartTotal(items: CartItem[]): number {"
+      }
+    ],
+    "usedBy": [
+      "src/lib/cart/cart-context.tsx",
+      "src/lib/cart/cart-reducer.test.ts"
+    ]
+  },
+  "readCart": {
+    "name": "readCart",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/cart/cart-storage.ts",
+        "signature": "  export function readCart(): Cart {"
+      }
+    ],
+    "usedBy": [
+      "src/lib/cart/cart-context.tsx"
+    ]
+  },
+  "writeCart": {
+    "name": "writeCart",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/cart/cart-storage.ts",
+        "signature": "  export function writeCart(cart: Cart): void {"
+      }
+    ],
+    "usedBy": [
+      "src/lib/cart/cart-context.tsx"
+    ]
+  },
+  "subscribeCart": {
+    "name": "subscribeCart",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/cart/cart-storage.ts",
+        "signature": "  export function subscribeCart(onChange: () => void): () => void {"
+      }
+    ],
+    "usedBy": [
+      "src/lib/cart/cart-context.tsx"
+    ]
+  },
+  "CartItem": {
+    "name": "CartItem",
+    "files": [
+      {
+        "kind": "type",
+        "file": "src/lib/cart/types.ts",
+        "signature": "  export type CartItem = {"
+      }
+    ],
+    "usedBy": []
+  },
+  "Cart": {
+    "name": "Cart",
+    "files": [
+      {
+        "kind": "type",
+        "file": "src/lib/cart/types.ts",
+        "signature": "  export type Cart = {"
+      }
+    ],
+    "usedBy": []
+  },
+  "EMPTY_CART": {
+    "name": "EMPTY_CART",
+    "files": [
+      {
+        "kind": "const",
+        "file": "src/lib/cart/types.ts",
+        "signature": "  export const EMPTY_CART: Cart = { items: [] };\n  \n  export type CartAction =\n  | { type: \"ADD_ITEM\"; item: CartItem }\n  | { type: \"REMOVE_ITEM\"; slug: string }\n  | { type: \"UPDATE_QUANTITY\"; slug: string; quantity: number }\n  | { type: \"CLEAR\" };\n  "
+      }
+    ],
+    "usedBy": [
+      "src/lib/cart/cart-context.tsx",
+      "src/lib/cart/cart-storage.ts"
+    ]
+  },
+  "CartAction": {
+    "name": "CartAction",
+    "files": [
+      {
+        "kind": "type",
+        "file": "src/lib/cart/types.ts",
+        "signature": "  export type CartAction =\n  | { type: \"ADD_ITEM\"; item: CartItem }\n  | { type: \"REMOVE_ITEM\"; slug: string }\n  | { type: \"UPDATE_QUANTITY\"; slug: string; quantity: number }\n  | { type: \"CLEAR\" };\n  "
+      }
+    ],
+    "usedBy": []
+  },
+  "formatToman": {
+    "name": "formatToman",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/format/currency.ts",
+        "signature": "  export function formatToman(amount: number, locale: Locale = \"fa\") {"
+      }
+    ],
+    "usedBy": [
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/components/cart/CartContent.tsx",
+      "src/components/product/ProductCard.tsx",
+      "src/components/sections/FeaturedProducts.tsx",
+      "src/lib/format/currency.test.ts",
+      "src/lib/seo/schema.ts"
+    ]
+  },
+  "formatRial": {
+    "name": "formatRial",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/format/currency.ts",
+        "signature": "  export function formatRial(amountInToman: number, locale: Locale = \"fa\") {"
+      }
+    ],
+    "usedBy": [
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/shop/[slug]/page.tsx"
+    ]
+  },
+  "inventoryLabel": {
+    "name": "inventoryLabel",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/format/persian.ts",
+        "signature": "  export function inventoryLabel(status: \"available\" | \"low\" | \"sold-out\", locale: Locale = \"fa\") {"
+      }
+    ],
+    "usedBy": [
+      "src/components/product/ProductCard.tsx"
+    ]
+  },
+  "latin": {
+    "name": "latin",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/format/persian.ts",
+        "signature": "  export function latin(text: string) {"
+      }
+    ],
+    "usedBy": [
+      "src/components/product/ProductCard.tsx"
+    ]
+  },
+  "Locale": {
+    "name": "Locale",
+    "files": [
+      {
+        "kind": "type",
+        "file": "src/lib/i18n.ts",
+        "signature": "  export type Locale = \"fa\" | \"en\";\n  \n  export function localePath(locale: Locale, path: string) {"
+      }
+    ],
+    "usedBy": []
+  },
+  "localePath": {
+    "name": "localePath",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/i18n.ts",
+        "signature": "  export function localePath(locale: Locale, path: string) {"
+      }
+    ],
+    "usedBy": [
+      "src/components/blog/BlogCard.tsx",
+      "src/components/cart/CartButton.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/components/layout/Header.tsx",
+      "src/components/product/ProductCard.tsx",
+      "src/components/sections/FeaturedProducts.tsx",
+      "src/components/sections/HeroSection.tsx"
+    ]
+  },
+  "alternateLocalePath": {
+    "name": "alternateLocalePath",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/i18n.ts",
+        "signature": "  export function alternateLocalePath(locale: Locale, pathname: string) {"
+      }
+    ],
+    "usedBy": [
+      "src/components/layout/LanguageSwitch.tsx"
+    ]
+  },
+  "LocalOrder": {
+    "name": "LocalOrder",
+    "files": [
+      {
+        "kind": "type",
+        "file": "src/lib/orders/store.ts",
+        "signature": "  export type LocalOrder = {"
+      }
+    ],
+    "usedBy": []
+  },
+  "CreateOrderInput": {
+    "name": "CreateOrderInput",
+    "files": [
+      {
+        "kind": "type",
+        "file": "src/lib/orders/store.ts",
+        "signature": "  export type CreateOrderInput = {"
+      }
+    ],
+    "usedBy": []
+  },
+  "createOrder": {
+    "name": "createOrder",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/orders/store.ts",
+        "signature": "  export function createOrder(input: CreateOrderInput): LocalOrder {"
+      }
+    ],
+    "usedBy": [
+      "src/app/api/checkout/route.ts",
+      "src/lib/orders/store.test.ts"
+    ]
+  },
+  "getOrder": {
+    "name": "getOrder",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/orders/store.ts",
+        "signature": "  export function getOrder(id: string): LocalOrder | undefined {"
+      }
+    ],
+    "usedBy": [
+      "src/app/actions/payment.ts",
+      "src/app/api/payment/callback/route.ts",
+      "src/lib/orders/store.test.ts"
+    ]
+  },
+  "updateOrderStatus": {
+    "name": "updateOrderStatus",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/orders/store.ts",
+        "signature": "  export function updateOrderStatus(\n  id: string,\n  status: LocalOrder[\"status\"],\n  zarinpalRefId?: string,\n  ): LocalOrder | undefined {"
+      }
+    ],
+    "usedBy": [
+      "src/app/api/payment/callback/route.ts",
+      "src/lib/orders/store.test.ts"
+    ]
+  },
+  "setOrderAuthority": {
+    "name": "setOrderAuthority",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/orders/store.ts",
+        "signature": "  export function setOrderAuthority(id: string, authority: string): LocalOrder | undefined {"
+      }
+    ],
+    "usedBy": [
+      "src/app/actions/payment.ts"
+    ]
+  },
+  "productJsonLd": {
+    "name": "productJsonLd",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/seo/schema.ts",
+        "signature": "  export function productJsonLd(product: CoffeeProduct) {"
+      }
+    ],
+    "usedBy": [
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/shop/[slug]/page.tsx"
+    ]
+  },
+  "DesignSettings": {
+    "name": "DesignSettings",
+    "files": [
+      {
+        "kind": "type",
+        "file": "src/lib/settings/design-presets.ts",
+        "signature": "  export type DesignSettings = {"
+      }
+    ],
+    "usedBy": []
+  },
+  "DesignPreset": {
+    "name": "DesignPreset",
+    "files": [
+      {
+        "kind": "type",
+        "file": "src/lib/settings/design-presets.ts",
+        "signature": "  export type DesignPreset = {"
+      }
+    ],
+    "usedBy": []
+  },
+  "designPresets": {
+    "name": "designPresets",
+    "files": [
+      {
+        "kind": "const",
+        "file": "src/lib/settings/design-presets.ts",
+        "signature": "  export const designPresets: DesignPreset[] = [\n  preset(\"minimal-light\", \"Minimal light\", \"Sharp black-and-white Azadi identity with white landing tabs and strict editorial spacing.\", {}),\n  preset(\"premium-dark\", \"Premium dark\", \"Dark showcase canvas, graphite cards, soft contrast, and restrained coffee accents.\", {"
+      }
+    ],
+    "usedBy": [
+      "src/components/settings/DesignDashboard.tsx",
+      "src/lib/theme-settings.ts"
+    ]
+  },
+  "defaultDesignSettings": {
+    "name": "defaultDesignSettings",
+    "files": [
+      {
+        "kind": "const",
+        "file": "src/lib/settings/design-presets.ts",
+        "signature": "  export const defaultDesignSettings = designPresets[0].settings;\n  "
+      }
+    ],
+    "usedBy": [
+      "src/components/settings/DesignDashboard.tsx",
+      "src/components/settings/DesignSettingsProvider.tsx",
+      "src/lib/settings/design-storage.ts",
+      "src/lib/theme-settings.ts"
+    ]
+  },
+  "DESIGN_SETTINGS_KEY": {
+    "name": "DESIGN_SETTINGS_KEY",
+    "files": [
+      {
+        "kind": "const",
+        "file": "src/lib/settings/design-storage.ts",
+        "signature": "  export const DESIGN_SETTINGS_KEY = \"azadi.design.settings.v1\";\n  \n  const colorKeys = Object.keys(defaultDesignSettings.colors) as Array<keyof DesignSettings[\"colors\"]>;\n  const shapeKeys = Object.keys(defaultDesignSettings.shape) as Array<keyof DesignSettings[\"shape\"]>;\n  const listeners = new Set<() => void>();\n  let cachedRaw: string | null = null;\n  let cachedSettings: DesignSettings = de..."
+      }
+    ],
+    "usedBy": []
+  },
+  "readStoredDesignSettings": {
+    "name": "readStoredDesignSettings",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/settings/design-storage.ts",
+        "signature": "  export function readStoredDesignSettings(fallback: DesignSettings = defaultDesignSettings): DesignSettings {"
+      }
+    ],
+    "usedBy": [
+      "src/components/settings/DesignSettingsProvider.tsx"
+    ]
+  },
+  "persistDesignSettings": {
+    "name": "persistDesignSettings",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/settings/design-storage.ts",
+        "signature": "  export function persistDesignSettings(settings: DesignSettings) {"
+      }
+    ],
+    "usedBy": [
+      "src/components/settings/DesignSettingsProvider.tsx"
+    ]
+  },
+  "subscribeDesignSettings": {
+    "name": "subscribeDesignSettings",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/settings/design-storage.ts",
+        "signature": "  export function subscribeDesignSettings(listener: () => void) {"
+      }
+    ],
+    "usedBy": [
+      "src/components/settings/DesignSettingsProvider.tsx"
+    ]
+  },
+  "applyDesignSettings": {
+    "name": "applyDesignSettings",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/settings/design-storage.ts",
+        "signature": "  export function applyDesignSettings(settings: DesignSettings) {"
+      }
+    ],
+    "usedBy": [
+      "src/components/settings/DesignSettingsProvider.tsx"
+    ]
+  },
+  "updateDesignSetting": {
+    "name": "updateDesignSetting",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/settings/design-storage.ts",
+        "signature": "  export function updateDesignSetting<T extends DesignSettingGroup>(\n  settings: DesignSettings,\n  group: T,\n  key: keyof DesignSettings[T],\n  value: string | number,\n  ): DesignSettings {"
+      }
+    ],
+    "usedBy": [
+      "src/components/settings/DesignDashboard.tsx"
+    ]
+  },
+  "resetCustomFont": {
+    "name": "resetCustomFont",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/settings/design-storage.ts",
+        "signature": "  export function resetCustomFont(settings: DesignSettings): DesignSettings {"
+      }
+    ],
+    "usedBy": [
+      "src/components/settings/DesignDashboard.tsx"
+    ]
+  },
+  "FontSettings": {
+    "name": "FontSettings",
+    "files": [
+      {
+        "kind": "type",
+        "file": "src/lib/theme-settings.ts",
+        "signature": "  export type FontSettings = DesignSettings[\"typography\"] & {"
+      }
+    ],
+    "usedBy": []
+  },
+  "LandingPageSettings": {
+    "name": "LandingPageSettings",
+    "files": [
+      {
+        "kind": "type",
+        "file": "src/lib/theme-settings.ts",
+        "signature": "  export type LandingPageSettings = {"
+      }
+    ],
+    "usedBy": []
+  },
+  "HeaderFooterSettings": {
+    "name": "HeaderFooterSettings",
+    "files": [
+      {
+        "kind": "type",
+        "file": "src/lib/theme-settings.ts",
+        "signature": "  export type HeaderFooterSettings = {"
+      }
+    ],
+    "usedBy": []
+  },
+  "getThemeSettings": {
+    "name": "getThemeSettings",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/theme-settings.ts",
+        "signature": "  export function getThemeSettings() {"
+      }
+    ],
+    "usedBy": [
+      "src/app/layout.tsx"
+    ]
+  },
+  "getLandingSettings": {
+    "name": "getLandingSettings",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/theme-settings.ts",
+        "signature": "  export function getLandingSettings(_locale: \"fa\" | \"en\" = \"fa\"): LandingPageSettings {"
+      }
+    ],
+    "usedBy": [
+      "src/app/en/page.tsx",
+      "src/app/page.tsx"
+    ]
+  },
+  "getFontSettings": {
+    "name": "getFontSettings",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/theme-settings.ts",
+        "signature": "  export function getFontSettings() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "getDesignPresets": {
+    "name": "getDesignPresets",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/theme-settings.ts",
+        "signature": "  export function getDesignPresets() {"
+      }
+    ],
+    "usedBy": []
+  },
+  "themeSettingsToCssVariables": {
+    "name": "themeSettingsToCssVariables",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/theme-settings.ts",
+        "signature": "  export function themeSettingsToCssVariables(settings: DesignSettings): CSSProperties {"
+      }
+    ],
+    "usedBy": [
+      "src/app/layout.tsx"
+    ]
+  },
+  "PaymentRequestResult": {
+    "name": "PaymentRequestResult",
+    "files": [
+      {
+        "kind": "type",
+        "file": "src/lib/zarinpal.ts",
+        "signature": "  export type PaymentRequestResult = {"
+      }
+    ],
+    "usedBy": []
+  },
+  "PaymentVerifyResult": {
+    "name": "PaymentVerifyResult",
+    "files": [
+      {
+        "kind": "type",
+        "file": "src/lib/zarinpal.ts",
+        "signature": "  export type PaymentVerifyResult = {"
+      }
+    ],
+    "usedBy": []
+  },
+  "requestPayment": {
+    "name": "requestPayment",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/zarinpal.ts",
+        "signature": "  export async function requestPayment(params: {"
+      }
+    ],
+    "usedBy": [
+      "src/app/actions/payment.ts"
+    ]
+  },
+  "verifyPayment": {
+    "name": "verifyPayment",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/lib/zarinpal.ts",
+        "signature": "  export async function verifyPayment(params: {"
+      }
+    ],
+    "usedBy": [
+      "src/app/api/payment/callback/route.ts"
+    ]
+  },
+  "proxy": {
+    "name": "proxy",
+    "files": [
+      {
+        "kind": "function",
+        "file": "src/proxy.ts",
+        "signature": "  export function proxy(request: NextRequest) {"
+      }
+    ],
+    "usedBy": []
+  },
+  "config": {
+    "name": "config",
+    "files": [
+      {
+        "kind": "const",
+        "file": "src/proxy.ts",
+        "signature": "  export const config = {"
+      }
+    ],
+    "usedBy": []
+  }
+}

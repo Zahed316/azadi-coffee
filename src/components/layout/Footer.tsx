@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { localePath, type Locale } from "@/lib/i18n";
 import type { HeaderFooterSettings } from "@/lib/theme-settings";
-import type { NavigationItem } from "@/lib/wordpress";
+import type { NavigationItem } from "./Header";
 
 export function Footer({
   locale = "fa",

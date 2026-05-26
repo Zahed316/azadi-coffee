@@ -3,8 +3,8 @@ import { PageStackLayout } from "@/components/page-stack/PageStackLayout";
 import type { StackPanel } from "@/components/page-stack/PagePanel";
 import { FeaturedProducts } from "@/components/sections/FeaturedProducts";
 import { HeroSection } from "@/components/sections/HeroSection";
-import { getProducts } from "@/lib/woocommerce";
-import { getPosts } from "@/lib/wordpress";
+import { getProducts } from "@/data/products";
+import { getPosts } from "@/data/posts";
 import { getLandingSettings } from "@/lib/theme-settings";
 
 export default async function Home() {

@@ -1,7 +1,5 @@
 import { NextResponse } from "next/server";
-import { createWooOrder } from "@/lib/woocommerce/orders";
-
-const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
+import { createOrder } from "@/lib/orders/store";
 
 export async function POST(request: Request) {
   try {
@@ -17,7 +15,6 @@ export async function POST(request: Request) {
     const phone = typeof body.phone === "string" ? body.phone.trim() : "";
     const address = typeof body.address === "string" ? body.address.trim() : "";
     const paymentMethod = typeof body.paymentMethod === "string" ? body.paymentMethod : "zarinpal";
-    const paymentMethodTitle = typeof body.paymentMethodTitle === "string" ? body.paymentMethodTitle : "زرین پال";
 
     if (!Array.isArray(body.items) || body.items.length === 0) {
       return NextResponse.json(
@@ -49,21 +46,18 @@ export async function POST(request: Request) {
       quantity: Math.max(1, Number(item.quantity) || 1),
     }));
 
-    const order = await createWooOrder({
+    const order = createOrder({
       phone,
       address,
       paymentMethod,
-      paymentMethodTitle,
       items,
     });
 
     return NextResponse.json({
       success: true,
       orderId: order.id,
-      orderNumber: order.number,
-      total: order.total,
-      redirectUrl: `${siteUrl}/order/${order.id}?status=pending`,
-      callbackUrl: `${siteUrl}/api/payment/callback?order_id=${order.id}`,
+      orderNumber: order.orderNumber,
+      totalToman: order.totalToman,
     });
   } catch (error) {
     console.error("Checkout error:", error);

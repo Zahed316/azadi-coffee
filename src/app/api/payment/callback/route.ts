@@ -1,5 +1,6 @@
 import { NextResponse } from "next/server";
-import { getWooOrder, updateWooOrderStatus } from "@/lib/woocommerce/orders";
+import { getOrder, updateOrderStatus } from "@/lib/orders/store";
+import { verifyPayment } from "@/lib/zarinpal";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "http://localhost:3000";
 
@@ -17,26 +18,31 @@ export async function GET(request: Request) {
     return redirectTo("/");
   }
 
-  const numericOrderId = Number(orderId);
-  if (!Number.isFinite(numericOrderId)) {
-    return redirectTo("/");
-  }
-
   try {
-    const order = await getWooOrder(numericOrderId);
+    const order = getOrder(orderId);
 
     if (!order) {
       return redirectTo(`/order/${orderId}?status=error`);
     }
 
-    const paymentSuccessful = status === "OK" || status === "1" || authority === "000000000000000000000000000000000000";
+    if (status !== "OK" && status !== "1") {
+      updateOrderStatus(orderId, "failed");
+      return redirectTo(`/order/${orderId}?status=failed`);
+    }
 
-    if (paymentSuccessful) {
-      await updateWooOrderStatus(numericOrderId, "processing");
+    if (!authority) {
+      updateOrderStatus(orderId, "failed");
+      return redirectTo(`/order/${orderId}?status=failed`);
+    }
+
+    const result = await verifyPayment({ authority, amount: order.totalToman });
+
+    if (result.success) {
+      updateOrderStatus(orderId, "completed", String(result.refId));
       return redirectTo(`/order/${orderId}?status=success`);
     }
 
-    await updateWooOrderStatus(numericOrderId, "failed");
+    updateOrderStatus(orderId, "failed");
     return redirectTo(`/order/${orderId}?status=failed`);
   } catch (error) {
     console.error("Payment callback error:", error);

@@ -75,3 +75,11 @@ export const posts: BlogPost[] = [
 export function getPost(slug: string) {
   return posts.find((post) => post.slug === slug);
 }
+
+export function getPosts(_locale?: string) {
+  return posts;
+}
+
+export function getPostBySlug(slug: string, _locale?: string) {
+  return posts.find((post) => post.slug === slug) ?? null;
+}

@@ -2,7 +2,7 @@
 
 export default function EnglishErrorPage({ reset }: { error: Error; reset: () => void }) {
   return (
-    <div className="container-shell grid min-h-[60vh] place-items-center py-12">
+    <div className="container-shell grid min-h-[60vh] place-items-center py-12" dir="ltr">
       <div className="max-w-md text-center">
         <h1 className="text-4xl font-bold">Error</h1>
         <p className="mt-4 leading-8 text-stone">

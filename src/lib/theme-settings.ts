@@ -1,6 +1,5 @@
 import type { CSSProperties } from "react";
 import { defaultDesignSettings, designPresets, type DesignSettings } from "@/lib/settings/design-presets";
-import { safeApiFetch } from "./api-client";
 
 export type FontSettings = DesignSettings["typography"] & {
   persianFont?: string;
@@ -41,35 +40,20 @@ function mergeThemeSettings(value: Partial<DesignSettings> | null | undefined): 
   };
 }
 
-export async function getThemeSettings() {
-  const settings = await safeApiFetch<Partial<DesignSettings>>("azadi/v1/theme-settings", defaultDesignSettings);
-  return mergeThemeSettings(settings);
+export function getThemeSettings() {
+  return defaultDesignSettings;
 }
 
-export async function getLandingPageSettings(locale: "fa" | "en" = "fa") {
-  return safeApiFetch<LandingPageSettings>("azadi/v1/landing-settings", {}, { params: { locale } });
+export function getLandingSettings(_locale: "fa" | "en" = "fa"): LandingPageSettings {
+  return {};
 }
 
-export const getLandingSettings = getLandingPageSettings;
-
-export async function getFontSettings() {
-  return safeApiFetch<FontSettings>("azadi/v1/font-settings", defaultDesignSettings.typography);
+export function getFontSettings() {
+  return defaultDesignSettings.typography;
 }
 
-export async function getDesignPresets() {
-  return safeApiFetch("azadi/v1/design-presets", designPresets);
-}
-
-export async function getHeaderSettings(locale: "fa" | "en" = "fa") {
-  return safeApiFetch<HeaderFooterSettings>("azadi/v1/header-settings", {}, { params: { locale } });
-}
-
-export async function getFooterSettings(locale: "fa" | "en" = "fa") {
-  return safeApiFetch<HeaderFooterSettings>("azadi/v1/footer-settings", {}, { params: { locale } });
-}
-
-export async function getComponentSettings() {
-  return safeApiFetch<Record<string, unknown>>("azadi/v1/component-settings", {});
+export function getDesignPresets() {
+  return designPresets;
 }
 
 export function themeSettingsToCssVariables(settings: DesignSettings): CSSProperties {

@@ -1,8 +1,12 @@
 import Link from "next/link";
 import { localePath, type Locale } from "@/lib/i18n";
-import type { NavigationItem } from "@/lib/wordpress";
 import { LanguageSwitch } from "./LanguageSwitch";
 import { CartButton } from "../cart/CartButton";
+
+export type NavigationItem = {
+  label: string;
+  href: string;
+};
 
 const nav = {
   fa: [

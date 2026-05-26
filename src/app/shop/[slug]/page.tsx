@@ -4,7 +4,7 @@ import { PageShell } from "@/components/layout/PageShell";
 import { ProductBuyPanel } from "@/components/product/ProductBuyPanel";
 import { formatRial, formatToman } from "@/lib/format/currency";
 import { productJsonLd } from "@/lib/seo/schema";
-import { getProductBySlug, getProducts } from "@/lib/woocommerce";
+import { getProductBySlug, getProducts } from "@/data/products";
 
 export async function generateStaticParams() {
   const products = await getProducts("fa");

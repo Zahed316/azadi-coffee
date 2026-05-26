@@ -1,0 +1,1436 @@
+{
+  "src/app/about/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/actions/contact.ts": {
+    "directImporters": [
+      "src/components/forms/ContactForm.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/contact/page.tsx",
+      "src/app/en/contact/page.tsx",
+      "src/components/forms/ContactForm.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/actions/payment.ts": {
+    "directImporters": [
+      "src/components/cart/PayButton.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/order/[id]/page.tsx",
+      "src/components/cart/OrderStatus.tsx",
+      "src/components/cart/PayButton.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/actions/wholesale.ts": {
+    "directImporters": [
+      "src/components/forms/WholesaleForm.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/en/wholesale/page.tsx",
+      "src/app/wholesale/page.tsx",
+      "src/components/forms/WholesaleForm.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/api/checkout/route.ts": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/api/payment/callback/route.ts": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/blog/[slug]/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/blog/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/cart/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/checkout/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/contact/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/dashboard/design/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/en/about/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/en/blog/[slug]/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/en/blog/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/en/cart/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/en/checkout/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/en/contact/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/en/error.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/en/loading.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/en/not-found.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/en/order/[id]/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/en/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/en/roastery/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/en/shop/[slug]/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/en/shop/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/en/wholesale/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/error.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/global-error.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/layout.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "high",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/loading.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/not-found.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/order/[id]/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "high",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/roastery/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/robots.ts": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/shop/[slug]/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/shop/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/sitemap.ts": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/app/wholesale/page.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/blog/BlogCard.tsx": {
+    "directImporters": [
+      "src/app/blog/page.tsx",
+      "src/app/en/blog/page.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/blog/page.tsx",
+      "src/app/en/blog/page.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/cart/CartButton.tsx": {
+    "directImporters": [
+      "src/components/layout/Header.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/about/page.tsx",
+      "src/app/blog/[slug]/page.tsx",
+      "src/app/blog/page.tsx",
+      "src/app/cart/page.tsx",
+      "src/app/checkout/page.tsx",
+      "src/app/contact/page.tsx",
+      "src/app/en/about/page.tsx",
+      "src/app/en/blog/[slug]/page.tsx",
+      "src/app/en/blog/page.tsx",
+      "src/app/en/cart/page.tsx",
+      "src/app/en/checkout/page.tsx",
+      "src/app/en/contact/page.tsx",
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/en/roastery/page.tsx",
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/en/shop/page.tsx",
+      "src/app/en/wholesale/page.tsx",
+      "src/app/order/[id]/page.tsx",
+      "src/app/roastery/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/app/shop/page.tsx",
+      "src/app/wholesale/page.tsx",
+      "src/components/layout/Header.tsx",
+      "src/components/layout/PageShell.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/cart/CartContent.tsx": {
+    "directImporters": [
+      "src/app/cart/page.tsx",
+      "src/app/en/cart/page.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/cart/page.tsx",
+      "src/app/en/cart/page.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/cart/CartProvider.tsx": {
+    "directImporters": [
+      "src/app/layout.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/layout.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/cart/CheckoutForm.tsx": {
+    "directImporters": [
+      "src/app/checkout/page.tsx",
+      "src/app/en/checkout/page.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/checkout/page.tsx",
+      "src/app/en/checkout/page.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/cart/OrderStatus.tsx": {
+    "directImporters": [
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/order/[id]/page.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/order/[id]/page.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/cart/PayButton.tsx": {
+    "directImporters": [
+      "src/components/cart/OrderStatus.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/order/[id]/page.tsx",
+      "src/components/cart/OrderStatus.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/cart/QuantityStepper.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/forms/ContactForm.tsx": {
+    "directImporters": [
+      "src/app/contact/page.tsx",
+      "src/app/en/contact/page.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/contact/page.tsx",
+      "src/app/en/contact/page.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/forms/WholesaleForm.tsx": {
+    "directImporters": [
+      "src/app/en/wholesale/page.tsx",
+      "src/app/wholesale/page.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/en/wholesale/page.tsx",
+      "src/app/wholesale/page.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/layout/DocumentLocaleSync.tsx": {
+    "directImporters": [
+      "src/app/layout.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/layout.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/layout/Footer.tsx": {
+    "directImporters": [
+      "src/components/layout/PageShell.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/about/page.tsx",
+      "src/app/blog/[slug]/page.tsx",
+      "src/app/blog/page.tsx",
+      "src/app/cart/page.tsx",
+      "src/app/checkout/page.tsx",
+      "src/app/contact/page.tsx",
+      "src/app/en/about/page.tsx",
+      "src/app/en/blog/[slug]/page.tsx",
+      "src/app/en/blog/page.tsx",
+      "src/app/en/cart/page.tsx",
+      "src/app/en/checkout/page.tsx",
+      "src/app/en/contact/page.tsx",
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/en/roastery/page.tsx",
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/en/shop/page.tsx",
+      "src/app/en/wholesale/page.tsx",
+      "src/app/order/[id]/page.tsx",
+      "src/app/roastery/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/app/shop/page.tsx",
+      "src/app/wholesale/page.tsx",
+      "src/components/layout/PageShell.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/layout/Header.tsx": {
+    "directImporters": [
+      "src/components/layout/PageShell.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/about/page.tsx",
+      "src/app/blog/[slug]/page.tsx",
+      "src/app/blog/page.tsx",
+      "src/app/cart/page.tsx",
+      "src/app/checkout/page.tsx",
+      "src/app/contact/page.tsx",
+      "src/app/en/about/page.tsx",
+      "src/app/en/blog/[slug]/page.tsx",
+      "src/app/en/blog/page.tsx",
+      "src/app/en/cart/page.tsx",
+      "src/app/en/checkout/page.tsx",
+      "src/app/en/contact/page.tsx",
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/en/roastery/page.tsx",
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/en/shop/page.tsx",
+      "src/app/en/wholesale/page.tsx",
+      "src/app/order/[id]/page.tsx",
+      "src/app/roastery/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/app/shop/page.tsx",
+      "src/app/wholesale/page.tsx",
+      "src/components/layout/PageShell.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/layout/LanguageSwitch.tsx": {
+    "directImporters": [
+      "src/components/layout/Header.tsx",
+      "src/components/page-stack/ActivePanel.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/about/page.tsx",
+      "src/app/blog/[slug]/page.tsx",
+      "src/app/blog/page.tsx",
+      "src/app/cart/page.tsx",
+      "src/app/checkout/page.tsx",
+      "src/app/contact/page.tsx",
+      "src/app/en/about/page.tsx",
+      "src/app/en/blog/[slug]/page.tsx",
+      "src/app/en/blog/page.tsx",
+      "src/app/en/cart/page.tsx",
+      "src/app/en/checkout/page.tsx",
+      "src/app/en/contact/page.tsx",
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/en/page.tsx",
+      "src/app/en/roastery/page.tsx",
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/en/shop/page.tsx",
+      "src/app/en/wholesale/page.tsx",
+      "src/app/order/[id]/page.tsx",
+      "src/app/page.tsx",
+      "src/app/roastery/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/app/shop/page.tsx",
+      "src/app/wholesale/page.tsx",
+      "src/components/layout/Header.tsx",
+      "src/components/layout/PageShell.tsx",
+      "src/components/page-stack/ActivePanel.tsx",
+      "src/components/page-stack/PageStackLayout.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/layout/PageShell.tsx": {
+    "directImporters": [
+      "src/app/about/page.tsx",
+      "src/app/blog/[slug]/page.tsx",
+      "src/app/blog/page.tsx",
+      "src/app/cart/page.tsx",
+      "src/app/checkout/page.tsx",
+      "src/app/contact/page.tsx",
+      "src/app/en/about/page.tsx",
+      "src/app/en/blog/[slug]/page.tsx",
+      "src/app/en/blog/page.tsx",
+      "src/app/en/cart/page.tsx",
+      "src/app/en/checkout/page.tsx",
+      "src/app/en/contact/page.tsx",
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/en/roastery/page.tsx",
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/en/shop/page.tsx",
+      "src/app/en/wholesale/page.tsx",
+      "src/app/order/[id]/page.tsx",
+      "src/app/roastery/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/app/shop/page.tsx",
+      "src/app/wholesale/page.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/about/page.tsx",
+      "src/app/blog/[slug]/page.tsx",
+      "src/app/blog/page.tsx",
+      "src/app/cart/page.tsx",
+      "src/app/checkout/page.tsx",
+      "src/app/contact/page.tsx",
+      "src/app/en/about/page.tsx",
+      "src/app/en/blog/[slug]/page.tsx",
+      "src/app/en/blog/page.tsx",
+      "src/app/en/cart/page.tsx",
+      "src/app/en/checkout/page.tsx",
+      "src/app/en/contact/page.tsx",
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/en/roastery/page.tsx",
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/en/shop/page.tsx",
+      "src/app/en/wholesale/page.tsx",
+      "src/app/order/[id]/page.tsx",
+      "src/app/roastery/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/app/shop/page.tsx",
+      "src/app/wholesale/page.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/page-stack/ActivePanel.tsx": {
+    "directImporters": [
+      "src/components/page-stack/PageStackLayout.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/en/page.tsx",
+      "src/app/page.tsx",
+      "src/components/page-stack/PageStackLayout.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/page-stack/CollapsedTab.tsx": {
+    "directImporters": [
+      "src/components/page-stack/PageStackLayout.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/en/page.tsx",
+      "src/app/page.tsx",
+      "src/components/page-stack/PageStackLayout.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/page-stack/PagePanel.tsx": {
+    "directImporters": [
+      "src/components/page-stack/ActivePanel.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/en/page.tsx",
+      "src/app/page.tsx",
+      "src/components/page-stack/ActivePanel.tsx",
+      "src/components/page-stack/PageStackLayout.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/page-stack/PageStackLayout.tsx": {
+    "directImporters": [
+      "src/app/en/page.tsx",
+      "src/app/page.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/en/page.tsx",
+      "src/app/page.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/product/ProductBuyPanel.tsx": {
+    "directImporters": [
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/shop/[slug]/page.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/shop/[slug]/page.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/product/ProductCard.tsx": {
+    "directImporters": [
+      "src/app/en/shop/page.tsx",
+      "src/app/shop/page.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/en/shop/page.tsx",
+      "src/app/shop/page.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/sections/FeaturedProducts.tsx": {
+    "directImporters": [
+      "src/app/en/page.tsx",
+      "src/app/page.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/en/page.tsx",
+      "src/app/page.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/sections/HeroSection.tsx": {
+    "directImporters": [
+      "src/app/en/page.tsx",
+      "src/app/page.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/en/page.tsx",
+      "src/app/page.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/settings/DesignDashboard.tsx": {
+    "directImporters": [
+      "src/app/dashboard/design/page.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/dashboard/design/page.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/settings/DesignSettingsProvider.tsx": {
+    "directImporters": [
+      "src/app/layout.tsx",
+      "src/components/settings/DesignDashboard.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/dashboard/design/page.tsx",
+      "src/app/layout.tsx",
+      "src/components/settings/DesignDashboard.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/components/ui/ButtonLink.tsx": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/data/posts.ts": {
+    "directImporters": [
+      "src/app/blog/[slug]/page.tsx",
+      "src/app/blog/page.tsx",
+      "src/app/en/blog/[slug]/page.tsx",
+      "src/app/en/blog/page.tsx",
+      "src/app/en/page.tsx",
+      "src/app/page.tsx",
+      "src/data/posts.test.ts"
+    ],
+    "transitiveConsumers": [
+      "src/app/blog/[slug]/page.tsx",
+      "src/app/blog/page.tsx",
+      "src/app/en/blog/[slug]/page.tsx",
+      "src/app/en/blog/page.tsx",
+      "src/app/en/page.tsx",
+      "src/app/page.tsx",
+      "src/data/posts.test.ts"
+    ],
+    "tests": [
+      "src/data/posts.test.ts"
+    ],
+    "testCount": 1,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npx vitest src/data/posts.test.ts"
+    ]
+  },
+  "src/data/products.ts": {
+    "directImporters": [
+      "src/app/en/page.tsx",
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/en/shop/page.tsx",
+      "src/app/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/app/shop/page.tsx",
+      "src/data/products.test.ts"
+    ],
+    "transitiveConsumers": [
+      "src/app/en/page.tsx",
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/en/shop/page.tsx",
+      "src/app/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/app/shop/page.tsx",
+      "src/data/products.test.ts"
+    ],
+    "tests": [
+      "src/data/products.test.ts"
+    ],
+    "testCount": 1,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npx vitest src/data/products.test.ts"
+    ]
+  },
+  "src/lib/cart/cart-context.tsx": {
+    "directImporters": [
+      "src/components/cart/CartButton.tsx",
+      "src/components/cart/CartContent.tsx",
+      "src/components/cart/CartProvider.tsx",
+      "src/components/cart/CheckoutForm.tsx",
+      "src/components/product/ProductBuyPanel.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/about/page.tsx",
+      "src/app/blog/[slug]/page.tsx",
+      "src/app/blog/page.tsx",
+      "src/app/cart/page.tsx",
+      "src/app/checkout/page.tsx",
+      "src/app/contact/page.tsx",
+      "src/app/en/about/page.tsx",
+      "src/app/en/blog/[slug]/page.tsx",
+      "src/app/en/blog/page.tsx",
+      "src/app/en/cart/page.tsx",
+      "src/app/en/checkout/page.tsx",
+      "src/app/en/contact/page.tsx",
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/en/roastery/page.tsx",
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/en/shop/page.tsx",
+      "src/app/en/wholesale/page.tsx",
+      "src/app/layout.tsx",
+      "src/app/order/[id]/page.tsx",
+      "src/app/roastery/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/app/shop/page.tsx",
+      "src/app/wholesale/page.tsx",
+      "src/components/cart/CartButton.tsx",
+      "src/components/cart/CartContent.tsx",
+      "src/components/cart/CartProvider.tsx",
+      "src/components/cart/CheckoutForm.tsx",
+      "src/components/layout/Header.tsx",
+      "src/components/layout/PageShell.tsx",
+      "src/components/product/ProductBuyPanel.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/lib/cart/cart-reducer.ts": {
+    "directImporters": [
+      "src/lib/cart/cart-context.tsx",
+      "src/lib/cart/cart-reducer.test.ts"
+    ],
+    "transitiveConsumers": [
+      "src/app/about/page.tsx",
+      "src/app/blog/[slug]/page.tsx",
+      "src/app/blog/page.tsx",
+      "src/app/cart/page.tsx",
+      "src/app/checkout/page.tsx",
+      "src/app/contact/page.tsx",
+      "src/app/en/about/page.tsx",
+      "src/app/en/blog/[slug]/page.tsx",
+      "src/app/en/blog/page.tsx",
+      "src/app/en/cart/page.tsx",
+      "src/app/en/checkout/page.tsx",
+      "src/app/en/contact/page.tsx",
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/en/roastery/page.tsx",
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/en/shop/page.tsx",
+      "src/app/en/wholesale/page.tsx",
+      "src/app/layout.tsx",
+      "src/app/order/[id]/page.tsx",
+      "src/app/roastery/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/app/shop/page.tsx",
+      "src/app/wholesale/page.tsx",
+      "src/components/cart/CartButton.tsx",
+      "src/components/cart/CartContent.tsx",
+      "src/components/cart/CartProvider.tsx",
+      "src/components/cart/CheckoutForm.tsx",
+      "src/components/layout/Header.tsx",
+      "src/components/layout/PageShell.tsx",
+      "src/components/product/ProductBuyPanel.tsx",
+      "src/lib/cart/cart-context.tsx",
+      "src/lib/cart/cart-reducer.test.ts"
+    ],
+    "tests": [
+      "src/lib/cart/cart-reducer.test.ts"
+    ],
+    "testCount": 1,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npx vitest src/lib/cart/cart-reducer.test.ts"
+    ]
+  },
+  "src/lib/cart/cart-storage.ts": {
+    "directImporters": [
+      "src/lib/cart/cart-context.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/about/page.tsx",
+      "src/app/blog/[slug]/page.tsx",
+      "src/app/blog/page.tsx",
+      "src/app/cart/page.tsx",
+      "src/app/checkout/page.tsx",
+      "src/app/contact/page.tsx",
+      "src/app/en/about/page.tsx",
+      "src/app/en/blog/[slug]/page.tsx",
+      "src/app/en/blog/page.tsx",
+      "src/app/en/cart/page.tsx",
+      "src/app/en/checkout/page.tsx",
+      "src/app/en/contact/page.tsx",
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/en/roastery/page.tsx",
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/en/shop/page.tsx",
+      "src/app/en/wholesale/page.tsx",
+      "src/app/layout.tsx",
+      "src/app/order/[id]/page.tsx",
+      "src/app/roastery/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/app/shop/page.tsx",
+      "src/app/wholesale/page.tsx",
+      "src/components/cart/CartButton.tsx",
+      "src/components/cart/CartContent.tsx",
+      "src/components/cart/CartProvider.tsx",
+      "src/components/cart/CheckoutForm.tsx",
+      "src/components/layout/Header.tsx",
+      "src/components/layout/PageShell.tsx",
+      "src/components/product/ProductBuyPanel.tsx",
+      "src/lib/cart/cart-context.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/lib/cart/types.ts": {
+    "directImporters": [
+      "src/lib/cart/cart-context.tsx",
+      "src/lib/cart/cart-storage.ts"
+    ],
+    "transitiveConsumers": [
+      "src/app/about/page.tsx",
+      "src/app/blog/[slug]/page.tsx",
+      "src/app/blog/page.tsx",
+      "src/app/cart/page.tsx",
+      "src/app/checkout/page.tsx",
+      "src/app/contact/page.tsx",
+      "src/app/en/about/page.tsx",
+      "src/app/en/blog/[slug]/page.tsx",
+      "src/app/en/blog/page.tsx",
+      "src/app/en/cart/page.tsx",
+      "src/app/en/checkout/page.tsx",
+      "src/app/en/contact/page.tsx",
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/en/roastery/page.tsx",
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/en/shop/page.tsx",
+      "src/app/en/wholesale/page.tsx",
+      "src/app/layout.tsx",
+      "src/app/order/[id]/page.tsx",
+      "src/app/roastery/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/app/shop/page.tsx",
+      "src/app/wholesale/page.tsx",
+      "src/components/cart/CartButton.tsx",
+      "src/components/cart/CartContent.tsx",
+      "src/components/cart/CartProvider.tsx",
+      "src/components/cart/CheckoutForm.tsx",
+      "src/components/layout/Header.tsx",
+      "src/components/layout/PageShell.tsx",
+      "src/components/product/ProductBuyPanel.tsx",
+      "src/lib/cart/cart-context.tsx",
+      "src/lib/cart/cart-storage.ts"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/lib/format/currency.ts": {
+    "directImporters": [
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/components/cart/CartContent.tsx",
+      "src/components/product/ProductCard.tsx",
+      "src/components/sections/FeaturedProducts.tsx",
+      "src/lib/format/currency.test.ts",
+      "src/lib/seo/schema.ts"
+    ],
+    "transitiveConsumers": [
+      "src/app/cart/page.tsx",
+      "src/app/en/cart/page.tsx",
+      "src/app/en/page.tsx",
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/en/shop/page.tsx",
+      "src/app/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/app/shop/page.tsx",
+      "src/components/cart/CartContent.tsx",
+      "src/components/product/ProductCard.tsx",
+      "src/components/sections/FeaturedProducts.tsx",
+      "src/lib/format/currency.test.ts",
+      "src/lib/seo/schema.ts"
+    ],
+    "tests": [
+      "src/lib/format/currency.test.ts"
+    ],
+    "testCount": 1,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npx vitest src/lib/format/currency.test.ts"
+    ]
+  },
+  "src/lib/format/persian.ts": {
+    "directImporters": [
+      "src/components/product/ProductCard.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/en/shop/page.tsx",
+      "src/app/shop/page.tsx",
+      "src/components/product/ProductCard.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/lib/i18n.ts": {
+    "directImporters": [
+      "src/components/blog/BlogCard.tsx",
+      "src/components/cart/CartButton.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/components/layout/Header.tsx",
+      "src/components/layout/LanguageSwitch.tsx",
+      "src/components/product/ProductCard.tsx",
+      "src/components/sections/FeaturedProducts.tsx",
+      "src/components/sections/HeroSection.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/about/page.tsx",
+      "src/app/blog/[slug]/page.tsx",
+      "src/app/blog/page.tsx",
+      "src/app/cart/page.tsx",
+      "src/app/checkout/page.tsx",
+      "src/app/contact/page.tsx",
+      "src/app/en/about/page.tsx",
+      "src/app/en/blog/[slug]/page.tsx",
+      "src/app/en/blog/page.tsx",
+      "src/app/en/cart/page.tsx",
+      "src/app/en/checkout/page.tsx",
+      "src/app/en/contact/page.tsx",
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/en/page.tsx",
+      "src/app/en/roastery/page.tsx",
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/en/shop/page.tsx",
+      "src/app/en/wholesale/page.tsx",
+      "src/app/order/[id]/page.tsx",
+      "src/app/page.tsx",
+      "src/app/roastery/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/app/shop/page.tsx",
+      "src/app/wholesale/page.tsx",
+      "src/components/blog/BlogCard.tsx",
+      "src/components/cart/CartButton.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/components/layout/Header.tsx",
+      "src/components/layout/LanguageSwitch.tsx",
+      "src/components/layout/PageShell.tsx",
+      "src/components/page-stack/ActivePanel.tsx",
+      "src/components/page-stack/PageStackLayout.tsx",
+      "src/components/product/ProductCard.tsx",
+      "src/components/sections/FeaturedProducts.tsx",
+      "src/components/sections/HeroSection.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "medium",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/lib/orders/store.ts": {
+    "directImporters": [
+      "src/app/actions/payment.ts",
+      "src/app/api/checkout/route.ts",
+      "src/app/api/payment/callback/route.ts",
+      "src/lib/orders/store.test.ts"
+    ],
+    "transitiveConsumers": [
+      "src/app/actions/payment.ts",
+      "src/app/api/checkout/route.ts",
+      "src/app/api/payment/callback/route.ts",
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/order/[id]/page.tsx",
+      "src/components/cart/OrderStatus.tsx",
+      "src/components/cart/PayButton.tsx",
+      "src/lib/orders/store.test.ts"
+    ],
+    "tests": [
+      "src/lib/orders/store.test.ts"
+    ],
+    "testCount": 1,
+    "risk": "low",
+    "suggestedValidation": [
+      "npx vitest src/lib/orders/store.test.ts"
+    ]
+  },
+  "src/lib/seo/schema.ts": {
+    "directImporters": [
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/shop/[slug]/page.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/shop/[slug]/page.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/lib/settings/design-presets.ts": {
+    "directImporters": [
+      "src/components/settings/DesignDashboard.tsx",
+      "src/components/settings/DesignSettingsProvider.tsx",
+      "src/lib/settings/design-storage.ts",
+      "src/lib/theme-settings.ts"
+    ],
+    "transitiveConsumers": [
+      "src/app/dashboard/design/page.tsx",
+      "src/app/en/page.tsx",
+      "src/app/layout.tsx",
+      "src/app/page.tsx",
+      "src/components/settings/DesignDashboard.tsx",
+      "src/components/settings/DesignSettingsProvider.tsx",
+      "src/lib/settings/design-storage.ts",
+      "src/lib/theme-settings.ts"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/lib/settings/design-storage.ts": {
+    "directImporters": [
+      "src/components/settings/DesignDashboard.tsx",
+      "src/components/settings/DesignSettingsProvider.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/dashboard/design/page.tsx",
+      "src/app/layout.tsx",
+      "src/components/settings/DesignDashboard.tsx",
+      "src/components/settings/DesignSettingsProvider.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/lib/theme-settings.ts": {
+    "directImporters": [
+      "src/app/en/page.tsx",
+      "src/app/layout.tsx",
+      "src/app/page.tsx"
+    ],
+    "transitiveConsumers": [
+      "src/app/en/page.tsx",
+      "src/app/layout.tsx",
+      "src/app/page.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/lib/zarinpal.ts": {
+    "directImporters": [
+      "src/app/actions/payment.ts",
+      "src/app/api/payment/callback/route.ts"
+    ],
+    "transitiveConsumers": [
+      "src/app/actions/payment.ts",
+      "src/app/api/payment/callback/route.ts",
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/order/[id]/page.tsx",
+      "src/components/cart/OrderStatus.tsx",
+      "src/components/cart/PayButton.tsx"
+    ],
+    "tests": [],
+    "testCount": 0,
+    "risk": "low",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "src/proxy.ts": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "high",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  },
+  "next.config.ts": {
+    "directImporters": [],
+    "transitiveConsumers": [],
+    "tests": [],
+    "testCount": 0,
+    "risk": "high",
+    "suggestedValidation": [
+      "npm run build"
+    ]
+  }
+}

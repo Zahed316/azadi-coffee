@@ -1,0 +1,3243 @@
+{
+  "src/app/about/page.tsx": {
+    "imports": [
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "AboutPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/actions/contact.ts": {
+    "imports": [
+      {
+        "name": "Resend",
+        "alias": "Resend",
+        "source": "resend",
+        "resolved": null
+      }
+    ],
+    "importedBy": [
+      "src/components/forms/ContactForm.tsx"
+    ],
+    "exports": [
+      {
+        "name": "submitContact",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/actions/payment.ts": {
+    "imports": [
+      {
+        "name": "redirect",
+        "alias": "redirect",
+        "source": "next/navigation",
+        "resolved": null
+      },
+      {
+        "name": "getOrder",
+        "alias": "getOrder",
+        "source": "src/lib/orders/store",
+        "resolved": [
+          "src/lib/orders/store.ts"
+        ]
+      },
+      {
+        "name": "setOrderAuthority",
+        "alias": "setOrderAuthority",
+        "source": "src/lib/orders/store",
+        "resolved": [
+          "src/lib/orders/store.ts"
+        ]
+      },
+      {
+        "name": "requestPayment",
+        "alias": "requestPayment",
+        "source": "src/lib/zarinpal",
+        "resolved": [
+          "src/lib/zarinpal.ts"
+        ]
+      }
+    ],
+    "importedBy": [
+      "src/components/cart/PayButton.tsx"
+    ],
+    "exports": [
+      {
+        "name": "initiatePayment",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/actions/wholesale.ts": {
+    "imports": [
+      {
+        "name": "Resend",
+        "alias": "Resend",
+        "source": "resend",
+        "resolved": null
+      }
+    ],
+    "importedBy": [
+      "src/components/forms/WholesaleForm.tsx"
+    ],
+    "exports": [
+      {
+        "name": "submitWholesale",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/api/checkout/route.ts": {
+    "imports": [
+      {
+        "name": "NextResponse",
+        "alias": "NextResponse",
+        "source": "next/server",
+        "resolved": null
+      },
+      {
+        "name": "createOrder",
+        "alias": "createOrder",
+        "source": "src/lib/orders/store",
+        "resolved": [
+          "src/lib/orders/store.ts"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "POST",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/api/payment/callback/route.ts": {
+    "imports": [
+      {
+        "name": "NextResponse",
+        "alias": "NextResponse",
+        "source": "next/server",
+        "resolved": null
+      },
+      {
+        "name": "getOrder",
+        "alias": "getOrder",
+        "source": "src/lib/orders/store",
+        "resolved": [
+          "src/lib/orders/store.ts"
+        ]
+      },
+      {
+        "name": "updateOrderStatus",
+        "alias": "updateOrderStatus",
+        "source": "src/lib/orders/store",
+        "resolved": [
+          "src/lib/orders/store.ts"
+        ]
+      },
+      {
+        "name": "verifyPayment",
+        "alias": "verifyPayment",
+        "source": "src/lib/zarinpal",
+        "resolved": [
+          "src/lib/zarinpal.ts"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "GET",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/blog/[slug]/page.tsx": {
+    "imports": [
+      {
+        "name": "notFound",
+        "alias": "notFound",
+        "source": "next/navigation",
+        "resolved": null
+      },
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      },
+      {
+        "name": "getPostBySlug",
+        "alias": "getPostBySlug",
+        "source": "src/data/posts",
+        "resolved": [
+          "src/data/posts.ts"
+        ]
+      },
+      {
+        "name": "getPosts",
+        "alias": "getPosts",
+        "source": "src/data/posts",
+        "resolved": [
+          "src/data/posts.ts"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "generateStaticParams",
+        "kind": "function"
+      },
+      {
+        "name": "generateMetadata",
+        "kind": "function"
+      },
+      {
+        "name": "BlogPostPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/blog/page.tsx": {
+    "imports": [
+      {
+        "name": "BlogCard",
+        "alias": "BlogCard",
+        "source": "src/components/blog/BlogCard",
+        "resolved": [
+          "src/components/blog/BlogCard.tsx"
+        ]
+      },
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      },
+      {
+        "name": "getPosts",
+        "alias": "getPosts",
+        "source": "src/data/posts",
+        "resolved": [
+          "src/data/posts.ts"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "BlogPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/cart/page.tsx": {
+    "imports": [
+      {
+        "name": "CartContent",
+        "alias": "CartContent",
+        "source": "src/components/cart/CartContent",
+        "resolved": [
+          "src/components/cart/CartContent.tsx"
+        ]
+      },
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "CartPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/checkout/page.tsx": {
+    "imports": [
+      {
+        "name": "CheckoutForm",
+        "alias": "CheckoutForm",
+        "source": "src/components/cart/CheckoutForm",
+        "resolved": [
+          "src/components/cart/CheckoutForm.tsx"
+        ]
+      },
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "CheckoutPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/contact/page.tsx": {
+    "imports": [
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      },
+      {
+        "name": "ContactForm",
+        "alias": "ContactForm",
+        "source": "src/components/forms/ContactForm",
+        "resolved": [
+          "src/components/forms/ContactForm.tsx"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "ContactPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/dashboard/design/page.tsx": {
+    "imports": [
+      {
+        "name": "DesignDashboard",
+        "alias": "DesignDashboard",
+        "source": "src/components/settings/DesignDashboard",
+        "resolved": [
+          "src/components/settings/DesignDashboard.tsx"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "DesignSettingsPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/en/about/page.tsx": {
+    "imports": [
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "EnglishAboutPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/en/blog/[slug]/page.tsx": {
+    "imports": [
+      {
+        "name": "notFound",
+        "alias": "notFound",
+        "source": "next/navigation",
+        "resolved": null
+      },
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      },
+      {
+        "name": "getPostBySlug",
+        "alias": "getPostBySlug",
+        "source": "src/data/posts",
+        "resolved": [
+          "src/data/posts.ts"
+        ]
+      },
+      {
+        "name": "getPosts",
+        "alias": "getPosts",
+        "source": "src/data/posts",
+        "resolved": [
+          "src/data/posts.ts"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "generateStaticParams",
+        "kind": "function"
+      },
+      {
+        "name": "generateMetadata",
+        "kind": "function"
+      },
+      {
+        "name": "EnglishBlogPostPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/en/blog/page.tsx": {
+    "imports": [
+      {
+        "name": "BlogCard",
+        "alias": "BlogCard",
+        "source": "src/components/blog/BlogCard",
+        "resolved": [
+          "src/components/blog/BlogCard.tsx"
+        ]
+      },
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      },
+      {
+        "name": "getPosts",
+        "alias": "getPosts",
+        "source": "src/data/posts",
+        "resolved": [
+          "src/data/posts.ts"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "EnglishBlogPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/en/cart/page.tsx": {
+    "imports": [
+      {
+        "name": "CartContent",
+        "alias": "CartContent",
+        "source": "src/components/cart/CartContent",
+        "resolved": [
+          "src/components/cart/CartContent.tsx"
+        ]
+      },
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "EnglishCartPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/en/checkout/page.tsx": {
+    "imports": [
+      {
+        "name": "CheckoutForm",
+        "alias": "CheckoutForm",
+        "source": "src/components/cart/CheckoutForm",
+        "resolved": [
+          "src/components/cart/CheckoutForm.tsx"
+        ]
+      },
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "EnglishCheckoutPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/en/contact/page.tsx": {
+    "imports": [
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      },
+      {
+        "name": "ContactForm",
+        "alias": "ContactForm",
+        "source": "src/components/forms/ContactForm",
+        "resolved": [
+          "src/components/forms/ContactForm.tsx"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "EnglishContactPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/en/error.tsx": {
+    "imports": [],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "EnglishErrorPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/en/loading.tsx": {
+    "imports": [],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "EnglishLoadingPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/en/not-found.tsx": {
+    "imports": [
+      {
+        "name": "default",
+        "alias": "Link",
+        "source": "next/link",
+        "resolved": null
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "EnglishNotFound",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/en/order/[id]/page.tsx": {
+    "imports": [
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      },
+      {
+        "name": "OrderStatus",
+        "alias": "OrderStatus",
+        "source": "src/components/cart/OrderStatus",
+        "resolved": [
+          "src/components/cart/OrderStatus.tsx"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "EnglishOrderPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/en/page.tsx": {
+    "imports": [
+      {
+        "name": "PageStackLayout",
+        "alias": "PageStackLayout",
+        "source": "src/components/page-stack/PageStackLayout",
+        "resolved": [
+          "src/components/page-stack/PageStackLayout.tsx"
+        ]
+      },
+      {
+        "name": "FeaturedProducts",
+        "alias": "FeaturedProducts",
+        "source": "src/components/sections/FeaturedProducts",
+        "resolved": [
+          "src/components/sections/FeaturedProducts.tsx"
+        ]
+      },
+      {
+        "name": "HeroSection",
+        "alias": "HeroSection",
+        "source": "src/components/sections/HeroSection",
+        "resolved": [
+          "src/components/sections/HeroSection.tsx"
+        ]
+      },
+      {
+        "name": "getProducts",
+        "alias": "getProducts",
+        "source": "src/data/products",
+        "resolved": [
+          "src/data/products.ts"
+        ]
+      },
+      {
+        "name": "getPosts",
+        "alias": "getPosts",
+        "source": "src/data/posts",
+        "resolved": [
+          "src/data/posts.ts"
+        ]
+      },
+      {
+        "name": "getLandingSettings",
+        "alias": "getLandingSettings",
+        "source": "src/lib/theme-settings",
+        "resolved": [
+          "src/lib/theme-settings.ts"
+        ]
+      },
+      {
+        "name": "default",
+        "alias": "Link",
+        "source": "next/link",
+        "resolved": null
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "EnglishHome",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/en/roastery/page.tsx": {
+    "imports": [
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "EnglishRoasteryPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/en/shop/[slug]/page.tsx": {
+    "imports": [
+      {
+        "name": "notFound",
+        "alias": "notFound",
+        "source": "next/navigation",
+        "resolved": null
+      },
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      },
+      {
+        "name": "ProductBuyPanelEn",
+        "alias": "ProductBuyPanelEn",
+        "source": "src/components/product/ProductBuyPanel",
+        "resolved": [
+          "src/components/product/ProductBuyPanel.tsx"
+        ]
+      },
+      {
+        "name": "formatRial",
+        "alias": "formatRial",
+        "source": "src/lib/format/currency",
+        "resolved": [
+          "src/lib/format/currency.ts"
+        ]
+      },
+      {
+        "name": "formatToman",
+        "alias": "formatToman",
+        "source": "src/lib/format/currency",
+        "resolved": [
+          "src/lib/format/currency.ts"
+        ]
+      },
+      {
+        "name": "productJsonLd",
+        "alias": "productJsonLd",
+        "source": "src/lib/seo/schema",
+        "resolved": [
+          "src/lib/seo/schema.ts"
+        ]
+      },
+      {
+        "name": "getProductBySlug",
+        "alias": "getProductBySlug",
+        "source": "src/data/products",
+        "resolved": [
+          "src/data/products.ts"
+        ]
+      },
+      {
+        "name": "getProducts",
+        "alias": "getProducts",
+        "source": "src/data/products",
+        "resolved": [
+          "src/data/products.ts"
+        ]
+      },
+      {
+        "name": "default",
+        "alias": "Image",
+        "source": "next/image",
+        "resolved": null
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "generateStaticParams",
+        "kind": "function"
+      },
+      {
+        "name": "generateMetadata",
+        "kind": "function"
+      },
+      {
+        "name": "EnglishProductPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/en/shop/page.tsx": {
+    "imports": [
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      },
+      {
+        "name": "ProductCard",
+        "alias": "ProductCard",
+        "source": "src/components/product/ProductCard",
+        "resolved": [
+          "src/components/product/ProductCard.tsx"
+        ]
+      },
+      {
+        "name": "getProducts",
+        "alias": "getProducts",
+        "source": "src/data/products",
+        "resolved": [
+          "src/data/products.ts"
+        ]
+      },
+      {
+        "name": "default",
+        "alias": "Link",
+        "source": "next/link",
+        "resolved": null
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "EnglishShopPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/en/wholesale/page.tsx": {
+    "imports": [
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      },
+      {
+        "name": "WholesaleForm",
+        "alias": "WholesaleForm",
+        "source": "src/components/forms/WholesaleForm",
+        "resolved": [
+          "src/components/forms/WholesaleForm.tsx"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "EnglishWholesalePage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/error.tsx": {
+    "imports": [],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "ErrorPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/global-error.tsx": {
+    "imports": [],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "GlobalError",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/layout.tsx": {
+    "imports": [
+      {
+        "name": "headers",
+        "alias": "headers",
+        "source": "next/headers",
+        "resolved": null
+      },
+      {
+        "name": "DocumentLocaleSync",
+        "alias": "DocumentLocaleSync",
+        "source": "src/components/layout/DocumentLocaleSync",
+        "resolved": [
+          "src/components/layout/DocumentLocaleSync.tsx"
+        ]
+      },
+      {
+        "name": "CartProvider",
+        "alias": "CartProvider",
+        "source": "src/components/cart/CartProvider",
+        "resolved": [
+          "src/components/cart/CartProvider.tsx"
+        ]
+      },
+      {
+        "name": "DesignSettingsProvider",
+        "alias": "DesignSettingsProvider",
+        "source": "src/components/settings/DesignSettingsProvider",
+        "resolved": [
+          "src/components/settings/DesignSettingsProvider.tsx"
+        ]
+      },
+      {
+        "name": "getThemeSettings",
+        "alias": "getThemeSettings",
+        "source": "src/lib/theme-settings",
+        "resolved": [
+          "src/lib/theme-settings.ts"
+        ]
+      },
+      {
+        "name": "themeSettingsToCssVariables",
+        "alias": "themeSettingsToCssVariables",
+        "source": "src/lib/theme-settings",
+        "resolved": [
+          "src/lib/theme-settings.ts"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "RootLayout",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/loading.tsx": {
+    "imports": [],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "LoadingPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/not-found.tsx": {
+    "imports": [
+      {
+        "name": "default",
+        "alias": "Link",
+        "source": "next/link",
+        "resolved": null
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "NotFound",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/order/[id]/page.tsx": {
+    "imports": [
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      },
+      {
+        "name": "OrderStatus",
+        "alias": "OrderStatus",
+        "source": "src/components/cart/OrderStatus",
+        "resolved": [
+          "src/components/cart/OrderStatus.tsx"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "OrderPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/page.tsx": {
+    "imports": [
+      {
+        "name": "PageStackLayout",
+        "alias": "PageStackLayout",
+        "source": "src/components/page-stack/PageStackLayout",
+        "resolved": [
+          "src/components/page-stack/PageStackLayout.tsx"
+        ]
+      },
+      {
+        "name": "FeaturedProducts",
+        "alias": "FeaturedProducts",
+        "source": "src/components/sections/FeaturedProducts",
+        "resolved": [
+          "src/components/sections/FeaturedProducts.tsx"
+        ]
+      },
+      {
+        "name": "HeroSection",
+        "alias": "HeroSection",
+        "source": "src/components/sections/HeroSection",
+        "resolved": [
+          "src/components/sections/HeroSection.tsx"
+        ]
+      },
+      {
+        "name": "getProducts",
+        "alias": "getProducts",
+        "source": "src/data/products",
+        "resolved": [
+          "src/data/products.ts"
+        ]
+      },
+      {
+        "name": "getPosts",
+        "alias": "getPosts",
+        "source": "src/data/posts",
+        "resolved": [
+          "src/data/posts.ts"
+        ]
+      },
+      {
+        "name": "getLandingSettings",
+        "alias": "getLandingSettings",
+        "source": "src/lib/theme-settings",
+        "resolved": [
+          "src/lib/theme-settings.ts"
+        ]
+      },
+      {
+        "name": "default",
+        "alias": "Link",
+        "source": "next/link",
+        "resolved": null
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "Home",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/roastery/page.tsx": {
+    "imports": [
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "RoasteryPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/robots.ts": {
+    "imports": [],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "robots",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/shop/[slug]/page.tsx": {
+    "imports": [
+      {
+        "name": "notFound",
+        "alias": "notFound",
+        "source": "next/navigation",
+        "resolved": null
+      },
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      },
+      {
+        "name": "ProductBuyPanel",
+        "alias": "ProductBuyPanel",
+        "source": "src/components/product/ProductBuyPanel",
+        "resolved": [
+          "src/components/product/ProductBuyPanel.tsx"
+        ]
+      },
+      {
+        "name": "formatRial",
+        "alias": "formatRial",
+        "source": "src/lib/format/currency",
+        "resolved": [
+          "src/lib/format/currency.ts"
+        ]
+      },
+      {
+        "name": "formatToman",
+        "alias": "formatToman",
+        "source": "src/lib/format/currency",
+        "resolved": [
+          "src/lib/format/currency.ts"
+        ]
+      },
+      {
+        "name": "productJsonLd",
+        "alias": "productJsonLd",
+        "source": "src/lib/seo/schema",
+        "resolved": [
+          "src/lib/seo/schema.ts"
+        ]
+      },
+      {
+        "name": "getProductBySlug",
+        "alias": "getProductBySlug",
+        "source": "src/data/products",
+        "resolved": [
+          "src/data/products.ts"
+        ]
+      },
+      {
+        "name": "getProducts",
+        "alias": "getProducts",
+        "source": "src/data/products",
+        "resolved": [
+          "src/data/products.ts"
+        ]
+      },
+      {
+        "name": "default",
+        "alias": "Image",
+        "source": "next/image",
+        "resolved": null
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "generateStaticParams",
+        "kind": "function"
+      },
+      {
+        "name": "generateMetadata",
+        "kind": "function"
+      },
+      {
+        "name": "ProductPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/shop/page.tsx": {
+    "imports": [
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      },
+      {
+        "name": "ProductCard",
+        "alias": "ProductCard",
+        "source": "src/components/product/ProductCard",
+        "resolved": [
+          "src/components/product/ProductCard.tsx"
+        ]
+      },
+      {
+        "name": "getProducts",
+        "alias": "getProducts",
+        "source": "src/data/products",
+        "resolved": [
+          "src/data/products.ts"
+        ]
+      },
+      {
+        "name": "default",
+        "alias": "Link",
+        "source": "next/link",
+        "resolved": null
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "ShopPage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/sitemap.ts": {
+    "imports": [],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "sitemap",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/app/wholesale/page.tsx": {
+    "imports": [
+      {
+        "name": "PageShell",
+        "alias": "PageShell",
+        "source": "src/components/layout/PageShell",
+        "resolved": [
+          "src/components/layout/PageShell.tsx"
+        ]
+      },
+      {
+        "name": "WholesaleForm",
+        "alias": "WholesaleForm",
+        "source": "src/components/forms/WholesaleForm",
+        "resolved": [
+          "src/components/forms/WholesaleForm.tsx"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "metadata",
+        "kind": "const"
+      },
+      {
+        "name": "WholesalePage",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/blog/BlogCard.tsx": {
+    "imports": [
+      {
+        "name": "localePath",
+        "alias": "localePath",
+        "source": "src/lib/i18n",
+        "resolved": [
+          "src/lib/i18n.ts"
+        ]
+      },
+      {
+        "name": "type Locale",
+        "alias": "type Locale",
+        "source": "src/lib/i18n",
+        "resolved": [
+          "src/lib/i18n.ts"
+        ]
+      },
+      {
+        "name": "default",
+        "alias": "Link",
+        "source": "next/link",
+        "resolved": null
+      }
+    ],
+    "importedBy": [
+      "src/app/blog/page.tsx",
+      "src/app/en/blog/page.tsx"
+    ],
+    "exports": [
+      {
+        "name": "BlogCard",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/cart/CartButton.tsx": {
+    "imports": [
+      {
+        "name": "useCart",
+        "alias": "useCart",
+        "source": "src/lib/cart/cart-context",
+        "resolved": [
+          "src/lib/cart/cart-context.tsx"
+        ]
+      },
+      {
+        "name": "usePathname",
+        "alias": "usePathname",
+        "source": "next/navigation",
+        "resolved": null
+      },
+      {
+        "name": "localePath",
+        "alias": "localePath",
+        "source": "src/lib/i18n",
+        "resolved": [
+          "src/lib/i18n.ts"
+        ]
+      },
+      {
+        "name": "default",
+        "alias": "Link",
+        "source": "next/link",
+        "resolved": null
+      }
+    ],
+    "importedBy": [
+      "src/components/layout/Header.tsx"
+    ],
+    "exports": [
+      {
+        "name": "CartButton",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/cart/CartContent.tsx": {
+    "imports": [
+      {
+        "name": "useCart",
+        "alias": "useCart",
+        "source": "src/lib/cart/cart-context",
+        "resolved": [
+          "src/lib/cart/cart-context.tsx"
+        ]
+      },
+      {
+        "name": "formatToman",
+        "alias": "formatToman",
+        "source": "src/lib/format/currency",
+        "resolved": [
+          "src/lib/format/currency.ts"
+        ]
+      },
+      {
+        "name": "default",
+        "alias": "Link",
+        "source": "next/link",
+        "resolved": null
+      }
+    ],
+    "importedBy": [
+      "src/app/cart/page.tsx",
+      "src/app/en/cart/page.tsx"
+    ],
+    "exports": [
+      {
+        "name": "CartContent",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/cart/CartProvider.tsx": {
+    "imports": [
+      {
+        "name": "type ReactNode",
+        "alias": "type ReactNode",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "CartContextProvider",
+        "alias": "CartContextProvider",
+        "source": "src/lib/cart/cart-context",
+        "resolved": [
+          "src/lib/cart/cart-context.tsx"
+        ]
+      }
+    ],
+    "importedBy": [
+      "src/app/layout.tsx"
+    ],
+    "exports": [
+      {
+        "name": "CartProvider",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/cart/CheckoutForm.tsx": {
+    "imports": [
+      {
+        "name": "useState",
+        "alias": "useState",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "type FormEvent",
+        "alias": "type FormEvent",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "useRouter",
+        "alias": "useRouter",
+        "source": "next/navigation",
+        "resolved": null
+      },
+      {
+        "name": "useCart",
+        "alias": "useCart",
+        "source": "src/lib/cart/cart-context",
+        "resolved": [
+          "src/lib/cart/cart-context.tsx"
+        ]
+      }
+    ],
+    "importedBy": [
+      "src/app/checkout/page.tsx",
+      "src/app/en/checkout/page.tsx"
+    ],
+    "exports": [
+      {
+        "name": "CheckoutForm",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/cart/OrderStatus.tsx": {
+    "imports": [
+      {
+        "name": "useSearchParams",
+        "alias": "useSearchParams",
+        "source": "next/navigation",
+        "resolved": null
+      },
+      {
+        "name": "PayButton",
+        "alias": "PayButton",
+        "source": "src/components/cart/PayButton",
+        "resolved": [
+          "src/components/cart/PayButton.tsx"
+        ]
+      },
+      {
+        "name": "default",
+        "alias": "Link",
+        "source": "next/link",
+        "resolved": null
+      }
+    ],
+    "importedBy": [
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/order/[id]/page.tsx"
+    ],
+    "exports": [
+      {
+        "name": "OrderStatus",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/cart/PayButton.tsx": {
+    "imports": [
+      {
+        "name": "useActionState",
+        "alias": "useActionState",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "initiatePayment",
+        "alias": "initiatePayment",
+        "source": "src/app/actions/payment",
+        "resolved": [
+          "src/app/actions/payment.ts"
+        ]
+      }
+    ],
+    "importedBy": [
+      "src/components/cart/OrderStatus.tsx"
+    ],
+    "exports": [
+      {
+        "name": "PayButton",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/cart/QuantityStepper.tsx": {
+    "imports": [
+      {
+        "name": "useState",
+        "alias": "useState",
+        "source": "react",
+        "resolved": null
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "QuantityStepper",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/forms/ContactForm.tsx": {
+    "imports": [
+      {
+        "name": "useActionState",
+        "alias": "useActionState",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "submitContact",
+        "alias": "submitContact",
+        "source": "src/app/actions/contact",
+        "resolved": [
+          "src/app/actions/contact.ts"
+        ]
+      }
+    ],
+    "importedBy": [
+      "src/app/contact/page.tsx",
+      "src/app/en/contact/page.tsx"
+    ],
+    "exports": [
+      {
+        "name": "ContactForm",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/forms/WholesaleForm.tsx": {
+    "imports": [
+      {
+        "name": "useActionState",
+        "alias": "useActionState",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "submitWholesale",
+        "alias": "submitWholesale",
+        "source": "src/app/actions/wholesale",
+        "resolved": [
+          "src/app/actions/wholesale.ts"
+        ]
+      }
+    ],
+    "importedBy": [
+      "src/app/en/wholesale/page.tsx",
+      "src/app/wholesale/page.tsx"
+    ],
+    "exports": [
+      {
+        "name": "WholesaleForm",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/layout/DocumentLocaleSync.tsx": {
+    "imports": [
+      {
+        "name": "useLayoutEffect",
+        "alias": "useLayoutEffect",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "usePathname",
+        "alias": "usePathname",
+        "source": "next/navigation",
+        "resolved": null
+      }
+    ],
+    "importedBy": [
+      "src/app/layout.tsx"
+    ],
+    "exports": [
+      {
+        "name": "DocumentLocaleSync",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/layout/Footer.tsx": {
+    "imports": [
+      {
+        "name": "localePath",
+        "alias": "localePath",
+        "source": "src/lib/i18n",
+        "resolved": [
+          "src/lib/i18n.ts"
+        ]
+      },
+      {
+        "name": "type Locale",
+        "alias": "type Locale",
+        "source": "src/lib/i18n",
+        "resolved": [
+          "src/lib/i18n.ts"
+        ]
+      },
+      {
+        "name": "default",
+        "alias": "Link",
+        "source": "next/link",
+        "resolved": null
+      }
+    ],
+    "importedBy": [
+      "src/components/layout/PageShell.tsx"
+    ],
+    "exports": [
+      {
+        "name": "Footer",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/layout/Header.tsx": {
+    "imports": [
+      {
+        "name": "localePath",
+        "alias": "localePath",
+        "source": "src/lib/i18n",
+        "resolved": [
+          "src/lib/i18n.ts"
+        ]
+      },
+      {
+        "name": "type Locale",
+        "alias": "type Locale",
+        "source": "src/lib/i18n",
+        "resolved": [
+          "src/lib/i18n.ts"
+        ]
+      },
+      {
+        "name": "LanguageSwitch",
+        "alias": "LanguageSwitch",
+        "source": "src/components/layout/LanguageSwitch",
+        "resolved": [
+          "src/components/layout/LanguageSwitch.tsx"
+        ]
+      },
+      {
+        "name": "CartButton",
+        "alias": "CartButton",
+        "source": "src/components/cart/CartButton",
+        "resolved": [
+          "src/components/cart/CartButton.tsx"
+        ]
+      },
+      {
+        "name": "default",
+        "alias": "Link",
+        "source": "next/link",
+        "resolved": null
+      }
+    ],
+    "importedBy": [
+      "src/components/layout/PageShell.tsx"
+    ],
+    "exports": [
+      {
+        "name": "NavigationItem",
+        "kind": "type"
+      },
+      {
+        "name": "Header",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/layout/LanguageSwitch.tsx": {
+    "imports": [
+      {
+        "name": "usePathname",
+        "alias": "usePathname",
+        "source": "next/navigation",
+        "resolved": null
+      },
+      {
+        "name": "alternateLocalePath",
+        "alias": "alternateLocalePath",
+        "source": "src/lib/i18n",
+        "resolved": [
+          "src/lib/i18n.ts"
+        ]
+      },
+      {
+        "name": "type Locale",
+        "alias": "type Locale",
+        "source": "src/lib/i18n",
+        "resolved": [
+          "src/lib/i18n.ts"
+        ]
+      },
+      {
+        "name": "default",
+        "alias": "Link",
+        "source": "next/link",
+        "resolved": null
+      }
+    ],
+    "importedBy": [
+      "src/components/layout/Header.tsx",
+      "src/components/page-stack/ActivePanel.tsx"
+    ],
+    "exports": [
+      {
+        "name": "LanguageSwitch",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/layout/PageShell.tsx": {
+    "imports": [
+      {
+        "name": "Footer",
+        "alias": "Footer",
+        "source": "src/components/layout/Footer",
+        "resolved": [
+          "src/components/layout/Footer.tsx"
+        ]
+      },
+      {
+        "name": "Header",
+        "alias": "Header",
+        "source": "src/components/layout/Header",
+        "resolved": [
+          "src/components/layout/Header.tsx"
+        ]
+      }
+    ],
+    "importedBy": [
+      "src/app/about/page.tsx",
+      "src/app/blog/[slug]/page.tsx",
+      "src/app/blog/page.tsx",
+      "src/app/cart/page.tsx",
+      "src/app/checkout/page.tsx",
+      "src/app/contact/page.tsx",
+      "src/app/en/about/page.tsx",
+      "src/app/en/blog/[slug]/page.tsx",
+      "src/app/en/blog/page.tsx",
+      "src/app/en/cart/page.tsx",
+      "src/app/en/checkout/page.tsx",
+      "src/app/en/contact/page.tsx",
+      "src/app/en/order/[id]/page.tsx",
+      "src/app/en/roastery/page.tsx",
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/en/shop/page.tsx",
+      "src/app/en/wholesale/page.tsx",
+      "src/app/order/[id]/page.tsx",
+      "src/app/roastery/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/app/shop/page.tsx",
+      "src/app/wholesale/page.tsx"
+    ],
+    "exports": [
+      {
+        "name": "PageShell",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/page-stack/ActivePanel.tsx": {
+    "imports": [
+      {
+        "name": "PagePanel",
+        "alias": "PagePanel",
+        "source": "src/components/page-stack/PagePanel",
+        "resolved": [
+          "src/components/page-stack/PagePanel.tsx"
+        ]
+      },
+      {
+        "name": "LanguageSwitch",
+        "alias": "LanguageSwitch",
+        "source": "src/components/layout/LanguageSwitch",
+        "resolved": [
+          "src/components/layout/LanguageSwitch.tsx"
+        ]
+      }
+    ],
+    "importedBy": [
+      "src/components/page-stack/PageStackLayout.tsx"
+    ],
+    "exports": [
+      {
+        "name": "ActivePanel",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/page-stack/CollapsedTab.tsx": {
+    "imports": [],
+    "importedBy": [
+      "src/components/page-stack/PageStackLayout.tsx"
+    ],
+    "exports": [
+      {
+        "name": "CollapsedTab",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/page-stack/PagePanel.tsx": {
+    "imports": [],
+    "importedBy": [
+      "src/components/page-stack/ActivePanel.tsx"
+    ],
+    "exports": [
+      {
+        "name": "PanelTone",
+        "kind": "type"
+      },
+      {
+        "name": "StackPanel",
+        "kind": "type"
+      },
+      {
+        "name": "PagePanel",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/page-stack/PageStackLayout.tsx": {
+    "imports": [
+      {
+        "name": "useState",
+        "alias": "useState",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "ActivePanel",
+        "alias": "ActivePanel",
+        "source": "src/components/page-stack/ActivePanel",
+        "resolved": [
+          "src/components/page-stack/ActivePanel.tsx"
+        ]
+      },
+      {
+        "name": "CollapsedTab",
+        "alias": "CollapsedTab",
+        "source": "src/components/page-stack/CollapsedTab",
+        "resolved": [
+          "src/components/page-stack/CollapsedTab.tsx"
+        ]
+      }
+    ],
+    "importedBy": [
+      "src/app/en/page.tsx",
+      "src/app/page.tsx"
+    ],
+    "exports": [
+      {
+        "name": "PageStackLayout",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/product/ProductBuyPanel.tsx": {
+    "imports": [
+      {
+        "name": "useState",
+        "alias": "useState",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "useCart",
+        "alias": "useCart",
+        "source": "src/lib/cart/cart-context",
+        "resolved": [
+          "src/lib/cart/cart-context.tsx"
+        ]
+      }
+    ],
+    "importedBy": [
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/shop/[slug]/page.tsx"
+    ],
+    "exports": [
+      {
+        "name": "ProductBuyPanel",
+        "kind": "function"
+      },
+      {
+        "name": "ProductBuyPanelEn",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/product/ProductCard.tsx": {
+    "imports": [
+      {
+        "name": "formatToman",
+        "alias": "formatToman",
+        "source": "src/lib/format/currency",
+        "resolved": [
+          "src/lib/format/currency.ts"
+        ]
+      },
+      {
+        "name": "localePath",
+        "alias": "localePath",
+        "source": "src/lib/i18n",
+        "resolved": [
+          "src/lib/i18n.ts"
+        ]
+      },
+      {
+        "name": "type Locale",
+        "alias": "type Locale",
+        "source": "src/lib/i18n",
+        "resolved": [
+          "src/lib/i18n.ts"
+        ]
+      },
+      {
+        "name": "inventoryLabel",
+        "alias": "inventoryLabel",
+        "source": "src/lib/format/persian",
+        "resolved": [
+          "src/lib/format/persian.ts"
+        ]
+      },
+      {
+        "name": "latin",
+        "alias": "latin",
+        "source": "src/lib/format/persian",
+        "resolved": [
+          "src/lib/format/persian.ts"
+        ]
+      },
+      {
+        "name": "default",
+        "alias": "Image",
+        "source": "next/image",
+        "resolved": null
+      },
+      {
+        "name": "default",
+        "alias": "Link",
+        "source": "next/link",
+        "resolved": null
+      }
+    ],
+    "importedBy": [
+      "src/app/en/shop/page.tsx",
+      "src/app/shop/page.tsx"
+    ],
+    "exports": [
+      {
+        "name": "ProductCard",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/sections/FeaturedProducts.tsx": {
+    "imports": [
+      {
+        "name": "formatToman",
+        "alias": "formatToman",
+        "source": "src/lib/format/currency",
+        "resolved": [
+          "src/lib/format/currency.ts"
+        ]
+      },
+      {
+        "name": "localePath",
+        "alias": "localePath",
+        "source": "src/lib/i18n",
+        "resolved": [
+          "src/lib/i18n.ts"
+        ]
+      },
+      {
+        "name": "type Locale",
+        "alias": "type Locale",
+        "source": "src/lib/i18n",
+        "resolved": [
+          "src/lib/i18n.ts"
+        ]
+      },
+      {
+        "name": "default",
+        "alias": "Link",
+        "source": "next/link",
+        "resolved": null
+      }
+    ],
+    "importedBy": [
+      "src/app/en/page.tsx",
+      "src/app/page.tsx"
+    ],
+    "exports": [
+      {
+        "name": "FeaturedProducts",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/sections/HeroSection.tsx": {
+    "imports": [
+      {
+        "name": "localePath",
+        "alias": "localePath",
+        "source": "src/lib/i18n",
+        "resolved": [
+          "src/lib/i18n.ts"
+        ]
+      },
+      {
+        "name": "type Locale",
+        "alias": "type Locale",
+        "source": "src/lib/i18n",
+        "resolved": [
+          "src/lib/i18n.ts"
+        ]
+      },
+      {
+        "name": "default",
+        "alias": "Link",
+        "source": "next/link",
+        "resolved": null
+      }
+    ],
+    "importedBy": [
+      "src/app/en/page.tsx",
+      "src/app/page.tsx"
+    ],
+    "exports": [
+      {
+        "name": "HeroSection",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/settings/DesignDashboard.tsx": {
+    "imports": [
+      {
+        "name": "useMemo",
+        "alias": "useMemo",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "useRef",
+        "alias": "useRef",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "useState",
+        "alias": "useState",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "type ChangeEvent",
+        "alias": "type ChangeEvent",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "defaultDesignSettings",
+        "alias": "defaultDesignSettings",
+        "source": "src/lib/settings/design-presets",
+        "resolved": [
+          "src/lib/settings/design-presets.ts"
+        ]
+      },
+      {
+        "name": "designPresets",
+        "alias": "designPresets",
+        "source": "src/lib/settings/design-presets",
+        "resolved": [
+          "src/lib/settings/design-presets.ts"
+        ]
+      },
+      {
+        "name": "type DesignSettings",
+        "alias": "type DesignSettings",
+        "source": "src/lib/settings/design-presets",
+        "resolved": [
+          "src/lib/settings/design-presets.ts"
+        ]
+      },
+      {
+        "name": "resetCustomFont",
+        "alias": "resetCustomFont",
+        "source": "src/lib/settings/design-storage",
+        "resolved": [
+          "src/lib/settings/design-storage.ts"
+        ]
+      },
+      {
+        "name": "updateDesignSetting",
+        "alias": "updateDesignSetting",
+        "source": "src/lib/settings/design-storage",
+        "resolved": [
+          "src/lib/settings/design-storage.ts"
+        ]
+      },
+      {
+        "name": "useDesignSettings",
+        "alias": "useDesignSettings",
+        "source": "src/components/settings/DesignSettingsProvider",
+        "resolved": [
+          "src/components/settings/DesignSettingsProvider.tsx"
+        ]
+      },
+      {
+        "name": "default",
+        "alias": "Link",
+        "source": "next/link",
+        "resolved": null
+      }
+    ],
+    "importedBy": [
+      "src/app/dashboard/design/page.tsx"
+    ],
+    "exports": [
+      {
+        "name": "DesignDashboard",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/settings/DesignSettingsProvider.tsx": {
+    "imports": [
+      {
+        "name": "createContext",
+        "alias": "createContext",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "useCallback",
+        "alias": "useCallback",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "useContext",
+        "alias": "useContext",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "useEffect",
+        "alias": "useEffect",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "useMemo",
+        "alias": "useMemo",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "useSyncExternalStore",
+        "alias": "useSyncExternalStore",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "type ReactNode",
+        "alias": "type ReactNode",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "defaultDesignSettings",
+        "alias": "defaultDesignSettings",
+        "source": "src/lib/settings/design-presets",
+        "resolved": [
+          "src/lib/settings/design-presets.ts"
+        ]
+      },
+      {
+        "name": "type DesignSettings",
+        "alias": "type DesignSettings",
+        "source": "src/lib/settings/design-presets",
+        "resolved": [
+          "src/lib/settings/design-presets.ts"
+        ]
+      },
+      {
+        "name": "applyDesignSettings",
+        "alias": "applyDesignSettings",
+        "source": "src/lib/settings/design-storage",
+        "resolved": [
+          "src/lib/settings/design-storage.ts"
+        ]
+      },
+      {
+        "name": "persistDesignSettings",
+        "alias": "persistDesignSettings",
+        "source": "src/lib/settings/design-storage",
+        "resolved": [
+          "src/lib/settings/design-storage.ts"
+        ]
+      },
+      {
+        "name": "readStoredDesignSettings",
+        "alias": "readStoredDesignSettings",
+        "source": "src/lib/settings/design-storage",
+        "resolved": [
+          "src/lib/settings/design-storage.ts"
+        ]
+      },
+      {
+        "name": "subscribeDesignSettings",
+        "alias": "subscribeDesignSettings",
+        "source": "src/lib/settings/design-storage",
+        "resolved": [
+          "src/lib/settings/design-storage.ts"
+        ]
+      },
+      {
+        "name": "",
+        "alias": "",
+        "source": "src/lib/settings/design-storage",
+        "resolved": [
+          "src/lib/settings/design-storage.ts"
+        ]
+      }
+    ],
+    "importedBy": [
+      "src/app/layout.tsx",
+      "src/components/settings/DesignDashboard.tsx"
+    ],
+    "exports": [
+      {
+        "name": "DesignSettingsProvider",
+        "kind": "function"
+      },
+      {
+        "name": "useDesignSettings",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/components/ui/ButtonLink.tsx": {
+    "imports": [
+      {
+        "name": "default",
+        "alias": "Link",
+        "source": "next/link",
+        "resolved": null
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "ButtonLink",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/data/posts.test.ts": {
+    "imports": [
+      {
+        "name": "describe",
+        "alias": "describe",
+        "source": "vitest",
+        "resolved": null
+      },
+      {
+        "name": "it",
+        "alias": "it",
+        "source": "vitest",
+        "resolved": null
+      },
+      {
+        "name": "expect",
+        "alias": "expect",
+        "source": "vitest",
+        "resolved": null
+      },
+      {
+        "name": "getPosts",
+        "alias": "getPosts",
+        "source": "src/data/posts",
+        "resolved": [
+          "src/data/posts.ts"
+        ]
+      },
+      {
+        "name": "getPostBySlug",
+        "alias": "getPostBySlug",
+        "source": "src/data/posts",
+        "resolved": [
+          "src/data/posts.ts"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": []
+  },
+  "src/data/posts.ts": {
+    "imports": [],
+    "importedBy": [
+      "src/app/blog/[slug]/page.tsx",
+      "src/app/blog/page.tsx",
+      "src/app/en/blog/[slug]/page.tsx",
+      "src/app/en/blog/page.tsx",
+      "src/app/en/page.tsx",
+      "src/app/page.tsx",
+      "src/data/posts.test.ts"
+    ],
+    "exports": [
+      {
+        "name": "BlogPost",
+        "kind": "type"
+      },
+      {
+        "name": "posts",
+        "kind": "const"
+      },
+      {
+        "name": "getPost",
+        "kind": "function"
+      },
+      {
+        "name": "getPosts",
+        "kind": "function"
+      },
+      {
+        "name": "getPostBySlug",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/data/products.test.ts": {
+    "imports": [
+      {
+        "name": "describe",
+        "alias": "describe",
+        "source": "vitest",
+        "resolved": null
+      },
+      {
+        "name": "it",
+        "alias": "it",
+        "source": "vitest",
+        "resolved": null
+      },
+      {
+        "name": "expect",
+        "alias": "expect",
+        "source": "vitest",
+        "resolved": null
+      },
+      {
+        "name": "getProducts",
+        "alias": "getProducts",
+        "source": "src/data/products",
+        "resolved": [
+          "src/data/products.ts"
+        ]
+      },
+      {
+        "name": "getProductBySlug",
+        "alias": "getProductBySlug",
+        "source": "src/data/products",
+        "resolved": [
+          "src/data/products.ts"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": []
+  },
+  "src/data/products.ts": {
+    "imports": [],
+    "importedBy": [
+      "src/app/en/page.tsx",
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/en/shop/page.tsx",
+      "src/app/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/app/shop/page.tsx",
+      "src/data/products.test.ts"
+    ],
+    "exports": [
+      {
+        "name": "CoffeeProduct",
+        "kind": "type"
+      },
+      {
+        "name": "products",
+        "kind": "const"
+      },
+      {
+        "name": "getProduct",
+        "kind": "function"
+      },
+      {
+        "name": "getProducts",
+        "kind": "function"
+      },
+      {
+        "name": "getProductBySlug",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/lib/cart/cart-context.tsx": {
+    "imports": [
+      {
+        "name": "createContext",
+        "alias": "createContext",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "useCallback",
+        "alias": "useCallback",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "useContext",
+        "alias": "useContext",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "useEffect",
+        "alias": "useEffect",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "useMemo",
+        "alias": "useMemo",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "useReducer",
+        "alias": "useReducer",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "useSyncExternalStore",
+        "alias": "useSyncExternalStore",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "type ReactNode",
+        "alias": "type ReactNode",
+        "source": "react",
+        "resolved": null
+      },
+      {
+        "name": "cartReducer",
+        "alias": "cartReducer",
+        "source": "src/lib/cart/cart-reducer",
+        "resolved": [
+          "src/lib/cart/cart-reducer.ts"
+        ]
+      },
+      {
+        "name": "getCartCount",
+        "alias": "getCartCount",
+        "source": "src/lib/cart/cart-reducer",
+        "resolved": [
+          "src/lib/cart/cart-reducer.ts"
+        ]
+      },
+      {
+        "name": "getCartTotal",
+        "alias": "getCartTotal",
+        "source": "src/lib/cart/cart-reducer",
+        "resolved": [
+          "src/lib/cart/cart-reducer.ts"
+        ]
+      },
+      {
+        "name": "readCart",
+        "alias": "readCart",
+        "source": "src/lib/cart/cart-storage",
+        "resolved": [
+          "src/lib/cart/cart-storage.ts"
+        ]
+      },
+      {
+        "name": "subscribeCart",
+        "alias": "subscribeCart",
+        "source": "src/lib/cart/cart-storage",
+        "resolved": [
+          "src/lib/cart/cart-storage.ts"
+        ]
+      },
+      {
+        "name": "writeCart",
+        "alias": "writeCart",
+        "source": "src/lib/cart/cart-storage",
+        "resolved": [
+          "src/lib/cart/cart-storage.ts"
+        ]
+      },
+      {
+        "name": "EMPTY_CART",
+        "alias": "EMPTY_CART",
+        "source": "src/lib/cart/types",
+        "resolved": [
+          "src/lib/cart/types.ts"
+        ]
+      }
+    ],
+    "importedBy": [
+      "src/components/cart/CartButton.tsx",
+      "src/components/cart/CartContent.tsx",
+      "src/components/cart/CartProvider.tsx",
+      "src/components/cart/CheckoutForm.tsx",
+      "src/components/product/ProductBuyPanel.tsx"
+    ],
+    "exports": [
+      {
+        "name": "CartContextValue",
+        "kind": "type"
+      },
+      {
+        "name": "CartContextProvider",
+        "kind": "function"
+      },
+      {
+        "name": "useCart",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/lib/cart/cart-reducer.test.ts": {
+    "imports": [
+      {
+        "name": "describe",
+        "alias": "describe",
+        "source": "vitest",
+        "resolved": null
+      },
+      {
+        "name": "it",
+        "alias": "it",
+        "source": "vitest",
+        "resolved": null
+      },
+      {
+        "name": "expect",
+        "alias": "expect",
+        "source": "vitest",
+        "resolved": null
+      },
+      {
+        "name": "cartReducer",
+        "alias": "cartReducer",
+        "source": "src/lib/cart/cart-reducer",
+        "resolved": [
+          "src/lib/cart/cart-reducer.ts"
+        ]
+      },
+      {
+        "name": "getCartCount",
+        "alias": "getCartCount",
+        "source": "src/lib/cart/cart-reducer",
+        "resolved": [
+          "src/lib/cart/cart-reducer.ts"
+        ]
+      },
+      {
+        "name": "getCartTotal",
+        "alias": "getCartTotal",
+        "source": "src/lib/cart/cart-reducer",
+        "resolved": [
+          "src/lib/cart/cart-reducer.ts"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": []
+  },
+  "src/lib/cart/cart-reducer.ts": {
+    "imports": [],
+    "importedBy": [
+      "src/lib/cart/cart-context.tsx",
+      "src/lib/cart/cart-reducer.test.ts"
+    ],
+    "exports": [
+      {
+        "name": "cartReducer",
+        "kind": "function"
+      },
+      {
+        "name": "getCartCount",
+        "kind": "function"
+      },
+      {
+        "name": "getCartTotal",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/lib/cart/cart-storage.ts": {
+    "imports": [
+      {
+        "name": "EMPTY_CART",
+        "alias": "EMPTY_CART",
+        "source": "src/lib/cart/types",
+        "resolved": [
+          "src/lib/cart/types.ts"
+        ]
+      },
+      {
+        "name": "type Cart",
+        "alias": "type Cart",
+        "source": "src/lib/cart/types",
+        "resolved": [
+          "src/lib/cart/types.ts"
+        ]
+      }
+    ],
+    "importedBy": [
+      "src/lib/cart/cart-context.tsx"
+    ],
+    "exports": [
+      {
+        "name": "readCart",
+        "kind": "function"
+      },
+      {
+        "name": "writeCart",
+        "kind": "function"
+      },
+      {
+        "name": "subscribeCart",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/lib/cart/types.ts": {
+    "imports": [],
+    "importedBy": [
+      "src/lib/cart/cart-context.tsx",
+      "src/lib/cart/cart-storage.ts"
+    ],
+    "exports": [
+      {
+        "name": "CartItem",
+        "kind": "type"
+      },
+      {
+        "name": "Cart",
+        "kind": "type"
+      },
+      {
+        "name": "EMPTY_CART",
+        "kind": "const"
+      },
+      {
+        "name": "CartAction",
+        "kind": "type"
+      }
+    ]
+  },
+  "src/lib/format/currency.test.ts": {
+    "imports": [
+      {
+        "name": "describe",
+        "alias": "describe",
+        "source": "vitest",
+        "resolved": null
+      },
+      {
+        "name": "it",
+        "alias": "it",
+        "source": "vitest",
+        "resolved": null
+      },
+      {
+        "name": "expect",
+        "alias": "expect",
+        "source": "vitest",
+        "resolved": null
+      },
+      {
+        "name": "formatToman",
+        "alias": "formatToman",
+        "source": "src/lib/format/currency",
+        "resolved": [
+          "src/lib/format/currency.ts"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": []
+  },
+  "src/lib/format/currency.ts": {
+    "imports": [],
+    "importedBy": [
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/shop/[slug]/page.tsx",
+      "src/components/cart/CartContent.tsx",
+      "src/components/product/ProductCard.tsx",
+      "src/components/sections/FeaturedProducts.tsx",
+      "src/lib/format/currency.test.ts",
+      "src/lib/seo/schema.ts"
+    ],
+    "exports": [
+      {
+        "name": "formatToman",
+        "kind": "function"
+      },
+      {
+        "name": "formatRial",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/lib/format/persian.ts": {
+    "imports": [],
+    "importedBy": [
+      "src/components/product/ProductCard.tsx"
+    ],
+    "exports": [
+      {
+        "name": "inventoryLabel",
+        "kind": "function"
+      },
+      {
+        "name": "latin",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/lib/i18n.ts": {
+    "imports": [],
+    "importedBy": [
+      "src/components/blog/BlogCard.tsx",
+      "src/components/cart/CartButton.tsx",
+      "src/components/layout/Footer.tsx",
+      "src/components/layout/Header.tsx",
+      "src/components/layout/LanguageSwitch.tsx",
+      "src/components/product/ProductCard.tsx",
+      "src/components/sections/FeaturedProducts.tsx",
+      "src/components/sections/HeroSection.tsx"
+    ],
+    "exports": [
+      {
+        "name": "Locale",
+        "kind": "type"
+      },
+      {
+        "name": "localePath",
+        "kind": "function"
+      },
+      {
+        "name": "alternateLocalePath",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/lib/orders/store.test.ts": {
+    "imports": [
+      {
+        "name": "describe",
+        "alias": "describe",
+        "source": "vitest",
+        "resolved": null
+      },
+      {
+        "name": "it",
+        "alias": "it",
+        "source": "vitest",
+        "resolved": null
+      },
+      {
+        "name": "expect",
+        "alias": "expect",
+        "source": "vitest",
+        "resolved": null
+      },
+      {
+        "name": "beforeEach",
+        "alias": "beforeEach",
+        "source": "vitest",
+        "resolved": null
+      },
+      {
+        "name": "createOrder",
+        "alias": "createOrder",
+        "source": "src/lib/orders/store",
+        "resolved": [
+          "src/lib/orders/store.ts"
+        ]
+      },
+      {
+        "name": "getOrder",
+        "alias": "getOrder",
+        "source": "src/lib/orders/store",
+        "resolved": [
+          "src/lib/orders/store.ts"
+        ]
+      },
+      {
+        "name": "updateOrderStatus",
+        "alias": "updateOrderStatus",
+        "source": "src/lib/orders/store",
+        "resolved": [
+          "src/lib/orders/store.ts"
+        ]
+      }
+    ],
+    "importedBy": [],
+    "exports": []
+  },
+  "src/lib/orders/store.ts": {
+    "imports": [],
+    "importedBy": [
+      "src/app/actions/payment.ts",
+      "src/app/api/checkout/route.ts",
+      "src/app/api/payment/callback/route.ts",
+      "src/lib/orders/store.test.ts"
+    ],
+    "exports": [
+      {
+        "name": "LocalOrder",
+        "kind": "type"
+      },
+      {
+        "name": "CreateOrderInput",
+        "kind": "type"
+      },
+      {
+        "name": "createOrder",
+        "kind": "function"
+      },
+      {
+        "name": "getOrder",
+        "kind": "function"
+      },
+      {
+        "name": "updateOrderStatus",
+        "kind": "function"
+      },
+      {
+        "name": "setOrderAuthority",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/lib/seo/schema.ts": {
+    "imports": [
+      {
+        "name": "formatToman",
+        "alias": "formatToman",
+        "source": "src/lib/format/currency",
+        "resolved": [
+          "src/lib/format/currency.ts"
+        ]
+      }
+    ],
+    "importedBy": [
+      "src/app/en/shop/[slug]/page.tsx",
+      "src/app/shop/[slug]/page.tsx"
+    ],
+    "exports": [
+      {
+        "name": "productJsonLd",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/lib/settings/design-presets.ts": {
+    "imports": [],
+    "importedBy": [
+      "src/components/settings/DesignDashboard.tsx",
+      "src/components/settings/DesignSettingsProvider.tsx",
+      "src/lib/settings/design-storage.ts",
+      "src/lib/theme-settings.ts"
+    ],
+    "exports": [
+      {
+        "name": "DesignSettings",
+        "kind": "type"
+      },
+      {
+        "name": "DesignPreset",
+        "kind": "type"
+      },
+      {
+        "name": "designPresets",
+        "kind": "const"
+      },
+      {
+        "name": "defaultDesignSettings",
+        "kind": "const"
+      }
+    ]
+  },
+  "src/lib/settings/design-storage.ts": {
+    "imports": [
+      {
+        "name": "defaultDesignSettings",
+        "alias": "defaultDesignSettings",
+        "source": "src/lib/settings/design-presets",
+        "resolved": [
+          "src/lib/settings/design-presets.ts"
+        ]
+      },
+      {
+        "name": "type DesignSettings",
+        "alias": "type DesignSettings",
+        "source": "src/lib/settings/design-presets",
+        "resolved": [
+          "src/lib/settings/design-presets.ts"
+        ]
+      }
+    ],
+    "importedBy": [
+      "src/components/settings/DesignDashboard.tsx",
+      "src/components/settings/DesignSettingsProvider.tsx"
+    ],
+    "exports": [
+      {
+        "name": "DESIGN_SETTINGS_KEY",
+        "kind": "const"
+      },
+      {
+        "name": "readStoredDesignSettings",
+        "kind": "function"
+      },
+      {
+        "name": "persistDesignSettings",
+        "kind": "function"
+      },
+      {
+        "name": "subscribeDesignSettings",
+        "kind": "function"
+      },
+      {
+        "name": "applyDesignSettings",
+        "kind": "function"
+      },
+      {
+        "name": "updateDesignSetting",
+        "kind": "function"
+      },
+      {
+        "name": "resetCustomFont",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/lib/theme-settings.ts": {
+    "imports": [
+      {
+        "name": "defaultDesignSettings",
+        "alias": "defaultDesignSettings",
+        "source": "src/lib/settings/design-presets",
+        "resolved": [
+          "src/lib/settings/design-presets.ts"
+        ]
+      },
+      {
+        "name": "designPresets",
+        "alias": "designPresets",
+        "source": "src/lib/settings/design-presets",
+        "resolved": [
+          "src/lib/settings/design-presets.ts"
+        ]
+      },
+      {
+        "name": "type DesignSettings",
+        "alias": "type DesignSettings",
+        "source": "src/lib/settings/design-presets",
+        "resolved": [
+          "src/lib/settings/design-presets.ts"
+        ]
+      }
+    ],
+    "importedBy": [
+      "src/app/en/page.tsx",
+      "src/app/layout.tsx",
+      "src/app/page.tsx"
+    ],
+    "exports": [
+      {
+        "name": "FontSettings",
+        "kind": "type"
+      },
+      {
+        "name": "LandingPageSettings",
+        "kind": "type"
+      },
+      {
+        "name": "HeaderFooterSettings",
+        "kind": "type"
+      },
+      {
+        "name": "getThemeSettings",
+        "kind": "function"
+      },
+      {
+        "name": "getLandingSettings",
+        "kind": "function"
+      },
+      {
+        "name": "getFontSettings",
+        "kind": "function"
+      },
+      {
+        "name": "getDesignPresets",
+        "kind": "function"
+      },
+      {
+        "name": "themeSettingsToCssVariables",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/lib/zarinpal.ts": {
+    "imports": [],
+    "importedBy": [
+      "src/app/actions/payment.ts",
+      "src/app/api/payment/callback/route.ts"
+    ],
+    "exports": [
+      {
+        "name": "PaymentRequestResult",
+        "kind": "type"
+      },
+      {
+        "name": "PaymentVerifyResult",
+        "kind": "type"
+      },
+      {
+        "name": "requestPayment",
+        "kind": "function"
+      },
+      {
+        "name": "verifyPayment",
+        "kind": "function"
+      }
+    ]
+  },
+  "src/proxy.ts": {
+    "imports": [
+      {
+        "name": "NextResponse",
+        "alias": "NextResponse",
+        "source": "next/server",
+        "resolved": null
+      }
+    ],
+    "importedBy": [],
+    "exports": [
+      {
+        "name": "proxy",
+        "kind": "function"
+      },
+      {
+        "name": "config",
+        "kind": "const"
+      }
+    ]
+  },
+  "next.config.ts": {
+    "imports": [],
+    "importedBy": [],
+    "exports": []
+  },
+  "vitest.config.ts": {
+    "imports": [
+      {
+        "name": "defineConfig",
+        "alias": "defineConfig",
+        "source": "vitest/config",
+        "resolved": null
+      },
+      {
+        "name": "default",
+        "alias": "react",
+        "source": "@vitejs/plugin-react",
+        "resolved": null
+      },
+      {
+        "name": "default",
+        "alias": "path",
+        "source": "path",
+        "resolved": null
+      }
+    ],
+    "importedBy": [],
+    "exports": []
+  },
+  "playwright.config.ts": {
+    "imports": [
+      {
+        "name": "defineConfig",
+        "alias": "defineConfig",
+        "source": "@playwright/test",
+        "resolved": null
+      },
+      {
+        "name": "devices",
+        "alias": "devices",
+        "source": "@playwright/test",
+        "resolved": null
+      }
+    ],
+    "importedBy": [],
+    "exports": []
+  },
+  "eslint.config.mjs": {
+    "imports": [
+      {
+        "name": "defineConfig",
+        "alias": "defineConfig",
+        "source": "eslint/config",
+        "resolved": null
+      },
+      {
+        "name": "globalIgnores",
+        "alias": "globalIgnores",
+        "source": "eslint/config",
+        "resolved": null
+      },
+      {
+        "name": "default",
+        "alias": "nextVitals",
+        "source": "eslint-config-next/core-web-vitals",
+        "resolved": null
+      },
+      {
+        "name": "default",
+        "alias": "nextTs",
+        "source": "eslint-config-next/typescript",
+        "resolved": null
+      }
+    ],
+    "importedBy": [],
+    "exports": []
+  },
+  "postcss.config.mjs": {
+    "imports": [],
+    "importedBy": [],
+    "exports": []
+  },
+  "tests/e2e/smoke.spec.ts": {
+    "imports": [
+      {
+        "name": "test",
+        "alias": "test",
+        "source": "@playwright/test",
+        "resolved": null
+      },
+      {
+        "name": "expect",
+        "alias": "expect",
+        "source": "@playwright/test",
+        "resolved": null
+      }
+    ],
+    "importedBy": [],
+    "exports": []
+  }
+}

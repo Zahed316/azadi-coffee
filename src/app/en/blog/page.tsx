@@ -1,6 +1,6 @@
 import { BlogCard } from "@/components/blog/BlogCard";
 import { PageShell } from "@/components/layout/PageShell";
-import { getPosts } from "@/lib/wordpress";
+import { getPosts } from "@/data/posts";
 
 export const metadata = { title: "Journal" };
 

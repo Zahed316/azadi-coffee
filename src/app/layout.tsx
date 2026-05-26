@@ -4,7 +4,6 @@ import { DocumentLocaleSync } from "@/components/layout/DocumentLocaleSync";
 import { CartProvider } from "@/components/cart/CartProvider";
 import { DesignSettingsProvider } from "@/components/settings/DesignSettingsProvider";
 import { getThemeSettings, themeSettingsToCssVariables } from "@/lib/theme-settings";
-import { defaultDesignSettings } from "@/lib/settings/design-presets";
 import type { Locale } from "@/lib/i18n";
 import "./globals.css";
 
@@ -43,12 +42,7 @@ export default async function RootLayout({
   const lang = locale === "en" ? "en" : "fa";
   const dir = locale === "en" ? "ltr" : "rtl";
 
-  let themeSettings;
-  try {
-    themeSettings = await getThemeSettings();
-  } catch {
-    themeSettings = defaultDesignSettings;
-  }
+  const themeSettings = getThemeSettings();
 
   return (
     <html

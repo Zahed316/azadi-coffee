@@ -1,21 +1,11 @@
 import type { NextConfig } from "next";
 
-const wordpressApiUrl = process.env.WORDPRESS_API_URL || (process.env.WORDPRESS_BASE_URL ? `${process.env.WORDPRESS_BASE_URL.replace(/\/+$/, "")}/wp-json` : "");
-const wordpressUrl = wordpressApiUrl ? new URL(wordpressApiUrl) : undefined;
-const wordpressHost = wordpressUrl?.hostname;
-const wordpressPort = wordpressUrl?.port || undefined;
-
 const publicSiteUrl = process.env.NEXT_PUBLIC_SITE_URL;
 const publicSiteHost = publicSiteUrl ? new URL(publicSiteUrl).hostname : undefined;
 
 const remotePatterns: NonNullable<NextConfig["images"]>["remotePatterns"] = [];
 
-if (wordpressHost) {
-  remotePatterns.push({ protocol: "http", hostname: wordpressHost, port: wordpressPort, pathname: "/**" });
-  remotePatterns.push({ protocol: "https", hostname: wordpressHost, pathname: "/**" });
-}
-
-if (publicSiteHost && publicSiteHost !== wordpressHost) {
+if (publicSiteHost) {
   remotePatterns.push({ protocol: "https", hostname: publicSiteHost, pathname: "/**" });
 }
 
